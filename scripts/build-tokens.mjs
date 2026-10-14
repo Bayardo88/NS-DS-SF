@@ -28,6 +28,7 @@ const { textStyles } = read('tokens/figma/text-styles.json');
 const FONT_FALLBACKS = {
   'Fira Code': ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
   'Greycliff CF': ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+  'Public Sans': ['system-ui', 'sans-serif'],
 };
 
 const GROUP = {
@@ -37,6 +38,25 @@ const GROUP = {
   Shape: 'shape',
   Size: 'size',
   Typography: 'typography',
+  Effects: 'effects',
+};
+
+// The first mode of every collection is the :root default. Each other mode needs an
+// entry here saying where its overrides go; an unmapped mode fails the build.
+//   selector  rule that applies the mode explicitly
+//   media     [query, selector, note] rule that applies it from a media query
+//   changed   only emit variables whose value differs from the default mode
+const MODE_CSS = {
+  Color: {
+    Dark: {
+      selector: '[data-theme="dark"]',
+      media: ['(prefers-color-scheme: dark)', ':root:not([data-theme])', 'system preference, when no data-theme is set'],
+    },
+    'Web 2025': { selector: '[data-theme="web-2025"]' },
+  },
+  Typography: {
+    Mobile: { media: ['(max-width: 767px)', ':root', 'viewports up to 767px'], changed: true },
+  },
 };
 
 const kebab = (s) => s.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -132,24 +152,36 @@ const cssValue = (t, raw) => {
 // ---------------------------------------------------------------------------
 // Styles
 
+const defaultValue = (t) => t.values[t.modes[0]];
+
 const primitiveByHex = new Map();
 for (const t of tokens) {
-  if (t.collection === 'Primitives' && typeof t.values.Value === 'string' && !primitiveByHex.has(t.values.Value)) {
-    primitiveByHex.set(t.values.Value, t);
+  const value = defaultValue(t);
+  if (t.collection === 'Primitives' && typeof value === 'string' && !primitiveByHex.has(value)) {
+    primitiveByHex.set(value, t);
   }
 }
 // Style colors are either bound variables ("@…") or literals; literals that equal
 // a primitive are expressed as references to it.
 const styleColor = (raw) => resolveAlias(raw) || primitiveByHex.get(raw) || null;
 
-const elevation = effects
-  .filter((s) => s.name.startsWith('Elevation/'))
-  .map((s) => {
-    const key = kebab(s.name.slice('Elevation/'.length));
-    const css = s.description && /^var\(--/.test(s.description) ? cssName(s.description) : `--ns-elevation-${key}`;
-    const layers = s.effects.filter((e) => e.type === 'DROP_SHADOW' || e.type === 'INNER_SHADOW');
-    return { key, style: s.name, description: s.description, css, layers };
-  });
+// Effect styles are named <Group>/<Key> and become DTCG tokens at <group>.<key>.
+// Shadow styles map to box-shadow; a single blur maps to a CSS blur() filter value.
+const isShadow = (e) => e.type === 'DROP_SHADOW' || e.type === 'INNER_SHADOW';
+const BLUR_PROPERTY = { BACKGROUND_BLUR: 'backdrop-filter', LAYER_BLUR: 'filter' };
+const effectStyle = effects.map((s) => {
+  const [groupName, ...rest] = s.name.split('/');
+  const group = kebab(groupName);
+  const key = kebab(rest.join('-'));
+  const css = /^var\(--[a-z0-9-]+\)$/.test(s.description) ? cssName(s.description) : `--ns-${group}-${key}`;
+  const base = { group, groupName, key, style: s.name, description: s.description, css };
+  if (s.effects.every(isShadow)) return { ...base, kind: 'shadow', layers: s.effects };
+  if (s.effects.length === 1 && BLUR_PROPERTY[s.effects[0].type]) {
+    const { type, radius } = s.effects[0];
+    return { ...base, kind: 'blur', effectType: type, cssProperty: BLUR_PROPERTY[type], radius };
+  }
+  throw new Error(`Unsupported effect combination in ${s.name}`);
+});
 
 // Figma's gradientTransform maps node space to gradient space, where the gradient
 // runs from (0, 0.5) to (1, 0.5). Invert it to get the direction in node space.
@@ -169,14 +201,17 @@ const gradient = gradients.map((g) => {
 });
 
 const WEIGHT_BY_STYLE = {
+  ExtraLight: 'extralight',
+  Light: 'light',
   Regular: 'regular',
   Medium: 'medium',
   SemiBold: 'semibold',
   'Demi Bold': 'semibold',
   Bold: 'bold',
   Heavy: 'heavy',
+  Black: 'black',
 };
-const FAMILY_BY_GROUP = { Primary: 'font-family/primary', Secondary: 'font-family/secondary' };
+const FAMILY_BY_GROUP = { Primary: 'font-family/primary', Secondary: 'font-family/secondary', Web: 'font-family/web' };
 
 const textStyle = textStyles.map(([name, family, fontStyle, fontSize, lineHeight, letterSpacing, bound]) => {
   const [groupName, size, weightName] = name.split('/');
@@ -196,8 +231,9 @@ const textStyle = textStyles.map(([name, family, fontStyle, fontSize, lineHeight
     lineHeight: pick('lineHeight', `line-height/${sizeKey}`),
     letterSpacing: pick('letterSpacing', 'letter-spacing/default'),
   };
-  // Guard against the snapshot and the referenced variables drifting apart.
-  const resolved = (t) => t.values[t.modes[0]];
+  // Guard against the snapshot and the referenced variables drifting apart. Figma
+  // shows text styles in the default (Desktop) mode.
+  const resolved = defaultValue;
   if (resolved(parts.fontSize) !== fontSize || resolved(parts.lineHeight) !== lineHeight || resolved(parts.letterSpacing) !== letterSpacing) {
     throw new Error(`Text style ${name} does not match its typography variables`);
   }
@@ -236,22 +272,33 @@ for (const t of tokens) {
   });
 }
 
-for (const e of elevation) {
-  setPath(json, ['elevation', e.key], {
-    $type: 'shadow',
-    $value: e.layers.map((l) => ({
-      color: styleColor(l.color) ? ref(styleColor(l.color)) : toDtcgColor(l.color),
-      offsetX: px(l.x),
-      offsetY: px(l.y),
-      blur: px(l.blur),
-      spread: px(l.spread),
-      inset: l.type === 'INNER_SHADOW',
-    })),
-    $extensions: {
-      'com.figma': { effectStyle: e.style, description: e.description },
-      'com.nicasource.css': { customProperty: e.css },
-    },
-  });
+for (const e of effectStyle) {
+  const figmaExt = { effectStyle: e.style, description: e.description };
+  if (e.kind === 'shadow') {
+    setPath(json, [e.group, e.key], {
+      $type: 'shadow',
+      $value: e.layers.map((l) => ({
+        color: styleColor(l.color) ? ref(styleColor(l.color)) : toDtcgColor(l.color),
+        offsetX: px(l.x),
+        offsetY: px(l.y),
+        blur: px(l.blur),
+        spread: px(l.spread),
+        inset: l.type === 'INNER_SHADOW',
+      })),
+      $extensions: { 'com.figma': figmaExt, 'com.nicasource.css': { customProperty: e.css } },
+    });
+  } else {
+    // DTCG has no filter type: the token is the blur radius, the CSS wraps it in blur().
+    const radius = resolveAlias(e.radius);
+    setPath(json, [e.group, e.key], {
+      $type: 'dimension',
+      $value: radius ? ref(radius) : px(e.radius),
+      $extensions: {
+        'com.figma': { ...figmaExt, effectType: e.effectType },
+        'com.nicasource.css': { customProperty: e.css, property: e.cssProperty, function: 'blur' },
+      },
+    });
+  }
 }
 
 for (const g of gradient) {
@@ -270,7 +317,7 @@ for (const g of gradient) {
 
 for (const s of textStyle) {
   const figmaExt = { textStyle: s.name, fontName: s.figmaFont };
-  if (s.standIn) figmaExt.standInFor = s.parts.fontFamily.values.Value;
+  if (s.standIn) figmaExt.standInFor = defaultValue(s.parts.fontFamily);
   setPath(json, ['text-style', ...s.path], {
     $type: 'typography',
     $value: Object.fromEntries(Object.entries(s.parts).map(([k, t]) => [k, ref(t)])),
@@ -294,24 +341,56 @@ const cssNames = new Set();
 const decl = (name, value, indent = '  ') => `${indent}${name}: ${value};`;
 const section = (title, lines, indent = '  ') => [`${indent}/* ${title} */`, ...lines, ''];
 
-const rootLines = ['  color-scheme: light;', ''];
-const darkLines = [];
-for (const [collection, title] of [
+const SECTIONS = [
   ['Primitives', 'Primitives — raw palette; prefer semantic tokens in components'],
-  ['Color', 'Semantic color — light mode'],
+  ['Color', 'Semantic color'],
   ['Spacing', 'Spacing'],
   ['Shape', 'Shape — radius and border width'],
   ['Size', 'Size — icons and controls'],
   ['Typography', 'Typography'],
-]) {
+  ['Effects', 'Effects — blur radii'],
+];
+for (const c of Object.keys(snapshot.collections)) {
+  if (!SECTIONS.some(([name]) => name === c)) throw new Error(`No CSS section for collection ${c}`);
+}
+
+// color-scheme follows the lightness of each mode's canvas color.
+const resolveColor = (t, mode) => {
+  let raw = t.values[mode];
+  for (let alias = resolveAlias(raw); alias; alias = resolveAlias(raw)) raw = defaultValue(alias);
+  return typeof raw === 'string' ? raw : raw.hex;
+};
+const canvas = byFigmaRef.get('Color/bg/canvas');
+const colorScheme = (mode) => {
+  const [r, g, b] = parseHex(resolveColor(canvas, mode));
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b < 0.5 ? 'dark' : 'light';
+};
+
+const rootLines = [`  color-scheme: ${colorScheme(snapshot.collections.Color.modes[0])};`, ''];
+const modeBlocks = []; // { comment, selector, media?, lines }
+for (const [collection, title] of SECTIONS) {
   const group = tokens.filter((t) => t.collection === collection);
   for (const t of group) {
     if (cssNames.has(t.css)) throw new Error(`Duplicate CSS name ${t.css}`);
     cssNames.add(t.css);
   }
-  rootLines.push(...section(title, group.map((t) => decl(t.css, cssValue(t, t.values[t.modes[0]])))));
-  if (collection === 'Color') {
-    for (const t of group) darkLines.push(decl(t.css, cssValue(t, t.values.Dark), '    '));
+  const [defaultMode, ...otherModes] = snapshot.collections[collection].modes;
+  const label = otherModes.length ? ` — ${defaultMode.toLowerCase()} (default)` : '';
+  rootLines.push(...section(title + label, group.map((t) => decl(t.css, cssValue(t, defaultValue(t))))));
+
+  for (const mode of otherModes) {
+    const config = MODE_CSS[collection]?.[mode];
+    if (!config) throw new Error(`No CSS output configured for ${collection} mode "${mode}"`);
+    const changed = group.filter((t) => !config.changed || cssValue(t, t.values[mode]) !== cssValue(t, defaultValue(t)));
+    const lines = changed.map((t) => decl(t.css, cssValue(t, t.values[mode]), ''));
+    if (collection === 'Color') lines.unshift(`color-scheme: ${colorScheme(mode)};`);
+    const what = `${title} — ${mode.toLowerCase()}`;
+    if (config.selector) modeBlocks.push({ comment: `${what} (explicit opt-in)`, selector: config.selector, lines });
+    if (config.media) {
+      const [query, selector, note] = config.media;
+      const only = config.changed ? `; only the ${changed.length} values that differ` : '';
+      modeBlocks.push({ comment: `${what} (${note}${only})`, media: query, selector, lines });
+    }
   }
 }
 
@@ -321,7 +400,17 @@ const shadowCss = (l) => {
   const color = c ? `var(${c.css})` : toCssColor(l.color);
   return `${l.type === 'INNER_SHADOW' ? 'inset ' : ''}${[l.x, l.y, l.blur, l.spread].map(len).join(' ')} ${color}`;
 };
-rootLines.push(...section('Elevation', elevation.map((e) => decl(e.css, e.layers.map(shadowCss).join(', ')))));
+const effectCss = (e) => {
+  if (e.kind === 'shadow') return e.layers.map(shadowCss).join(', ');
+  const radius = resolveAlias(e.radius);
+  return `blur(${radius ? `var(${radius.css})` : len(e.radius)})`;
+};
+const effectGroups = [...new Set(effectStyle.map((e) => e.group))];
+for (const group of effectGroups) {
+  const styles = effectStyle.filter((e) => e.group === group);
+  const props = [...new Set(styles.map((e) => (e.kind === 'shadow' ? 'box-shadow' : e.cssProperty)))];
+  rootLines.push(...section(`${styles[0].groupName} — for ${props.join(', ')}`, styles.map((e) => decl(e.css, effectCss(e)))));
+}
 
 const gradientCss = (g) => {
   const stops = g.stops.map((s) => {
@@ -331,31 +420,24 @@ const gradientCss = (g) => {
   return `linear-gradient(${g.angle}deg, ${stops.join(', ')})`;
 };
 rootLines.push(...section('Gradient', gradient.map((g) => decl(g.css, gradientCss(g)))));
-for (const e of [...elevation, ...gradient]) {
+for (const e of [...effectStyle, ...gradient]) {
   if (cssNames.has(e.css)) throw new Error(`Duplicate CSS name ${e.css}`);
   cssNames.add(e.css);
 }
 while (rootLines.at(-1) === '') rootLines.pop();
 
-const darkBlock = (indent) => darkLines.map((l) => l.replace(/^ {4}/, indent)).join('\n');
+const indent = (lines, pad) => lines.map((l) => pad + l).join('\n');
+const blockCss = (b) =>
+  b.media
+    ? `/* ${b.comment} */\n@media ${b.media} {\n  ${b.selector} {\n${indent(b.lines, '    ')}\n  }\n}`
+    : `/* ${b.comment} */\n${b.selector} {\n${indent(b.lines, '  ')}\n}`;
+
 const tokensCss = `${header()}
 :root {
 ${rootLines.join('\n')}
 }
 
-/* Semantic color — dark mode (explicit opt-in) */
-[data-theme="dark"] {
-  color-scheme: dark;
-${darkBlock('  ')}
-}
-
-/* Semantic color — dark mode (system preference, unless light is forced) */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-${darkBlock('    ')}
-  }
-}
+${modeBlocks.map(blockCss).join('\n\n')}
 `;
 write('tokens/css/tokens.css', tokensCss);
 
@@ -381,5 +463,5 @@ write('tokens/css/text-styles.css', textCss);
 
 const counts = Object.fromEntries(Object.keys(snapshot.collections).map((c) => [c, tokens.filter((t) => t.collection === c).length]));
 console.log('Variables per collection:', counts, `(total ${tokens.length})`);
-console.log(`Elevation: ${elevation.length}, gradients: ${gradient.length}, text styles: ${textStyle.length}`);
+console.log(`Effect styles: ${effectStyle.length}, gradients: ${gradient.length}, text styles: ${textStyle.length}`);
 console.log(`CSS custom properties: ${cssNames.size}`);

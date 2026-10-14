@@ -87,8 +87,50 @@
   --ns-color-alpha-black-18: rgb(17 17 17 / 0.18);
   --ns-color-alpha-black-50: rgb(17 17 17 / 0.5);
   --ns-color-alpha-white-10: rgb(255 255 255 / 0.1);
+  --ns-color-night-50: #f1f0f8;
+  --ns-color-night-100: #e0dfee;
+  --ns-color-night-200: #c0bdd9;
+  --ns-color-night-300: #a09cc4;
+  --ns-color-night-400: #7c77a5;
+  --ns-color-night-500: #5a5486;
+  --ns-color-night-600: #413c64;
+  --ns-color-night-700: #292643;
+  --ns-color-night-800: #201e35;
+  --ns-color-night-900: #181728;
+  --ns-color-slate-50: #f6fcff;
+  --ns-color-slate-100: #d4e6ee;
+  --ns-color-slate-200: #c9d7e3;
+  --ns-color-slate-300: #bec8d8;
+  --ns-color-slate-400: #a1acc0;
+  --ns-color-slate-500: #8691a8;
+  --ns-color-slate-600: #6b7690;
+  --ns-color-slate-700: #4f586e;
+  --ns-color-slate-800: #343c4e;
+  --ns-color-slate-900: #1c2230;
+  --ns-color-coral-50: #fff0f1;
+  --ns-color-coral-100: #ffd7d8;
+  --ns-color-coral-200: #ffa3a6;
+  --ns-color-coral-300: #fd6a75;
+  --ns-color-coral-400: #fd4f5f;
+  --ns-color-coral-500: #fd2847;
+  --ns-color-coral-600: #df1c3a;
+  --ns-color-coral-700: #c20f2e;
+  --ns-color-coral-800: #8a0c22;
+  --ns-color-coral-900: #560816;
+  --ns-color-honey-50: #fffaee;
+  --ns-color-honey-100: #fef3d8;
+  --ns-color-honey-200: #fde5ac;
+  --ns-color-honey-300: #f5d38e;
+  --ns-color-honey-400: #ecc26e;
+  --ns-color-honey-500: #e3b04b;
+  --ns-color-honey-600: #c59535;
+  --ns-color-honey-700: #a87a1e;
+  --ns-color-honey-800: #825e16;
+  --ns-color-honey-900: #5e430f;
+  --ns-color-alpha-black-40: rgb(17 17 17 / 0.4);
+  --ns-color-alpha-white-8: rgb(255 255 255 / 0.08);
 
-  /* Semantic color — light mode */
+  /* Semantic color — light (default) */
   --ns-color-bg-canvas: var(--ns-color-cream-300);
   --ns-color-bg-surface: var(--ns-color-base-white);
   --ns-color-bg-surface-subtle: var(--ns-color-gray-50);
@@ -154,6 +196,7 @@
   --ns-color-icon-success: var(--ns-color-green-900);
   --ns-color-icon-warning: var(--ns-color-orange-600);
   --ns-color-icon-error: var(--ns-color-red-700);
+  --ns-color-bg-glass: var(--ns-color-alpha-black-5);
 
   /* Spacing */
   --ns-spacing-0: 0px;
@@ -172,6 +215,10 @@
   --ns-spacing-80: 80px;
   --ns-spacing-96: 96px;
   --ns-spacing-120: 120px;
+  --ns-spacing-6: 6px;
+  --ns-spacing-60: 60px;
+  --ns-spacing-100: 100px;
+  --ns-spacing-180: 180px;
 
   /* Shape — radius and border width */
   --ns-radius-none: 0px;
@@ -185,6 +232,8 @@
   --ns-border-width-thin: 1px;
   --ns-border-width-medium: 2px;
   --ns-border-width-thick: 4px;
+  --ns-radius-2xl: 32px;
+  --ns-border-width-regular: 1.5px;
 
   /* Size — icons and controls */
   --ns-size-icon-xs: 12px;
@@ -196,7 +245,7 @@
   --ns-size-control-md: 40px;
   --ns-size-control-lg: 48px;
 
-  /* Typography */
+  /* Typography — desktop (default) */
   --ns-font-family-primary: "Fira Code", ui-monospace, SFMono-Regular, Menlo, monospace;
   --ns-font-family-secondary: "Greycliff CF", "Plus Jakarta Sans", system-ui, sans-serif;
   --ns-font-weight-regular: 400;
@@ -235,22 +284,76 @@
   --ns-font-size-label-xs: 12px;
   --ns-line-height-label-xs: 12px;
   --ns-letter-spacing-default: 0px;
+  --ns-font-family-web: "Public Sans", system-ui, sans-serif;
+  --ns-font-weight-extralight: 200;
+  --ns-font-weight-light: 300;
+  --ns-font-weight-black: 900;
+  --ns-font-size-web-callout-xl: 225px;
+  --ns-line-height-web-callout-xl: 181px;
+  --ns-font-size-web-callout-lg: 160px;
+  --ns-line-height-web-callout-lg: 150px;
+  --ns-font-size-web-banner: 80px;
+  --ns-line-height-web-banner: 88px;
+  --ns-font-size-web-numbers: 80px;
+  --ns-line-height-web-numbers: 96px;
+  --ns-font-size-web-h1: 70px;
+  --ns-line-height-web-h1: 76px;
+  --ns-font-size-web-h2: 42px;
+  --ns-line-height-web-h2: 48px;
+  --ns-font-size-web-h3: 32px;
+  --ns-line-height-web-h3: 48px;
+  --ns-font-size-web-h4: 24px;
+  --ns-line-height-web-h4: 27px;
+  --ns-font-size-web-lead: 20px;
+  --ns-line-height-web-lead: 24px;
+  --ns-font-size-web-body: 18px;
+  --ns-line-height-web-body: 27px;
+  --ns-font-size-web-nav: 18px;
+  --ns-line-height-web-nav: 27px;
+  --ns-font-size-web-eyebrow: 16px;
+  --ns-line-height-web-eyebrow: 18px;
+  --ns-font-size-web-label: 14px;
+  --ns-line-height-web-label: 16px;
+  --ns-font-size-web-caption: 14px;
+  --ns-line-height-web-caption: 21px;
+  --ns-font-size-web-small: 12px;
+  --ns-line-height-web-small: 18px;
+  --ns-letter-spacing-web-h1: -1.61px;
+  --ns-letter-spacing-web-h3: -0.7px;
+  --ns-letter-spacing-web-label: -0.32px;
+  --ns-letter-spacing-web-caption: -0.32px;
 
-  /* Elevation */
+  /* Effects — blur radii */
+  --ns-blur-sm: 6px;
+  --ns-blur-lg: 24px;
+  --ns-blur-glow: 240px;
+
+  /* Elevation — for box-shadow */
   --ns-elevation-xs: 0 1px 2px 0 var(--ns-color-alpha-black-6), 0 1px 3px 0 var(--ns-color-alpha-black-10);
   --ns-elevation-sm: 0 2px 4px -1px var(--ns-color-alpha-black-6), 0 4px 6px -1px var(--ns-color-alpha-black-10);
   --ns-elevation-md: 0 4px 6px -2px var(--ns-color-alpha-black-5), 0 10px 15px -3px var(--ns-color-alpha-black-10);
   --ns-elevation-lg: 0 4px 8px -2px var(--ns-color-alpha-black-5), 0 15px 40px -4px var(--ns-color-alpha-black-14);
   --ns-elevation-xl: 0 4px 8px -2px var(--ns-color-alpha-black-5), 0 16px 72px -4px var(--ns-color-alpha-black-18);
 
+  /* Glass — for backdrop-filter */
+  --ns-glass-sm: blur(var(--ns-blur-sm));
+  --ns-glass-lg: blur(var(--ns-blur-lg));
+
+  /* Glow — for filter */
+  --ns-glow-xl: blur(var(--ns-blur-glow));
+
+  /* Inset — for box-shadow */
+  --ns-inset-hairline: inset 0 0 1px 0 var(--ns-color-alpha-black-10);
+
   /* Gradient */
   --ns-gradient-blue-light-to-dark: linear-gradient(90deg, var(--ns-color-blue-50) 0%, var(--ns-color-blue-300) 30%, var(--ns-color-blue-400) 50%, var(--ns-color-blue-700) 75%, var(--ns-color-blue-900) 100%);
   --ns-gradient-red-light-to-dark: linear-gradient(90deg, var(--ns-color-red-100) 0%, var(--ns-color-red-200) 10%, var(--ns-color-red-300) 30%, var(--ns-color-red-600) 60%, var(--ns-color-red-800) 100%);
   --ns-gradient-blue-base-to-dark: linear-gradient(90deg, var(--ns-color-blue-600) 0%, var(--ns-color-blue-700) 40%, var(--ns-color-blue-900) 100%);
   --ns-gradient-red-base-to-dark: linear-gradient(90deg, var(--ns-color-red-600) 0%, var(--ns-color-red-800) 50%, var(--ns-color-red-900) 100%);
+  --ns-gradient-night-fade: linear-gradient(180deg, #000000 0%, var(--ns-color-night-900) 100%);
 }
 
-/* Semantic color — dark mode (explicit opt-in) */
+/* Semantic color — dark (explicit opt-in) */
 [data-theme="dark"] {
   color-scheme: dark;
   --ns-color-bg-canvas: var(--ns-color-blue-900);
@@ -318,11 +421,12 @@
   --ns-color-icon-success: var(--ns-color-green-300);
   --ns-color-icon-warning: var(--ns-color-orange-300);
   --ns-color-icon-error: var(--ns-color-red-300);
+  --ns-color-bg-glass: var(--ns-color-alpha-white-10);
 }
 
-/* Semantic color — dark mode (system preference, unless light is forced) */
+/* Semantic color — dark (system preference, when no data-theme is set) */
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
+  :root:not([data-theme]) {
     color-scheme: dark;
     --ns-color-bg-canvas: var(--ns-color-blue-900);
     --ns-color-bg-surface: var(--ns-color-blue-800);
@@ -389,5 +493,112 @@
     --ns-color-icon-success: var(--ns-color-green-300);
     --ns-color-icon-warning: var(--ns-color-orange-300);
     --ns-color-icon-error: var(--ns-color-red-300);
+    --ns-color-bg-glass: var(--ns-color-alpha-white-10);
+  }
+}
+
+/* Semantic color — web 2025 (explicit opt-in) */
+[data-theme="web-2025"] {
+  color-scheme: dark;
+  --ns-color-bg-canvas: var(--ns-color-night-900);
+  --ns-color-bg-surface: var(--ns-color-night-700);
+  --ns-color-bg-surface-subtle: var(--ns-color-night-800);
+  --ns-color-bg-surface-warm: var(--ns-color-night-600);
+  --ns-color-bg-inverse: var(--ns-color-slate-50);
+  --ns-color-bg-brand: var(--ns-color-coral-500);
+  --ns-color-bg-brand-hover: var(--ns-color-coral-400);
+  --ns-color-bg-brand-pressed: var(--ns-color-coral-300);
+  --ns-color-bg-brand-subtle: var(--ns-color-coral-900);
+  --ns-color-bg-accent: var(--ns-color-honey-200);
+  --ns-color-bg-accent-hover: var(--ns-color-honey-100);
+  --ns-color-bg-accent-subtle: var(--ns-color-honey-900);
+  --ns-color-bg-highlight: var(--ns-color-coral-500);
+  --ns-color-bg-highlight-hover: var(--ns-color-coral-400);
+  --ns-color-bg-highlight-subtle: var(--ns-color-coral-900);
+  --ns-color-bg-disabled: var(--ns-color-night-600);
+  --ns-color-bg-info: var(--ns-color-blue-500);
+  --ns-color-bg-info-subtle: var(--ns-color-blue-800);
+  --ns-color-bg-success: var(--ns-color-green-900);
+  --ns-color-bg-success-subtle: var(--ns-color-green-900);
+  --ns-color-bg-warning: var(--ns-color-orange-400);
+  --ns-color-bg-warning-subtle: var(--ns-color-orange-900);
+  --ns-color-bg-error: var(--ns-color-red-700);
+  --ns-color-bg-error-subtle: var(--ns-color-red-900);
+  --ns-color-bg-overlay: var(--ns-color-alpha-black-40);
+  --ns-color-text-primary: var(--ns-color-slate-50);
+  --ns-color-text-secondary: var(--ns-color-slate-300);
+  --ns-color-text-tertiary: var(--ns-color-slate-400);
+  --ns-color-text-disabled: var(--ns-color-night-400);
+  --ns-color-text-inverse: var(--ns-color-night-900);
+  --ns-color-text-on-brand: var(--ns-color-night-900);
+  --ns-color-text-on-accent: var(--ns-color-night-900);
+  --ns-color-text-on-highlight: var(--ns-color-night-900);
+  --ns-color-text-on-status: var(--ns-color-base-white);
+  --ns-color-text-on-warning: var(--ns-color-gray-900);
+  --ns-color-text-brand: var(--ns-color-coral-300);
+  --ns-color-text-accent: var(--ns-color-honey-200);
+  --ns-color-text-highlight: var(--ns-color-coral-300);
+  --ns-color-text-link: var(--ns-color-coral-300);
+  --ns-color-text-link-hover: var(--ns-color-coral-200);
+  --ns-color-text-info: var(--ns-color-blue-200);
+  --ns-color-text-success: var(--ns-color-green-200);
+  --ns-color-text-warning: var(--ns-color-orange-300);
+  --ns-color-text-error: var(--ns-color-red-200);
+  --ns-color-border-default: var(--ns-color-night-600);
+  --ns-color-border-subtle: var(--ns-color-night-700);
+  --ns-color-border-strong: var(--ns-color-slate-50);
+  --ns-color-border-brand: var(--ns-color-coral-500);
+  --ns-color-border-accent: var(--ns-color-honey-200);
+  --ns-color-border-focus: var(--ns-color-honey-200);
+  --ns-color-border-disabled: var(--ns-color-night-600);
+  --ns-color-border-info: var(--ns-color-blue-300);
+  --ns-color-border-success: var(--ns-color-green-400);
+  --ns-color-border-warning: var(--ns-color-orange-400);
+  --ns-color-border-error: var(--ns-color-red-400);
+  --ns-color-icon-primary: var(--ns-color-slate-50);
+  --ns-color-icon-secondary: var(--ns-color-slate-300);
+  --ns-color-icon-disabled: var(--ns-color-night-400);
+  --ns-color-icon-inverse: var(--ns-color-night-900);
+  --ns-color-icon-brand: var(--ns-color-coral-300);
+  --ns-color-icon-accent: var(--ns-color-honey-200);
+  --ns-color-icon-highlight: var(--ns-color-coral-300);
+  --ns-color-icon-success: var(--ns-color-green-300);
+  --ns-color-icon-warning: var(--ns-color-orange-300);
+  --ns-color-icon-error: var(--ns-color-red-300);
+  --ns-color-bg-glass: var(--ns-color-alpha-white-8);
+}
+
+/* Typography — mobile (viewports up to 767px; only the 29 values that differ) */
+@media (max-width: 767px) {
+  :root {
+    --ns-font-size-web-callout-xl: 70px;
+    --ns-line-height-web-callout-xl: 60px;
+    --ns-font-size-web-callout-lg: 50px;
+    --ns-line-height-web-callout-lg: 40px;
+    --ns-font-size-web-banner: 60px;
+    --ns-line-height-web-banner: 55px;
+    --ns-font-size-web-numbers: 48px;
+    --ns-line-height-web-numbers: 56px;
+    --ns-font-size-web-h1: 40px;
+    --ns-line-height-web-h1: 44px;
+    --ns-font-size-web-h2: 32px;
+    --ns-line-height-web-h2: 38px;
+    --ns-font-size-web-h3: 20px;
+    --ns-line-height-web-h3: 30px;
+    --ns-font-size-web-h4: 18px;
+    --ns-line-height-web-h4: 22px;
+    --ns-font-size-web-lead: 18px;
+    --ns-line-height-web-lead: 22px;
+    --ns-font-size-web-body: 16px;
+    --ns-line-height-web-body: 24px;
+    --ns-font-size-web-nav: 16px;
+    --ns-line-height-web-nav: 24px;
+    --ns-font-size-web-eyebrow: 14px;
+    --ns-line-height-web-eyebrow: 16px;
+    --ns-font-size-web-caption: 12px;
+    --ns-line-height-web-caption: 18px;
+    --ns-letter-spacing-web-h1: -0.92px;
+    --ns-letter-spacing-web-h3: -0.44px;
+    --ns-letter-spacing-web-caption: -0.28px;
   }
 }

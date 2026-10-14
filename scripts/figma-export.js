@@ -6,17 +6,22 @@
 // each result verbatim:
 //
 //   PART = 'variables' -> tokens/figma/variables.json
-//   PART = 'effects'   -> tokens/figma/effects.json   (Elevation/* + Gradient/*)
+//   PART = 'effects'   -> tokens/figma/effects.json   (effect styles + Gradient/*)
 //   PART = 'text'      -> tokens/figma/text-styles.json
+//
+// If a part is over the limit, narrow it with ONLY and merge the runs, keeping
+// Figma's order: collection names for 'variables', style-name prefixes for 'text'.
 //
 // Then run `node scripts/build-tokens.mjs` to regenerate tokens.json and the CSS.
 //
 // Value encoding (all parts):
 //   color        "#rrggbb", or { "hex": "#rrggbb", "alpha": 0.06 } when alpha < 1
 //   alias        "@<Collection>/<variable name>", e.g. "@Primitives/blue/600"
-//   float/string the raw number or string
+//   float        the raw number, rounded to 3 decimals (Figma stores float32)
+//   string       the raw string
 
 const PART = 'variables';
+const ONLY = null; // e.g. ['Primitives'] or ['Primary/', 'Secondary/']
 
 const round = (n, d = 3) => Math.round(n * 10 ** d) / 10 ** d;
 const hex2 = (x) => Math.round(x * 255).toString(16).padStart(2, '0');
@@ -50,6 +55,7 @@ if (PART === 'variables') {
     collections: {},
   };
   for (const c of collections) {
+    if (ONLY && !ONLY.includes(c.name)) continue;
     out.collections[c.name] = {
       modes: c.modes.map((m) => m.name),
       variables: c.variableIds.map((id) => {
@@ -57,7 +63,8 @@ if (PART === 'variables') {
         const values = c.modes.map((m) => {
           const val = v.valuesByMode[m.modeId];
           if (val && typeof val === 'object' && val.type === 'VARIABLE_ALIAS') return ref(val.id);
-          return v.resolvedType === 'COLOR' ? color(val) : val;
+          if (v.resolvedType === 'COLOR') return color(val);
+          return v.resolvedType === 'FLOAT' ? round(val) : val;
         });
         return [v.name, v.resolvedType, v.codeSyntax.WEB || '', v.scopes, values];
       }),
@@ -70,14 +77,18 @@ if (PART === 'effects') {
   const effects = (await figma.getLocalEffectStylesAsync()).map((s) => ({
     name: s.name,
     description: s.description,
-    effects: s.effects.map((e) => ({
-      type: e.type,
-      color: bound(e).color || color(e.color),
-      x: e.offset.x,
-      y: e.offset.y,
-      blur: e.radius,
-      spread: e.spread || 0,
-    })),
+    effects: s.effects.map((e) =>
+      e.type === 'DROP_SHADOW' || e.type === 'INNER_SHADOW'
+        ? {
+            type: e.type,
+            color: bound(e).color || color(e.color),
+            x: e.offset.x,
+            y: e.offset.y,
+            blur: e.radius,
+            spread: e.spread || 0,
+          }
+        : { type: e.type, radius: bound(e).radius || e.radius },
+    ),
   }));
   const gradients = (await figma.getLocalPaintStylesAsync())
     .filter((s) => s.paints.some((p) => p.type.startsWith('GRADIENT_')))
@@ -100,15 +111,17 @@ if (PART === 'effects') {
 if (PART === 'text') {
   return {
     columns: ['name', 'fontFamily', 'fontStyle', 'fontSize', 'lineHeightPx', 'letterSpacingPx', 'boundVariables'],
-    textStyles: (await figma.getLocalTextStylesAsync()).map((s) => [
-      s.name,
-      s.fontName.family,
-      s.fontName.style,
-      s.fontSize,
-      s.lineHeight.unit === 'PIXELS' ? s.lineHeight.value : null,
-      s.letterSpacing.unit === 'PIXELS' ? s.letterSpacing.value : null,
-      bound(s),
-    ]),
+    textStyles: (await figma.getLocalTextStylesAsync())
+      .filter((s) => !ONLY || ONLY.some((prefix) => s.name.startsWith(prefix)))
+      .map((s) => [
+        s.name,
+        s.fontName.family,
+        s.fontName.style,
+        s.fontSize,
+        s.lineHeight.unit === 'PIXELS' ? round(s.lineHeight.value) : null,
+        s.letterSpacing.unit === 'PIXELS' ? round(s.letterSpacing.value) : null,
+        bound(s),
+      ]),
   };
 }
 
