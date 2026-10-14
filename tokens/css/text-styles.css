@@ -860,3 +860,84 @@
   line-height: var(--ns-line-height-web-small);
   letter-spacing: var(--ns-letter-spacing-default);
 }
+
+/* Web 2023/Hero XL/Extra Bold */
+.ns-text-web-2023-hero-xl-extra-bold {
+  font-family: var(--ns-font-family-secondary);
+  font-size: var(--ns-font-size-web23-hero-xl);
+  font-weight: var(--ns-font-weight-extrabold);
+  line-height: var(--ns-line-height-web23-hero-xl);
+  letter-spacing: var(--ns-letter-spacing-default);
+}
+
+/* Web 2023/Hero LG/Extra Bold */
+.ns-text-web-2023-hero-lg-extra-bold {
+  font-family: var(--ns-font-family-secondary);
+  font-size: var(--ns-font-size-web23-hero-lg);
+  font-weight: var(--ns-font-weight-extrabold);
+  line-height: var(--ns-line-height-web23-hero-lg);
+  letter-spacing: var(--ns-letter-spacing-default);
+}
+
+/* Web 2023/Hero MD/Extra Bold */
+.ns-text-web-2023-hero-md-extra-bold {
+  font-family: var(--ns-font-family-secondary);
+  font-size: var(--ns-font-size-web23-hero-md);
+  font-weight: var(--ns-font-weight-extrabold);
+  line-height: var(--ns-line-height-web23-hero-md);
+  letter-spacing: var(--ns-letter-spacing-default);
+}
+
+/* Web 2023/Title/Demi Bold */
+.ns-text-web-2023-title-demi-bold {
+  font-family: var(--ns-font-family-secondary);
+  font-size: var(--ns-font-size-web23-title);
+  font-weight: var(--ns-font-weight-semibold);
+  line-height: var(--ns-line-height-web23-title);
+  letter-spacing: var(--ns-letter-spacing-default);
+}
+
+/* Web 2023/Subtitle/Demi Bold */
+.ns-text-web-2023-subtitle-demi-bold {
+  font-family: var(--ns-font-family-secondary);
+  font-size: var(--ns-font-size-web23-subtitle);
+  font-weight: var(--ns-font-weight-semibold);
+  line-height: var(--ns-line-height-web23-subtitle);
+  letter-spacing: var(--ns-letter-spacing-default);
+}
+
+/* Web 2023/Subtitle/Regular */
+.ns-text-web-2023-subtitle-regular {
+  font-family: var(--ns-font-family-secondary);
+  font-size: var(--ns-font-size-web23-subtitle);
+  font-weight: var(--ns-font-weight-regular);
+  line-height: var(--ns-line-height-web23-subtitle);
+  letter-spacing: var(--ns-letter-spacing-default);
+}
+
+/* Web 2023/Body/Regular */
+.ns-text-web-2023-body-regular {
+  font-family: var(--ns-font-family-site-body);
+  font-size: var(--ns-font-size-web23-body);
+  font-weight: var(--ns-font-weight-regular);
+  line-height: var(--ns-line-height-web23-body);
+  letter-spacing: var(--ns-letter-spacing-default);
+}
+
+/* Web 2023/Label/Demi Bold */
+.ns-text-web-2023-label-demi-bold {
+  font-family: var(--ns-font-family-secondary);
+  font-size: var(--ns-font-size-web23-label);
+  font-weight: var(--ns-font-weight-semibold);
+  line-height: var(--ns-line-height-web23-label);
+  letter-spacing: var(--ns-letter-spacing-default);
+}
+
+/* Web 2023/Overline/Extra Bold */
+.ns-text-web-2023-overline-extra-bold {
+  font-family: var(--ns-font-family-secondary);
+  font-size: var(--ns-font-size-web23-overline);
+  font-weight: var(--ns-font-weight-extrabold);
+  line-height: var(--ns-line-height-web23-overline);
+  letter-spacing: var(--ns-letter-spacing-default);
+}

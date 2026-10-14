@@ -29,6 +29,12 @@ const FONT_FALLBACKS = {
   'Fira Code': ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
   'Greycliff CF': ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
   'Public Sans': ['system-ui', 'sans-serif'],
+  'Open Sans': ['system-ui', 'sans-serif'],
+  'Plus Jakarta Sans': ['system-ui', 'sans-serif'],
+  Atrament: ['sans-serif'],
+  'Hello Paris Sans': ['sans-serif'],
+  'Asphalts Display': ['sans-serif'],
+  'Bebas Neue': ['sans-serif'],
 };
 
 const GROUP = {
@@ -39,6 +45,7 @@ const GROUP = {
   Size: 'size',
   Typography: 'typography',
   Effects: 'effects',
+  'Brand Palettes': 'palette',
 };
 
 // The first mode of every collection is the :root default. Each other mode needs an
@@ -76,7 +83,7 @@ const byFigmaRef = new Map(); // "Collection/name" -> token
 for (const [collection, { modes, variables }] of Object.entries(snapshot.collections)) {
   const group = GROUP[collection];
   if (!group) throw new Error(`No DTCG group for collection ${collection}`);
-  for (const [name, type, codeSyntax, scopes, valuesByMode] of variables) {
+  for (const [name, type, codeSyntax, scopes, valuesByMode, description] of variables) {
     const segments = name.split('/').map(kebab);
     if (segments[0] === group) segments.shift(); // spacing/spacing/8 -> spacing/8
     const token = {
@@ -87,6 +94,7 @@ for (const [collection, { modes, variables }] of Object.entries(snapshot.collect
       scopes,
       css: cssName(codeSyntax),
       codeSyntax,
+      description,
       values: Object.fromEntries(modes.map((m, i) => [m, valuesByMode[i]])),
       modes,
     };
@@ -154,33 +162,40 @@ const cssValue = (t, raw) => {
 
 const defaultValue = (t) => t.values[t.modes[0]];
 
+// Primitives win over brand palettes when both have the same hex.
 const primitiveByHex = new Map();
-for (const t of tokens) {
-  const value = defaultValue(t);
-  if (t.collection === 'Primitives' && typeof value === 'string' && !primitiveByHex.has(value)) {
-    primitiveByHex.set(value, t);
+for (const collection of ['Primitives', 'Brand Palettes']) {
+  for (const t of tokens.filter((t) => t.collection === collection)) {
+    const value = defaultValue(t);
+    if (typeof value === 'string' && !primitiveByHex.has(value)) primitiveByHex.set(value, t);
   }
 }
 // Style colors are either bound variables ("@…") or literals; literals that equal
-// a primitive are expressed as references to it.
+// a primitive or palette color are expressed as references to it.
 const styleColor = (raw) => resolveAlias(raw) || primitiveByHex.get(raw) || null;
 
 // Effect styles are named <Group>/<Key> and become DTCG tokens at <group>.<key>.
-// Shadow styles map to box-shadow; a single blur maps to a CSS blur() filter value.
+// Shadows map to box-shadow; a blur maps to a CSS blur() filter value. A style
+// with one blur plus shadows (e.g. Glass/XL) yields both: <key> for the blur and
+// <key>-shadow for the shadows, since one CSS property can't hold the two.
 const isShadow = (e) => e.type === 'DROP_SHADOW' || e.type === 'INNER_SHADOW';
 const BLUR_PROPERTY = { BACKGROUND_BLUR: 'backdrop-filter', LAYER_BLUR: 'filter' };
-const effectStyle = effects.map((s) => {
+const effectStyle = effects.flatMap((s) => {
   const [groupName, ...rest] = s.name.split('/');
   const group = kebab(groupName);
   const key = kebab(rest.join('-'));
   const css = /^var\(--[a-z0-9-]+\)$/.test(s.description) ? cssName(s.description) : `--ns-${group}-${key}`;
   const base = { group, groupName, key, style: s.name, description: s.description, css };
-  if (s.effects.every(isShadow)) return { ...base, kind: 'shadow', layers: s.effects };
-  if (s.effects.length === 1 && BLUR_PROPERTY[s.effects[0].type]) {
-    const { type, radius } = s.effects[0];
-    return { ...base, kind: 'blur', effectType: type, cssProperty: BLUR_PROPERTY[type], radius };
+  const shadows = s.effects.filter(isShadow);
+  const blurs = s.effects.filter((e) => BLUR_PROPERTY[e.type]);
+  if (shadows.length + blurs.length !== s.effects.length || blurs.length > 1 || !s.effects.length) {
+    throw new Error(`Unsupported effect combination in ${s.name}`);
   }
-  throw new Error(`Unsupported effect combination in ${s.name}`);
+  if (!blurs.length) return [{ ...base, kind: 'shadow', layers: shadows }];
+  const { type, radius } = blurs[0];
+  const blur = { ...base, kind: 'blur', effectType: type, cssProperty: BLUR_PROPERTY[type], radius };
+  if (!shadows.length) return [blur];
+  return [blur, { ...base, key: `${key}-shadow`, css: `${css}-shadow`, kind: 'shadow', layers: shadows }];
 });
 
 // Figma's gradientTransform maps node space to gradient space, where the gradient
@@ -210,8 +225,15 @@ const WEIGHT_BY_STYLE = {
   Bold: 'bold',
   Heavy: 'heavy',
   Black: 'black',
+  'Extra Bold': 'extrabold',
 };
-const FAMILY_BY_GROUP = { Primary: 'font-family/primary', Secondary: 'font-family/secondary', Web: 'font-family/web' };
+// Family for text styles that don't bind one in Figma (the Greycliff CF stand-ins).
+const FAMILY_BY_GROUP = {
+  Primary: 'font-family/primary',
+  Secondary: 'font-family/secondary',
+  Web: 'font-family/web',
+  'Web 2023': 'font-family/secondary',
+};
 
 const textStyle = textStyles.map(([name, family, fontStyle, fontSize, lineHeight, letterSpacing, bound]) => {
   const [groupName, size, weightName] = name.split('/');
@@ -268,6 +290,7 @@ for (const t of tokens) {
   setPath(json, t.path, {
     $type: dtcgType(t),
     $value: dtcgValue(t, t.values[t.modes[0]]),
+    ...(t.description && { $description: t.description }),
     $extensions: { 'com.figma': figmaExt },
   });
 }
@@ -343,6 +366,7 @@ const section = (title, lines, indent = '  ') => [`${indent}/* ${title} */`, ...
 
 const SECTIONS = [
   ['Primitives', 'Primitives — raw palette; prefer semantic tokens in components'],
+  ['Brand Palettes', 'Brand palettes — sub-brand ramps'],
   ['Color', 'Semantic color'],
   ['Spacing', 'Spacing'],
   ['Shape', 'Shape — radius and border width'],
@@ -376,7 +400,13 @@ for (const [collection, title] of SECTIONS) {
   }
   const [defaultMode, ...otherModes] = snapshot.collections[collection].modes;
   const label = otherModes.length ? ` — ${defaultMode.toLowerCase()} (default)` : '';
-  rootLines.push(...section(title + label, group.map((t) => decl(t.css, cssValue(t, defaultValue(t))))));
+  // A Figma description becomes a comment above the first variable that carries it.
+  const lines = group.flatMap((t, i) => {
+    const line = decl(t.css, cssValue(t, defaultValue(t)));
+    const note = t.description && t.description !== group[i - 1]?.description ? [`  /* ${t.description} */`] : [];
+    return [...note, line];
+  });
+  rootLines.push(...section(title + label, lines));
 
   for (const mode of otherModes) {
     const config = MODE_CSS[collection]?.[mode];

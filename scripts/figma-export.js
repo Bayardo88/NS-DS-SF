@@ -11,6 +11,7 @@
 //
 // If a part is over the limit, narrow it with ONLY and merge the runs, keeping
 // Figma's order: collection names for 'variables', style-name prefixes for 'text'.
+// A single collection that is still too big can be read in pieces with SLICE.
 //
 // Then run `node scripts/build-tokens.mjs` to regenerate tokens.json and the CSS.
 //
@@ -22,6 +23,7 @@
 
 const PART = 'variables';
 const ONLY = null; // e.g. ['Primitives'] or ['Primary/', 'Secondary/']
+const SLICE = null; // e.g. [0, 90] — variable index range within each collection
 
 const round = (n, d = 3) => Math.round(n * 10 ** d) / 10 ** d;
 const hex2 = (x) => Math.round(x * 255).toString(16).padStart(2, '0');
@@ -51,14 +53,14 @@ const bound = (obj) => {
 if (PART === 'variables') {
   const out = {
     $source: { fileKey: 'JdINnstfRHeLRPZjeEla4U', fileName: 'Design System V2' },
-    columns: ['name', 'type', 'codeSyntax.WEB', 'scopes', 'valuesByMode'],
+    columns: ['name', 'type', 'codeSyntax.WEB', 'scopes', 'valuesByMode', 'description (when set)'],
     collections: {},
   };
   for (const c of collections) {
     if (ONLY && !ONLY.includes(c.name)) continue;
     out.collections[c.name] = {
       modes: c.modes.map((m) => m.name),
-      variables: c.variableIds.map((id) => {
+      variables: (SLICE ? c.variableIds.slice(...SLICE) : c.variableIds).map((id) => {
         const v = varById[id];
         const values = c.modes.map((m) => {
           const val = v.valuesByMode[m.modeId];
@@ -66,7 +68,9 @@ if (PART === 'variables') {
           if (v.resolvedType === 'COLOR') return color(val);
           return v.resolvedType === 'FLOAT' ? round(val) : val;
         });
-        return [v.name, v.resolvedType, v.codeSyntax.WEB || '', v.scopes, values];
+        const row = [v.name, v.resolvedType, v.codeSyntax.WEB || '', v.scopes, values];
+        if (v.description) row.push(v.description);
+        return row;
       }),
     };
   }

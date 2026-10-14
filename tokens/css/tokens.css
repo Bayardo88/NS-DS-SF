@@ -129,6 +129,210 @@
   --ns-color-honey-900: #5e430f;
   --ns-color-alpha-black-40: rgb(17 17 17 / 0.4);
   --ns-color-alpha-white-8: rgb(255 255 255 / 0.08);
+  --ns-color-alpha-black-8: rgb(17 17 17 / 0.08);
+  --ns-color-alpha-black-25: rgb(17 17 17 / 0.25);
+  --ns-color-alpha-black-30: rgb(17 17 17 / 0.3);
+  --ns-color-alpha-wine-50: rgb(95 22 50 / 0.5);
+  --ns-color-alpha-navy-16: rgb(18 32 63 / 0.16);
+
+  /* Brand palettes — sub-brand ramps */
+  /* Brand palette · Careers, Insights */
+  --ns-palette-yellow-50: #fffdea;
+  --ns-palette-yellow-100: #fffbd0;
+  --ns-palette-yellow-200: #fff8b6;
+  --ns-palette-yellow-300: #fff69c;
+  --ns-palette-yellow-400: #fff482;
+  --ns-palette-yellow-500: #fef169;
+  --ns-palette-yellow-600: #feef4f;
+  --ns-palette-yellow-700: #feed35;
+  --ns-palette-yellow-800: #feea1b;
+  --ns-palette-yellow-900: #fee801;
+  /* Brand palette · Careers */
+  --ns-palette-pink-50: #fff7fa;
+  --ns-palette-pink-100: #ffeef3;
+  --ns-palette-pink-200: #ffe4ed;
+  --ns-palette-pink-300: #ffdbe6;
+  --ns-palette-pink-400: #ffd1e0;
+  --ns-palette-pink-500: #ffc8d9;
+  --ns-palette-pink-600: #ffbed3;
+  --ns-palette-pink-700: #ffb5cc;
+  --ns-palette-pink-800: #ffabc6;
+  --ns-palette-pink-900: #ffa2bf;
+  --ns-palette-wine-50: #f3ecef;
+  --ns-palette-wine-100: #e4d4db;
+  --ns-palette-wine-200: #d4bdc6;
+  --ns-palette-wine-300: #c5a5b2;
+  --ns-palette-wine-400: #b68d9e;
+  --ns-palette-wine-500: #a7768a;
+  --ns-palette-wine-600: #985e76;
+  --ns-palette-wine-700: #884661;
+  --ns-palette-wine-800: #792f4d;
+  --ns-palette-wine-900: #5f1632;
+  /* Brand palette · Careers (Black), website placeholders and greys */
+  --ns-palette-neutral-50: #eaeaea;
+  --ns-palette-neutral-100: #d0d0d0;
+  --ns-palette-neutral-200: #b6b6b6;
+  --ns-palette-neutral-300: #9c9c9c;
+  --ns-palette-neutral-400: #828282;
+  --ns-palette-neutral-500: #686868;
+  --ns-palette-neutral-600: #4e4e4e;
+  --ns-palette-neutral-700: #343434;
+  --ns-palette-neutral-800: #1a1a1a;
+  --ns-palette-neutral-900: #000000;
+  /* Brand palette · Talks (Coral), Insights, Careers */
+  --ns-palette-salmon-50: #fceeee;
+  --ns-palette-salmon-100: #f9dcdc;
+  --ns-palette-salmon-200: #f3baba;
+  --ns-palette-salmon-300: #f0a8a8;
+  --ns-palette-salmon-400: #ea8585;
+  --ns-palette-salmon-500: #ff8084;
+  --ns-palette-salmon-600: #e15151;
+  --ns-palette-salmon-700: #de3f3f;
+  --ns-palette-salmon-800: #dc2e2e;
+  --ns-palette-salmon-900: #c02121;
+  /* Brand palette · Talks (Light Blue), Careers */
+  --ns-palette-cyan-50: #d9fafc;
+  --ns-palette-cyan-100: #c6f8fa;
+  --ns-palette-cyan-200: #b4f6f8;
+  --ns-palette-cyan-300: #8ff1f5;
+  --ns-palette-cyan-400: #69edf2;
+  --ns-palette-cyan-500: #36e5f0;
+  --ns-palette-cyan-600: #14dae1;
+  --ns-palette-cyan-700: #12c8ce;
+  --ns-palette-cyan-800: #10b6bc;
+  --ns-palette-cyan-900: #0fa4a9;
+  /* Brand palette · Insights, Ignite, Awards; Web 2023 page background (chalk/900) */
+  --ns-palette-chalk-50: #ededee;
+  --ns-palette-chalk-100: #d7d7d9;
+  --ns-palette-chalk-200: #c1c1c4;
+  --ns-palette-chalk-300: #ababaf;
+  --ns-palette-chalk-400: #95959a;
+  --ns-palette-chalk-500: #7f7f85;
+  --ns-palette-chalk-600: #696970;
+  --ns-palette-chalk-700: #53535b;
+  --ns-palette-chalk-800: #3d3d46;
+  --ns-palette-chalk-900: #272731;
+  /* Brand palette · Insights */
+  --ns-palette-purple-50: #a36bdb;
+  --ns-palette-purple-100: #8f4ad3;
+  --ns-palette-purple-200: #7a30c5;
+  --ns-palette-purple-300: #6628a4;
+  --ns-palette-purple-400: #5c2494;
+  --ns-palette-purple-500: #522083;
+  --ns-palette-purple-600: #471c73;
+  --ns-palette-purple-700: #3e1863;
+  --ns-palette-purple-800: #230d38;
+  --ns-palette-purple-900: #150821;
+  /* Brand palette · Awards (Yellow Gold) */
+  --ns-palette-gold-50: #ffe782;
+  --ns-palette-gold-100: #ffe362;
+  --ns-palette-gold-200: #ffdc47;
+  --ns-palette-gold-300: #ffd632;
+  --ns-palette-gold-400: #f9ca27;
+  --ns-palette-gold-500: #d0aa21;
+  --ns-palette-gold-600: #a9891b;
+  --ns-palette-gold-700: #836c15;
+  --ns-palette-gold-800: #604f10;
+  --ns-palette-gold-900: #3c340a;
+  /* Brand palette · Ignite */
+  --ns-palette-lime-50: #fbffeb;
+  --ns-palette-lime-100: #f7ffd6;
+  --ns-palette-lime-200: #efffad;
+  --ns-palette-lime-300: #ebff99;
+  --ns-palette-lime-400: #e2ff70;
+  --ns-palette-lime-500: #deff5c;
+  --ns-palette-lime-600: #d6ff33;
+  --ns-palette-lime-700: #ceff0a;
+  --ns-palette-lime-800: #b4e000;
+  --ns-palette-lime-900: #a3cc00;
+  /* Brand palette · Ignite (Neon Blue) */
+  --ns-palette-indigo-50: #c4c7fd;
+  --ns-palette-indigo-100: #b0b4fc;
+  --ns-palette-indigo-200: #898ffb;
+  --ns-palette-indigo-300: #757cfa;
+  --ns-palette-indigo-400: #6269f9;
+  --ns-palette-indigo-500: #3a44f8;
+  --ns-palette-indigo-600: #2631f7;
+  --ns-palette-indigo-700: #0812d9;
+  --ns-palette-indigo-800: #060fb1;
+  --ns-palette-indigo-900: #050c8a;
+  /* Brand palette · Ignite (Orange) */
+  --ns-palette-amber-50: #fbd589;
+  --ns-palette-amber-100: #face75;
+  --ns-palette-amber-200: #f9c762;
+  --ns-palette-amber-300: #f9c04d;
+  --ns-palette-amber-400: #f9b939;
+  --ns-palette-amber-500: #f8b225;
+  --ns-palette-amber-600: #f7a90c;
+  --ns-palette-amber-700: #eca009;
+  --ns-palette-amber-800: #d99308;
+  --ns-palette-amber-900: #c58607;
+  /* Brand palette · Bites */
+  --ns-palette-violet-50: #f0dafb;
+  --ns-palette-violet-100: #e1b6f7;
+  --ns-palette-violet-200: #d291f3;
+  --ns-palette-violet-300: #c36cef;
+  --ns-palette-violet-400: #b447eb;
+  --ns-palette-violet-500: #8e16ca;
+  --ns-palette-violet-600: #8114b8;
+  --ns-palette-violet-700: #671093;
+  --ns-palette-violet-800: #4e0c6e;
+  --ns-palette-violet-900: #270637;
+  /* Brand palette · Bites (Fucsia) */
+  --ns-palette-fuchsia-50: #fdedf0;
+  --ns-palette-fuchsia-100: #fbdae0;
+  --ns-palette-fuchsia-200: #f5a3b2;
+  --ns-palette-fuchsia-300: #f17e93;
+  --ns-palette-fuchsia-400: #ed5a75;
+  --ns-palette-fuchsia-500: #e93556;
+  --ns-palette-fuchsia-600: #931028;
+  --ns-palette-fuchsia-700: #6e0c1e;
+  --ns-palette-fuchsia-800: #490814;
+  --ns-palette-fuchsia-900: #37060f;
+  /* Brand palette · Bites (Light Blue), Careers */
+  --ns-palette-teal-50: #d9fafc;
+  --ns-palette-teal-100: #c6f8fa;
+  --ns-palette-teal-200: #91ecf3;
+  --ns-palette-teal-300: #5ae3ed;
+  --ns-palette-teal-400: #18cfdc;
+  --ns-palette-teal-500: #129ba5;
+  --ns-palette-teal-600: #0e7981;
+  --ns-palette-teal-700: #0a6d70;
+  --ns-palette-teal-800: #07494b;
+  --ns-palette-teal-900: #042325;
+  /* Brand palette · Bites */
+  --ns-palette-citrine-50: #fdf8d9;
+  --ns-palette-citrine-100: #fbf1b1;
+  --ns-palette-citrine-200: #f9ea8b;
+  --ns-palette-citrine-300: #f7e364;
+  --ns-palette-citrine-400: #f5dc3d;
+  --ns-palette-citrine-500: #e9cb0c;
+  --ns-palette-citrine-600: #c2a90a;
+  --ns-palette-citrine-700: #9b8708;
+  --ns-palette-citrine-800: #746606;
+  --ns-palette-citrine-900: #4e4404;
+  /* Brand palette · Web 1, Web 2, Web 2023, 404, Privacy (#1A223E, #0A2458) */
+  --ns-palette-navy-50: #eef1f8;
+  --ns-palette-navy-100: #dae1f0;
+  --ns-palette-navy-200: #b4c2e0;
+  --ns-palette-navy-300: #8fa3cf;
+  --ns-palette-navy-400: #657eb4;
+  --ns-palette-navy-500: #3d5a99;
+  --ns-palette-navy-600: #233e78;
+  --ns-palette-navy-700: #0a2458;
+  --ns-palette-navy-800: #1a223e;
+  --ns-palette-navy-900: #12203f;
+  /* Brand palette · Web 2023 CTA (#C73047) */
+  --ns-palette-crimson-50: #fceef0;
+  --ns-palette-crimson-100: #f9d6db;
+  --ns-palette-crimson-200: #efa7b2;
+  --ns-palette-crimson-300: #e4838e;
+  --ns-palette-crimson-400: #d65d6a;
+  --ns-palette-crimson-500: #c73047;
+  --ns-palette-crimson-600: #aa273c;
+  --ns-palette-crimson-700: #8e1f31;
+  --ns-palette-crimson-800: #6b1625;
+  --ns-palette-crimson-900: #4a0e19;
 
   /* Semantic color — light (default) */
   --ns-color-bg-canvas: var(--ns-color-cream-300);
@@ -219,6 +423,8 @@
   --ns-spacing-60: 60px;
   --ns-spacing-100: 100px;
   --ns-spacing-180: 180px;
+  --ns-spacing-10: 10px;
+  --ns-spacing-150: 150px;
 
   /* Shape — radius and border width */
   --ns-radius-none: 0px;
@@ -234,6 +440,8 @@
   --ns-border-width-thick: 4px;
   --ns-radius-2xl: 32px;
   --ns-border-width-regular: 1.5px;
+  /* Web 2023 cards and sections */
+  --ns-radius-3xl: 40px;
 
   /* Size — icons and controls */
   --ns-size-icon-xs: 12px;
@@ -322,11 +530,42 @@
   --ns-letter-spacing-web-h3: -0.7px;
   --ns-letter-spacing-web-label: -0.32px;
   --ns-letter-spacing-web-caption: -0.32px;
+  /* Body copy on the 2019–2023 websites (Web 1, Web 2, Web 2023) */
+  --ns-font-family-site-body: "Open Sans", system-ui, sans-serif;
+  /* UI and body copy in the v1 brand guideline pages */
+  --ns-font-family-tertiary: "Plus Jakarta Sans", system-ui, sans-serif;
+  /* NS Careers campaign display */
+  --ns-font-family-careers-display: Atrament, sans-serif;
+  /* NS Awards display */
+  --ns-font-family-awards-display: "Hello Paris Sans", sans-serif;
+  /* NS Talks display */
+  --ns-font-family-talks-display: "Asphalts Display", sans-serif;
+  /* NS Bites display */
+  --ns-font-family-bites-display: "Bebas Neue", sans-serif;
+  --ns-font-weight-extrabold: 800;
+  --ns-font-size-web23-hero-xl: 120px;
+  --ns-line-height-web23-hero-xl: 102px;
+  --ns-font-size-web23-hero-lg: 100px;
+  --ns-line-height-web23-hero-lg: 85px;
+  --ns-font-size-web23-hero-md: 70px;
+  --ns-line-height-web23-hero-md: 60px;
+  --ns-font-size-web23-title: 45px;
+  --ns-line-height-web23-title: 45px;
+  --ns-font-size-web23-subtitle: 30px;
+  --ns-line-height-web23-subtitle: 36px;
+  --ns-font-size-web23-body: 24px;
+  --ns-line-height-web23-body: 30px;
+  --ns-font-size-web23-label: 16px;
+  --ns-line-height-web23-label: 19px;
+  --ns-font-size-web23-overline: 16px;
+  --ns-line-height-web23-overline: 18px;
 
   /* Effects — blur radii */
   --ns-blur-sm: 6px;
   --ns-blur-lg: 24px;
   --ns-blur-glow: 240px;
+  --ns-blur-xl: 40px;
+  --ns-blur-2xl: 80px;
 
   /* Elevation — for box-shadow */
   --ns-elevation-xs: 0 1px 2px 0 var(--ns-color-alpha-black-6), 0 1px 3px 0 var(--ns-color-alpha-black-10);
@@ -335,22 +574,43 @@
   --ns-elevation-lg: 0 4px 8px -2px var(--ns-color-alpha-black-5), 0 15px 40px -4px var(--ns-color-alpha-black-14);
   --ns-elevation-xl: 0 4px 8px -2px var(--ns-color-alpha-black-5), 0 16px 72px -4px var(--ns-color-alpha-black-18);
 
-  /* Glass — for backdrop-filter */
+  /* Glass — for backdrop-filter, box-shadow */
   --ns-glass-sm: blur(var(--ns-blur-sm));
   --ns-glass-lg: blur(var(--ns-blur-lg));
+  --ns-glass-xl: blur(var(--ns-blur-xl));
+  --ns-glass-xl-shadow: 0 8px 24px 0 var(--ns-color-alpha-black-8);
 
   /* Glow — for filter */
   --ns-glow-xl: blur(var(--ns-blur-glow));
+  --ns-glow-lg: blur(var(--ns-blur-2xl));
 
   /* Inset — for box-shadow */
   --ns-inset-hairline: inset 0 0 1px 0 var(--ns-color-alpha-black-10);
+
+  /* Shadow — for box-shadow */
+  --ns-shadow-hard: 3px 3px 0 0 var(--ns-color-alpha-black-30);
+  --ns-shadow-wine: 0 30px 30px 0 var(--ns-color-alpha-wine-50);
+  --ns-shadow-float: 0 16px 32px 0 var(--ns-color-alpha-navy-16);
 
   /* Gradient */
   --ns-gradient-blue-light-to-dark: linear-gradient(90deg, var(--ns-color-blue-50) 0%, var(--ns-color-blue-300) 30%, var(--ns-color-blue-400) 50%, var(--ns-color-blue-700) 75%, var(--ns-color-blue-900) 100%);
   --ns-gradient-red-light-to-dark: linear-gradient(90deg, var(--ns-color-red-100) 0%, var(--ns-color-red-200) 10%, var(--ns-color-red-300) 30%, var(--ns-color-red-600) 60%, var(--ns-color-red-800) 100%);
   --ns-gradient-blue-base-to-dark: linear-gradient(90deg, var(--ns-color-blue-600) 0%, var(--ns-color-blue-700) 40%, var(--ns-color-blue-900) 100%);
   --ns-gradient-red-base-to-dark: linear-gradient(90deg, var(--ns-color-red-600) 0%, var(--ns-color-red-800) 50%, var(--ns-color-red-900) 100%);
-  --ns-gradient-night-fade: linear-gradient(180deg, #000000 0%, var(--ns-color-night-900) 100%);
+  --ns-gradient-night-fade: linear-gradient(180deg, var(--ns-palette-neutral-900) 0%, var(--ns-color-night-900) 100%);
+  --ns-gradient-careers-gold: linear-gradient(90deg, #d2a374 0%, #b88653 100%);
+  --ns-gradient-careers-gold-light: linear-gradient(90deg, #d2a374 0%, #deba94 100%);
+  --ns-gradient-careers-sky: linear-gradient(90deg, #b0e9ff 0%, #50ccfe 50%, #0099d6 100%);
+  --ns-gradient-red-to-wine: linear-gradient(90deg, #ea3544 0%, #6a1739 100%);
+  --ns-gradient-red-to-yellow: linear-gradient(90deg, var(--ns-color-red-500) 0%, #fef001 100%);
+  --ns-gradient-cyan-to-navy: linear-gradient(90deg, var(--ns-palette-cyan-500) 0%, var(--ns-palette-navy-800) 100%);
+  --ns-gradient-salmon-to-red: linear-gradient(90deg, var(--ns-palette-salmon-500) 0%, var(--ns-color-red-500) 100%);
+  --ns-gradient-web-2023-sunset: linear-gradient(90deg, #6085c3 0%, #f18b6f 100%);
+  --ns-gradient-bites-violet: linear-gradient(90deg, #7740e4 0%, #290a69 100%);
+  --ns-gradient-insights-purple: linear-gradient(90deg, #986bff 0%, #593aa4 100%);
+  --ns-gradient-awards-gold: linear-gradient(90deg, #ffd26b 0%, #b07600 100%);
+  --ns-gradient-talks-teal: linear-gradient(90deg, var(--ns-palette-cyan-900) 0%, var(--ns-palette-cyan-400) 100%);
+  --ns-gradient-talks-salmon: linear-gradient(90deg, var(--ns-palette-salmon-500) 0%, var(--ns-palette-salmon-900) 100%);
 }
 
 /* Semantic color — dark (explicit opt-in) */
@@ -568,7 +828,7 @@
   --ns-color-bg-glass: var(--ns-color-alpha-white-8);
 }
 
-/* Typography — mobile (viewports up to 767px; only the 29 values that differ) */
+/* Typography — mobile (viewports up to 767px; only the 41 values that differ) */
 @media (max-width: 767px) {
   :root {
     --ns-font-size-web-callout-xl: 70px;
@@ -600,5 +860,17 @@
     --ns-letter-spacing-web-h1: -0.92px;
     --ns-letter-spacing-web-h3: -0.44px;
     --ns-letter-spacing-web-caption: -0.28px;
+    --ns-font-size-web23-hero-xl: 60px;
+    --ns-line-height-web23-hero-xl: 51px;
+    --ns-font-size-web23-hero-lg: 42px;
+    --ns-line-height-web23-hero-lg: 36px;
+    --ns-font-size-web23-hero-md: 32px;
+    --ns-line-height-web23-hero-md: 28px;
+    --ns-font-size-web23-title: 32px;
+    --ns-line-height-web23-title: 32px;
+    --ns-font-size-web23-subtitle: 24px;
+    --ns-line-height-web23-subtitle: 29px;
+    --ns-font-size-web23-body: 18px;
+    --ns-line-height-web23-body: 27px;
   }
 }

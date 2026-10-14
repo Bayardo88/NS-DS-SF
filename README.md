@@ -9,7 +9,7 @@ from Figma exactly, so a name you see in Figma's inspect panel is the name you w
 
 ```html
 <link rel="stylesheet" href="tokens/css/tokens.css" />
-<!-- optional: utility classes for the 95 Figma text styles -->
+<!-- optional: utility classes for the 104 Figma text styles -->
 <link rel="stylesheet" href="tokens/css/text-styles.css" />
 ```
 
@@ -48,17 +48,21 @@ how light its canvas is (web-2025 is dark), so form controls and scrollbars matc
 
 The `Typography` collection has a **Desktop** mode, which is the `:root` default, and a
 **Mobile** mode. Below 768px wide, `@media (max-width: 767px)` overrides only the variables whose
-Mobile value differs. Right now that's the 29 `web-*` font sizes, line heights and letter spacings.
-For example, `--ns-font-size-web-h1` is 70px on desktop and 40px on mobile. Anything that uses
-these variables, including the `.ns-text-web-*` classes, adapts with no extra CSS. The
-`Primary/*` and `Secondary/*` scales are the same in both modes.
+Mobile value differs. Right now that's 41 values:
+- the 29 Web 2025 `web-*` font sizes, line heights and letter spacings
+- the 12 Web 2023 `web23-*` hero, title, subtitle and body sizes and line heights
+
+For example, `--ns-font-size-web-h1` is 70px on desktop and 40px on mobile, and
+`--ns-font-size-web23-hero-xl` is 120px on desktop and 60px on mobile. Anything that uses these
+variables, including the `.ns-text-web-*` and `.ns-text-web-2023-*` classes, adapts with no extra
+CSS. The `Primary/*` and `Secondary/*` scales, and the Web 2023 label and overline, are the same in both modes.
 
 ## Files
 
 | Path | What it is |
 | --- | --- |
 | `tokens/tokens.json` | Every token in [W3C DTCG 2025.10](https://www.designtokens.org/tr/2025.10/format/) format. Aliases are kept as `{group.token}` references. |
-| `tokens/css/tokens.css` | CSS custom properties. `:root` holds the primitives, light semantic colors, desktop typography, all other dimensions in px, effects and gradients. After it come the dark and web-2025 theme blocks and the mobile type media query. |
+| `tokens/css/tokens.css` | CSS custom properties. `:root` holds the primitives, brand palettes, light semantic colors, desktop typography, all other dimensions in px, effects and gradients. Figma variable descriptions appear as comments. After it come the dark and web-2025 theme blocks and the mobile type media query. |
 | `tokens/css/text-styles.css` | `.ns-text-*` classes, one per Figma text style, built from the typography variables. |
 | `tokens/figma/*.json` | Raw snapshot of the Figma variables and styles. The build reads these files; don't edit them by hand. |
 | `scripts/figma-export.js` | Read-only Figma Plugin API script that writes the snapshot. |
@@ -69,19 +73,47 @@ these variables, including the `.ns-text-web-*` classes, adapts with no extra CS
 Two tiers. Components use **semantic** tokens. **Primitives** are the raw palette that the
 semantic tokens alias. The NS Corporate ramps are red, blue, golden, cream, gray, orange and green.
 The Web 2025 ramps are night, slate, coral and honey. Primitives have no Figma scopes, so they stay out of Figma's property
-pickers.
+pickers. **Brand palettes** sit apart from both tiers; see below.
 
 | Figma collection | Modes | Count | DTCG group | CSS prefix | Examples |
 | --- | --- | ---: | --- | --- | --- |
-| Primitives | Value | 121 | `primitives` | `--ns-color-*` | `--ns-color-blue-600`, `--ns-color-night-900`, `--ns-color-alpha-black-10` |
+| Primitives | Value | 126 | `primitives` | `--ns-color-*` | `--ns-color-blue-600`, `--ns-color-night-900`, `--ns-color-alpha-wine-50` |
 | Color (semantic) | Light, Dark, Web 2025 | 66 | `color` | `--ns-color-{bg,text,border,icon}-*` | `--ns-color-bg-brand`, `--ns-color-bg-glass`, `--ns-color-text-on-brand` |
-| Spacing | Value | 20 | `spacing` | `--ns-spacing-*` | `--ns-spacing-16` (the name is the px value) |
-| Shape | Value | 13 | `shape` | `--ns-radius-*`, `--ns-border-width-*` | `--ns-radius-2xl`, `--ns-border-width-regular` (1.5px) |
+| Spacing | Value | 22 | `spacing` | `--ns-spacing-*` | `--ns-spacing-16` (the name is the px value) |
+| Shape | Value | 14 | `shape` | `--ns-radius-*`, `--ns-border-width-*` | `--ns-radius-3xl` (40px), `--ns-border-width-regular` (1.5px) |
 | Size | Value | 8 | `size` | `--ns-size-{icon,control}-*` | `--ns-size-icon-md`, `--ns-size-control-lg` |
-| Typography | Desktop, Mobile | 76 | `typography` | `--ns-font-*`, `--ns-line-height-*`, `--ns-letter-spacing-*` | `--ns-font-size-body-md`, `--ns-font-size-web-h1`, `--ns-font-weight-black` |
-| Effects | Value | 3 | `effects` | `--ns-blur-*` | `--ns-blur-sm` (6px), `--ns-blur-lg` (24px), `--ns-blur-glow` (240px) |
+| Typography | Desktop, Mobile | 99 | `typography` | `--ns-font-*`, `--ns-line-height-*`, `--ns-letter-spacing-*` | `--ns-font-size-body-md`, `--ns-font-size-web23-title`, `--ns-font-family-bites-display` |
+| Effects | Value | 5 | `effects` | `--ns-blur-*` | `--ns-blur-sm` (6px), `--ns-blur-lg` (24px), `--ns-blur-xl` (40px), `--ns-blur-2xl` (80px), `--ns-blur-glow` (240px) |
+| Brand Palettes | Value | 180 | `palette` | `--ns-palette-*` | `--ns-palette-navy-800`, `--ns-palette-crimson-500`, `--ns-palette-chalk-900` |
 
-That's 307 variables in total.
+That's 520 variables in total.
+
+### Brand palettes
+
+The 18 ramps (50–900) are the colors of NicaSource's sub-brands and past websites. They aren't
+aliased by the semantic tokens and don't change with the theme. Use them on campaign or sub-brand
+pages, and use the semantic `--ns-color-*` tokens everywhere else. Each ramp's Figma description
+names who uses it. That description is the token's `$description` in `tokens.json` and a comment
+above the ramp in `tokens.css`.
+
+| Ramps | Used by |
+| --- | --- |
+| yellow | Careers, Insights |
+| pink, wine | Careers |
+| neutral | Careers (Black), website placeholders and greys |
+| salmon | Talks (Coral), Insights, Careers |
+| cyan | Talks (Light Blue), Careers |
+| chalk | Insights, Ignite, Awards; Web 2023 page background (`chalk-900`) |
+| purple | Insights |
+| gold | Awards (Yellow Gold) |
+| lime, indigo, amber | Ignite (lime; Neon Blue; Orange) |
+| violet, fuchsia, citrine | Bites |
+| teal | Bites (Light Blue), Careers |
+| navy | Web 1, Web 2, Web 2023, 404, Privacy |
+| crimson | Web 2023 CTA |
+
+Unlike primitives, palette variables are scoped to fills, strokes and effect colors in Figma, so
+designers can pick them directly.
 
 Styles, which are composite tokens:
 
@@ -89,16 +121,23 @@ Styles, which are composite tokens:
 | --- | ---: | --- | --- |
 | `Elevation/XS…XL` effect styles | 5 | `elevation` / `shadow` | `--ns-elevation-{xs,sm,md,lg,xl}` for `box-shadow` (multi-layer; colors reference the alpha primitives) |
 | `Inset/Hairline` effect style | 1 | `inset` / `shadow` | `--ns-inset-hairline` for `box-shadow` (`inset 0 0 1px 0`, black 10%) |
-| `Glass/SM`, `Glass/LG` effect styles | 2 | `glass` / `dimension` | `--ns-glass-sm`, `--ns-glass-lg` for `backdrop-filter`, e.g. `blur(var(--ns-blur-sm))`. Pair with `--ns-color-bg-glass`. |
-| `Glow/XL` effect style | 1 | `glow` / `dimension` | `--ns-glow-xl` for `filter` (`blur(var(--ns-blur-glow))`), used for background light blobs |
-| `Gradient/*` paint styles | 5 | `gradient` / `gradient` | `--ns-gradient-blue-light-to-dark`, `-red-light-to-dark`, `-blue-base-to-dark`, `-red-base-to-dark`, `-night-fade` |
-| `Primary/*`, `Secondary/*`, `Web/*` text styles | 95 | `text-style` / `typography` | `.ns-text-{primary,secondary,web}-{size}-{weight}`, e.g. `.ns-text-primary-body-md-semibold`, `.ns-text-web-h1-black` |
+| `Shadow/Hard`, `Shadow/Wine`, `Shadow/Float` effect styles | 3 | `shadow` / `shadow` | `--ns-shadow-hard` (Careers retro offset), `--ns-shadow-wine` (Careers), `--ns-shadow-float` (Web 2023) for `box-shadow` |
+| `Glass/SM`, `Glass/LG`, `Glass/XL` effect styles | 3 | `glass` / `dimension` | `--ns-glass-sm`, `--ns-glass-lg`, `--ns-glass-xl` for `backdrop-filter`, e.g. `blur(var(--ns-blur-sm))`. Pair with `--ns-color-bg-glass`. `Glass/XL` also has a drop shadow, exported separately as `--ns-glass-xl-shadow` (`glass.xl-shadow`, a `shadow` token) for `box-shadow`. |
+| `Glow/LG`, `Glow/XL` effect styles | 2 | `glow` / `dimension` | `--ns-glow-lg` (80px), `--ns-glow-xl` (240px) for `filter`, used for background light blobs |
+| `Gradient/*` paint styles | 18 | `gradient` / `gradient` | Corporate: `--ns-gradient-blue-light-to-dark`, `-red-light-to-dark`, `-blue-base-to-dark`, `-red-base-to-dark`. Web: `-night-fade`, `-web-2023-sunset`. Sub-brands: `-careers-gold`, `-careers-gold-light`, `-careers-sky`, `-red-to-wine`, `-red-to-yellow`, `-cyan-to-navy`, `-salmon-to-red`, `-bites-violet`, `-insights-purple`, `-awards-gold`, `-talks-teal`, `-talks-salmon` |
+| `Primary/*`, `Secondary/*`, `Web/*`, `Web 2023/*` text styles | 104 | `text-style` / `typography` | `.ns-text-{primary,secondary,web,web-2023}-{size}-{weight}`, e.g. `.ns-text-primary-body-md-semibold`, `.ns-text-web-h1-black`, `.ns-text-web-2023-hero-xl-extra-bold` |
 
 ```css
 .glass-panel {
   background: var(--ns-color-bg-glass);
   backdrop-filter: var(--ns-glass-lg);
   box-shadow: var(--ns-inset-hairline);
+}
+
+.web-2023-card {
+  border-radius: var(--ns-radius-3xl);
+  backdrop-filter: var(--ns-glass-xl);
+  box-shadow: var(--ns-glass-xl-shadow);
 }
 ```
 
@@ -125,7 +164,8 @@ Styles, which are composite tokens:
 - Line heights are px dimensions because Figma defines them in px. The `typography`
   composites reference them as they are, without converting to unitless ratios.
 - Gradient stops in Figma are literal colors. The build replaces each one with a reference to the
-  primitive of the same hex. A color with no matching primitive stays literal, like the `#000000` in Night Fade.
+  primitive of the same hex, or to the brand-palette color if no primitive matches. For example,
+  Night Fade's `#000000` becomes `{palette.neutral.900}`. A color with no match stays literal, like the two Careers Gold stops.
   The CSS angle is computed from the Figma gradient transform: `90deg` is left to right and Night Fade's
   `180deg` is top to bottom.
 - DTCG has no filter type. Glass and Glow are stored as their blur-radius `dimension`, and
@@ -136,13 +176,22 @@ Styles, which are composite tokens:
 - **Primary:** Fira Code (`--ns-font-family-primary`).
 - **Web:** Public Sans (`--ns-font-family-web`), used by the `Web/*` text styles on the
   Web 2025 website.
+- **Site body:** Open Sans (`--ns-font-family-site-body`), body copy on the 2019–2023 websites.
+  `Web 2023/Body/Regular` uses it.
+- **Tertiary:** Plus Jakarta Sans (`--ns-font-family-tertiary`), UI and body copy in the v1 brand
+  guideline pages.
+- **Sub-brand display faces:** Atrament (`--ns-font-family-careers-display`, NS Careers), Hello
+  Paris Sans (`--ns-font-family-awards-display`, NS Awards), Asphalts Display
+  (`--ns-font-family-talks-display`, NS Talks) and Bebas Neue (`--ns-font-family-bites-display`, NS Bites).
+  These are tokens only. No text style uses them yet.
 - **Secondary:** Greycliff CF (`--ns-font-family-secondary`). Until Greycliff CF is installed,
-  Figma's `Secondary/*` text styles render in **Plus Jakarta Sans** as a stand-in. Those tokens
+  Figma's `Secondary/*` and `Web 2023/*` text styles render in **Plus Jakarta Sans** as a stand-in.
+  The exception is `Web 2023/Body`, which uses Open Sans. Those tokens
   carry `$extensions["com.figma"].standInFor`. In CSS, Plus Jakarta Sans is the first fallback after
   Greycliff CF. The CSS font-family values add fallback stacks after the Figma family. Those
   stacks live in `FONT_FALLBACKS` in the build script.
 - The weight comes from the style name: ExtraLight 200, Light 300, Regular 400, Medium 500,
-  SemiBold/Demi Bold 600, Bold 700, Heavy 800, Black 900.
+  SemiBold/Demi Bold 600, Bold 700, Extra Bold (`extrabold`) and Heavy (`heavy`) 800, Black 900.
 
 The font files themselves aren't in this repo yet. Load them yourself (`@font-face` or a font service).
 
@@ -153,7 +202,8 @@ The font files themselves aren't in this repo yet. Load them yourself (`@font-fa
    Save each result over `tokens/figma/variables.json`, `effects.json` and `text-styles.json`. The script
    only reads the file and never changes it. `use_figma` caps each result at 20 KB. If a part is over
    the limit, set `ONLY` to export it in pieces, then merge them in Figma's order: collection names for
-   `variables`, style-name prefixes for `text`.
+   `variables`, style-name prefixes for `text`. A collection that is still too big, like Brand Palettes,
+   can be read in index ranges with `SLICE`.
 2. Run the build:
 
    ```bash

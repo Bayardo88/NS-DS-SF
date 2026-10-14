@@ -67,6 +67,42 @@
       "effects": [
         {"type": "INNER_SHADOW", "color": "@Primitives/alpha/black-10", "x": 0, "y": 0, "blur": 1, "spread": 0}
       ]
+    },
+    {
+      "name": "Glass/XL",
+      "description": "Web 2023 glass card: background blur 40 + soft shadow 0 8 24.",
+      "effects": [
+        {"type": "BACKGROUND_BLUR", "radius": "@Effects/blur/xl"},
+        {"type": "DROP_SHADOW", "color": "@Primitives/alpha/black-8", "x": 0, "y": 8, "blur": 24, "spread": 0}
+      ]
+    },
+    {
+      "name": "Glow/LG",
+      "description": "Layer blur 80 for background light blobs (Web 2023).",
+      "effects": [
+        {"type": "LAYER_BLUR", "radius": "@Effects/blur/2xl"}
+      ]
+    },
+    {
+      "name": "Shadow/Hard",
+      "description": "Hard offset shadow 3 3 0 (Careers retro style).",
+      "effects": [
+        {"type": "DROP_SHADOW", "color": "@Primitives/alpha/black-30", "x": 3, "y": 3, "blur": 0, "spread": 0}
+      ]
+    },
+    {
+      "name": "Shadow/Wine",
+      "description": "Wine-tinted glow 0 30 30 (Careers).",
+      "effects": [
+        {"type": "DROP_SHADOW", "color": "@Primitives/alpha/wine-50", "x": 0, "y": 30, "blur": 30, "spread": 0}
+      ]
+    },
+    {
+      "name": "Shadow/Float",
+      "description": "Navy-tinted float shadow 0 16 32 (Web 2023).",
+      "effects": [
+        {"type": "DROP_SHADOW", "color": "@Primitives/alpha/navy-16", "x": 0, "y": 16, "blur": 32, "spread": 0}
+      ]
     }
   ],
   "gradients": [
@@ -126,6 +162,137 @@
       "stops": [
         {"position": 0, "color": "#000000"},
         {"position": 1, "color": "#181728"}
+      ]
+    },
+    {
+      "name": "Gradient/Careers Gold",
+      "description": "",
+      "type": "GRADIENT_LINEAR",
+      "transform": [[1, 0, 0], [0, 1, 0]],
+      "stops": [
+        {"position": 0, "color": "#d2a374"},
+        {"position": 1, "color": "#b88653"}
+      ]
+    },
+    {
+      "name": "Gradient/Careers Gold Light",
+      "description": "",
+      "type": "GRADIENT_LINEAR",
+      "transform": [[1, 0, 0], [0, 1, 0]],
+      "stops": [
+        {"position": 0, "color": "#d2a374"},
+        {"position": 1, "color": "#deba94"}
+      ]
+    },
+    {
+      "name": "Gradient/Careers Sky",
+      "description": "",
+      "type": "GRADIENT_LINEAR",
+      "transform": [[1, 0, 0], [0, 1, 0]],
+      "stops": [
+        {"position": 0, "color": "#b0e9ff"},
+        {"position": 0.5, "color": "#50ccfe"},
+        {"position": 1, "color": "#0099d6"}
+      ]
+    },
+    {
+      "name": "Gradient/Red to Wine",
+      "description": "",
+      "type": "GRADIENT_LINEAR",
+      "transform": [[1, 0, 0], [0, 1, 0]],
+      "stops": [
+        {"position": 0, "color": "#ea3544"},
+        {"position": 1, "color": "#6a1739"}
+      ]
+    },
+    {
+      "name": "Gradient/Red to Yellow",
+      "description": "",
+      "type": "GRADIENT_LINEAR",
+      "transform": [[1, 0, 0], [0, 1, 0]],
+      "stops": [
+        {"position": 0, "color": "#f13c45"},
+        {"position": 1, "color": "#fef001"}
+      ]
+    },
+    {
+      "name": "Gradient/Cyan to Navy",
+      "description": "",
+      "type": "GRADIENT_LINEAR",
+      "transform": [[1, 0, 0], [0, 1, 0]],
+      "stops": [
+        {"position": 0, "color": "#36e5f0"},
+        {"position": 1, "color": "#1a223e"}
+      ]
+    },
+    {
+      "name": "Gradient/Salmon to Red",
+      "description": "",
+      "type": "GRADIENT_LINEAR",
+      "transform": [[1, 0, 0], [0, 1, 0]],
+      "stops": [
+        {"position": 0, "color": "#ff8084"},
+        {"position": 1, "color": "#f13c45"}
+      ]
+    },
+    {
+      "name": "Gradient/Web 2023 Sunset",
+      "description": "",
+      "type": "GRADIENT_LINEAR",
+      "transform": [[1, 0, 0], [0, 1, 0]],
+      "stops": [
+        {"position": 0, "color": "#6085c3"},
+        {"position": 1, "color": "#f18b6f"}
+      ]
+    },
+    {
+      "name": "Gradient/Bites Violet",
+      "description": "",
+      "type": "GRADIENT_LINEAR",
+      "transform": [[1, 0, 0], [0, 1, 0]],
+      "stops": [
+        {"position": 0, "color": "#7740e4"},
+        {"position": 1, "color": "#290a69"}
+      ]
+    },
+    {
+      "name": "Gradient/Insights Purple",
+      "description": "",
+      "type": "GRADIENT_LINEAR",
+      "transform": [[1, 0, 0], [0, 1, 0]],
+      "stops": [
+        {"position": 0, "color": "#986bff"},
+        {"position": 1, "color": "#593aa4"}
+      ]
+    },
+    {
+      "name": "Gradient/Awards Gold",
+      "description": "",
+      "type": "GRADIENT_LINEAR",
+      "transform": [[1, 0, 0], [0, 1, 0]],
+      "stops": [
+        {"position": 0, "color": "#ffd26b"},
+        {"position": 1, "color": "#b07600"}
+      ]
+    },
+    {
+      "name": "Gradient/Talks Teal",
+      "description": "",
+      "type": "GRADIENT_LINEAR",
+      "transform": [[1, 0, 0], [0, 1, 0]],
+      "stops": [
+        {"position": 0, "color": "#0fa4a9"},
+        {"position": 1, "color": "#69edf2"}
+      ]
+    },
+    {
+      "name": "Gradient/Talks Salmon",
+      "description": "",
+      "type": "GRADIENT_LINEAR",
+      "transform": [[1, 0, 0], [0, 1, 0]],
+      "stops": [
+        {"position": 0, "color": "#ff8084"},
+        {"position": 1, "color": "#c02121"}
       ]
     }
   ]
