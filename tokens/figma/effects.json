@@ -1,0 +1,94 @@
+{
+  "effects": [
+    {
+      "name": "Elevation/XS",
+      "description": "var(--ns-elevation-xs)",
+      "effects": [
+        { "type": "DROP_SHADOW", "color": "@Primitives/alpha/black-6", "x": 0, "y": 1, "blur": 2, "spread": 0 },
+        { "type": "DROP_SHADOW", "color": "@Primitives/alpha/black-10", "x": 0, "y": 1, "blur": 3, "spread": 0 }
+      ]
+    },
+    {
+      "name": "Elevation/SM",
+      "description": "var(--ns-elevation-sm)",
+      "effects": [
+        { "type": "DROP_SHADOW", "color": "@Primitives/alpha/black-6", "x": 0, "y": 2, "blur": 4, "spread": -1 },
+        { "type": "DROP_SHADOW", "color": "@Primitives/alpha/black-10", "x": 0, "y": 4, "blur": 6, "spread": -1 }
+      ]
+    },
+    {
+      "name": "Elevation/MD",
+      "description": "var(--ns-elevation-md)",
+      "effects": [
+        { "type": "DROP_SHADOW", "color": "@Primitives/alpha/black-5", "x": 0, "y": 4, "blur": 6, "spread": -2 },
+        { "type": "DROP_SHADOW", "color": "@Primitives/alpha/black-10", "x": 0, "y": 10, "blur": 15, "spread": -3 }
+      ]
+    },
+    {
+      "name": "Elevation/LG",
+      "description": "var(--ns-elevation-lg)",
+      "effects": [
+        { "type": "DROP_SHADOW", "color": "@Primitives/alpha/black-5", "x": 0, "y": 4, "blur": 8, "spread": -2 },
+        { "type": "DROP_SHADOW", "color": "@Primitives/alpha/black-14", "x": 0, "y": 15, "blur": 40, "spread": -4 }
+      ]
+    },
+    {
+      "name": "Elevation/XL",
+      "description": "var(--ns-elevation-xl)",
+      "effects": [
+        { "type": "DROP_SHADOW", "color": "@Primitives/alpha/black-5", "x": 0, "y": 4, "blur": 8, "spread": -2 },
+        { "type": "DROP_SHADOW", "color": "@Primitives/alpha/black-18", "x": 0, "y": 16, "blur": 72, "spread": -4 }
+      ]
+    }
+  ],
+  "gradients": [
+    {
+      "name": "Gradient/Blue Light to Dark",
+      "description": "",
+      "type": "GRADIENT_LINEAR",
+      "transform": [[1, 0, 0], [0, 1, 0]],
+      "stops": [
+        { "position": 0, "color": "#d6f1ff" },
+        { "position": 0.3, "color": "#00a3f5" },
+        { "position": 0.5, "color": "#0088cc" },
+        { "position": 0.75, "color": "#003552" },
+        { "position": 1, "color": "#001b29" }
+      ]
+    },
+    {
+      "name": "Gradient/Red Light to Dark",
+      "description": "",
+      "type": "GRADIENT_LINEAR",
+      "transform": [[1, 0, 0], [0, 1, 0]],
+      "stops": [
+        { "position": 0, "color": "#fee3e4" },
+        { "position": 0.1, "color": "#ffb2b2" },
+        { "position": 0.3, "color": "#f4666e" },
+        { "position": 0.6, "color": "#ef1a25" },
+        { "position": 1, "color": "#ac0c14" }
+      ]
+    },
+    {
+      "name": "Gradient/Blue Base to Dark",
+      "description": "",
+      "type": "GRADIENT_LINEAR",
+      "transform": [[1, 0, 0], [0, 1, 0]],
+      "stops": [
+        { "position": 0, "color": "#004367" },
+        { "position": 0.4, "color": "#003552" },
+        { "position": 1, "color": "#001b29" }
+      ]
+    },
+    {
+      "name": "Gradient/Red Base to Dark",
+      "description": "",
+      "type": "GRADIENT_LINEAR",
+      "transform": [[1, 0, 0], [0, 1, 0]],
+      "stops": [
+        { "position": 0, "color": "#ef1a25" },
+        { "position": 0.5, "color": "#ac0c14" },
+        { "position": 1, "color": "#86090f" }
+      ]
+    }
+  ]
+}
