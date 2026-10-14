@@ -381,14 +381,14 @@
   --ns-color-text-error: var(--ns-color-red-700);
   --ns-color-border-default: var(--ns-color-gray-200);
   --ns-color-border-subtle: var(--ns-color-gray-100);
-  --ns-color-border-strong: var(--ns-color-gray-400);
+  --ns-color-border-strong: var(--ns-color-gray-500);
   --ns-color-border-brand: var(--ns-color-blue-600);
-  --ns-color-border-accent: var(--ns-color-golden-400);
-  --ns-color-border-focus: var(--ns-color-blue-300);
+  --ns-color-border-accent: var(--ns-color-golden-500);
+  --ns-color-border-focus: var(--ns-color-blue-400);
   --ns-color-border-disabled: var(--ns-color-gray-300);
   --ns-color-border-info: var(--ns-color-blue-500);
   --ns-color-border-success: var(--ns-color-green-800);
-  --ns-color-border-warning: var(--ns-color-orange-600);
+  --ns-color-border-warning: var(--ns-color-orange-700);
   --ns-color-border-error: var(--ns-color-red-700);
   --ns-color-icon-primary: var(--ns-color-gray-900);
   --ns-color-icon-secondary: var(--ns-color-gray-700);
@@ -398,7 +398,7 @@
   --ns-color-icon-accent: var(--ns-color-golden-500);
   --ns-color-icon-highlight: var(--ns-color-red-700);
   --ns-color-icon-success: var(--ns-color-green-900);
-  --ns-color-icon-warning: var(--ns-color-orange-600);
+  --ns-color-icon-warning: var(--ns-color-orange-700);
   --ns-color-icon-error: var(--ns-color-red-700);
   --ns-color-bg-glass: var(--ns-color-alpha-black-5);
   /* Resting outline of form inputs; ≥3:1 against bg/surface and bg/canvas in every mode (WCAG 1.4.11). */
@@ -655,7 +655,7 @@
   --ns-color-text-on-warning: var(--ns-color-gray-900);
   --ns-color-text-brand: var(--ns-color-blue-200);
   --ns-color-text-accent: var(--ns-color-golden-100);
-  --ns-color-text-highlight: var(--ns-color-red-300);
+  --ns-color-text-highlight: var(--ns-color-red-200);
   --ns-color-text-link: var(--ns-color-blue-200);
   --ns-color-text-link-hover: var(--ns-color-blue-100);
   --ns-color-text-info: var(--ns-color-blue-200);
@@ -728,7 +728,7 @@
     --ns-color-text-on-warning: var(--ns-color-gray-900);
     --ns-color-text-brand: var(--ns-color-blue-200);
     --ns-color-text-accent: var(--ns-color-golden-100);
-    --ns-color-text-highlight: var(--ns-color-red-300);
+    --ns-color-text-highlight: var(--ns-color-red-200);
     --ns-color-text-link: var(--ns-color-blue-200);
     --ns-color-text-link-hover: var(--ns-color-blue-100);
     --ns-color-text-info: var(--ns-color-blue-200);
@@ -767,7 +767,7 @@
   --ns-color-bg-canvas: var(--ns-color-night-900);
   --ns-color-bg-surface: var(--ns-color-night-700);
   --ns-color-bg-surface-subtle: var(--ns-color-night-800);
-  --ns-color-bg-surface-warm: var(--ns-color-night-600);
+  --ns-color-bg-surface-warm: var(--ns-color-night-800);
   --ns-color-bg-inverse: var(--ns-color-slate-50);
   --ns-color-bg-brand: var(--ns-color-coral-500);
   --ns-color-bg-brand-hover: var(--ns-color-coral-400);

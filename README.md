@@ -14,6 +14,22 @@ total, every one bound to these tokens and working in all three color modes. Sta
 properties and the code props they map to, states and behavior, accessibility, a React example and
 a JSON spec for AI agents. The components aren't implemented in code in this repo yet.
 
+## Accessibility
+
+The tokens and components target **WCAG 2.1 Level AA**. Every semantic color pair is checked in
+Light, Dark and Web 2025: text pairs are at least 4.5:1, and icons, input, focus and status borders
+are at least 3:1. The **♿ Accessibility** page in Figma has the per-mode results, the
+criterion-by-criterion checklist and the exemptions (logos, disabled controls, decorative borders).
+
+Focus rings are drawn offset from the component, so in code use an outline with an offset rather than a border:
+
+```css
+:focus-visible {
+  outline: var(--ns-border-width-medium) solid var(--ns-color-border-focus);
+  outline-offset: 2px;
+}
+```
+
 ## Using the tokens
 
 ```html
