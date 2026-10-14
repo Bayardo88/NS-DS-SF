@@ -1,0 +1,122 @@
+/* PortfolioCard — Figma `Card / Portfolio` (41:47). */
+.ns-portfolio-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  inline-size: 100%;
+  overflow: hidden; /* clips the media corners */
+  background: var(--ns-color-bg-surface);
+  border: var(--ns-border-width-thin) solid var(--ns-color-border-subtle);
+  border-radius: var(--ns-radius-lg);
+  color: var(--ns-color-text-primary);
+  transition:
+    box-shadow 200ms ease-out,
+    border-color 200ms ease-out,
+    transform 200ms ease-out;
+}
+
+/* Hover: border replaced by Elevation/LG, 2px lift, underlined title. */
+.ns-portfolio-card:hover {
+  border-color: transparent;
+  box-shadow: var(--ns-elevation-lg);
+  transform: translateY(calc(-1 * var(--ns-spacing-2)));
+}
+.ns-portfolio-card:hover .ns-portfolio-card__link {
+  text-decoration: underline;
+}
+
+/* Focused: 2px border/focus ring, offset 2px outside the card. */
+.ns-portfolio-card__link:focus-visible {
+  outline: var(--ns-border-width-medium) solid var(--ns-color-border-focus);
+  outline-offset: var(--ns-spacing-2);
+  text-decoration: underline;
+}
+@supports selector(:has(*)) {
+  .ns-portfolio-card:has(.ns-portfolio-card__link:focus-visible) {
+    outline: var(--ns-border-width-medium) solid var(--ns-color-border-focus);
+    outline-offset: var(--ns-spacing-2);
+  }
+  /* The ring moves to the card, so the link's own outline is replaced, not removed. */
+  .ns-portfolio-card__link:focus-visible {
+    outline: none;
+  }
+}
+
+.ns-portfolio-card__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 360 / 220;
+  overflow: hidden;
+  background: var(--ns-color-bg-surface-subtle);
+  color: var(--ns-color-icon-secondary);
+}
+.ns-portfolio-card__media > img,
+.ns-portfolio-card__media > picture,
+.ns-portfolio-card__media > picture > img {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.ns-portfolio-card__body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: var(--ns-spacing-12);
+  padding: var(--ns-spacing-24);
+}
+
+.ns-portfolio-card__title {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: var(--ns-color-text-brand);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+/* Stretched link: the title's <a> covers the whole card. */
+.ns-portfolio-card__link {
+  color: inherit;
+  text-decoration: none;
+}
+.ns-portfolio-card__link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.ns-portfolio-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ns-spacing-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ns-portfolio-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--ns-spacing-8);
+  margin: 0;
+  margin-block-start: auto; /* pin to the bottom so cards in a row line up */
+  color: var(--ns-color-text-secondary);
+}
+.ns-portfolio-card__separator {
+  color: var(--ns-color-text-tertiary);
+}
+.ns-portfolio-card__client {
+  color: var(--ns-color-text-primary);
+}
+
+@media (forced-colors: active) {
+  .ns-portfolio-card:hover {
+    border-color: Highlight;
+  }
+}

@@ -1,0 +1,24 @@
+# Review owners for @nicasource/ds. Branch protection on main requires a CODEOWNERS approval
+# (docs/branch-protection.md). Later lines win, so the specific paths below override the default.
+
+# Everything
+*                           @Bayardo88
+
+# Tokens: generated from Figma. Changes must come from a Figma export (CONTRIBUTING.md › Designers).
+/tokens/                    @Bayardo88
+/scripts/build-tokens.mjs   @Bayardo88
+/scripts/figma-export.js    @Bayardo88
+/scripts/gen-tokens-ts.mjs  @Bayardo88
+/src/tokens/                @Bayardo88
+
+# Global styles: focus ring, reduced motion, base layer
+/src/styles/                @Bayardo88
+
+# Guardrails: hooks, CI, agent rules
+/.githooks/                 @Bayardo88
+/.github/                   @Bayardo88
+/.claude/                   @Bayardo88
+/scripts/lint-tokens.mjs    @Bayardo88
+/scripts/guard-main.mjs     @Bayardo88
+/AI-GUIDE.md                @Bayardo88
+/CLAUDE.md                  @Bayardo88

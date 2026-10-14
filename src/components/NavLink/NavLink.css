@@ -1,0 +1,58 @@
+/*
+ * NavLink — Figma "Navigation Bar / Link" (page Navigation Bar).
+ * Anatomy: label (Secondary/Overline SM/Demi Bold, uppercase, 4% tracking) over a 2px indicator,
+ * 6px apart (spacing/6), padding 8px top / 4px sides (spacing/8, spacing/4), radius/xs.
+ * States: Hover = brand text + tinted indicator (120ms); Active = brand text + brand indicator.
+ */
+
+.ns-nav-link {
+  --_label: var(--ns-color-text-primary);
+  --_indicator: transparent;
+
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--ns-spacing-6);
+  padding: var(--ns-spacing-8) var(--ns-spacing-4) 0;
+  border-radius: var(--ns-radius-xs);
+  color: var(--_label);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 120ms ease;
+}
+
+.ns-nav-link__label {
+  display: block;
+}
+
+.ns-nav-link__indicator {
+  display: block;
+  height: var(--ns-border-width-medium);
+  border-radius: var(--ns-radius-full);
+  background: var(--_indicator);
+  transition: background-color 120ms ease;
+}
+
+.ns-nav-link:hover {
+  --_label: var(--ns-color-text-brand);
+  --_indicator: var(--ns-color-bg-brand-subtle);
+}
+
+.ns-nav-link--active,
+.ns-nav-link--active:hover {
+  --_label: var(--ns-color-text-brand);
+  --_indicator: var(--ns-color-bg-brand);
+}
+
+.ns-nav-link:focus-visible {
+  outline: var(--ns-border-width-medium) solid var(--ns-color-border-focus);
+  outline-offset: var(--ns-spacing-2);
+}
+
+@media (forced-colors: active) {
+  .ns-nav-link--active .ns-nav-link__indicator {
+    background: LinkText;
+  }
+}

@@ -1,0 +1,46 @@
+/*
+ * Base layer for @nicasource/ds. Loaded after tokens, before components.
+ * Scoped to library classes: it never restyles the consumer's own elements.
+ */
+
+.ns-theme {
+  background: var(--ns-color-bg-canvas);
+  color: var(--ns-color-text-primary);
+}
+
+[class^='ns-'],
+[class*=' ns-'],
+[class^='ns-']::before,
+[class*=' ns-']::before,
+[class^='ns-']::after,
+[class*=' ns-']::after {
+  box-sizing: border-box;
+}
+
+/* One focus ring for every interactive component: offset outline, never a border (README › Accessibility). */
+.ns-focus-ring:focus-visible,
+.ns-focusable:focus-visible {
+  outline: var(--ns-border-width-medium) solid var(--ns-color-border-focus);
+  outline-offset: var(--ns-spacing-2);
+}
+
+.ns-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [class^='ns-'],
+  [class*=' ns-'] {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

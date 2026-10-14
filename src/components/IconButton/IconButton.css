@@ -1,0 +1,110 @@
+/*
+ * IconButton — Figma "Icon Button / Filled · Outlined · Text" (page Icon Button).
+ * A circle bound to control/sm|md|lg with a 16/20/24px icon. Mirrors Button's colors and states.
+ */
+
+.ns-icon-button {
+  --_size: var(--ns-size-control-md);
+  --_fill: transparent;
+  --_ring-width: 0;
+  --_ring-color: transparent;
+  --_icon: var(--ns-color-icon-brand);
+
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  width: var(--_size);
+  height: var(--_size);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--ns-radius-full);
+  background: var(--_fill);
+  box-shadow: inset 0 0 0 var(--_ring-width) var(--_ring-color);
+  color: var(--_icon);
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background-color 120ms ease,
+    box-shadow 120ms ease,
+    color 120ms ease;
+}
+
+.ns-icon-button:focus-visible {
+  outline: var(--ns-border-width-medium) solid var(--ns-color-border-focus);
+  outline-offset: var(--ns-spacing-2);
+}
+
+/* ---------- Sizes ---------- */
+
+.ns-icon-button--sm {
+  --_size: var(--ns-size-control-sm);
+}
+
+.ns-icon-button--md {
+  --_size: var(--ns-size-control-md);
+}
+
+.ns-icon-button--lg {
+  --_size: var(--ns-size-control-lg);
+}
+
+/* ---------- Variants ---------- */
+
+.ns-icon-button--filled {
+  --_fill: var(--ns-color-bg-brand);
+  --_icon: var(--ns-color-icon-inverse);
+}
+
+.ns-icon-button--outlined {
+  --_ring-width: var(--ns-border-width-regular);
+  --_ring-color: var(--ns-color-border-brand);
+}
+
+/* ---------- Interaction states (not props) ---------- */
+
+.ns-icon-button--filled:not(:disabled, [aria-disabled='true']):hover {
+  --_fill: var(--ns-color-bg-brand-hover);
+}
+
+.ns-icon-button--outlined:not(:disabled, [aria-disabled='true']):hover,
+.ns-icon-button--text:not(:disabled, [aria-disabled='true']):hover {
+  --_fill: var(--ns-color-bg-brand-subtle);
+}
+
+.ns-icon-button--filled:not(:disabled, [aria-disabled='true']):active {
+  --_fill: var(--ns-color-bg-brand-pressed);
+}
+
+.ns-icon-button--outlined:not(:disabled, [aria-disabled='true']):active {
+  --_fill: var(--ns-color-bg-brand-subtle);
+  --_ring-width: var(--ns-border-width-medium);
+}
+
+.ns-icon-button--text:not(:disabled, [aria-disabled='true']):active {
+  --_fill: var(--ns-color-bg-brand-subtle);
+}
+
+/* Disabled: greyed icon and container, cursor not-allowed. */
+.ns-icon-button:is(:disabled, [aria-disabled='true']) {
+  --_icon: var(--ns-color-icon-disabled);
+  cursor: not-allowed;
+}
+
+.ns-icon-button--filled:is(:disabled, [aria-disabled='true']) {
+  --_fill: var(--ns-color-bg-disabled);
+}
+
+.ns-icon-button--outlined:is(:disabled, [aria-disabled='true']) {
+  --_ring-color: var(--ns-color-border-disabled);
+}
+
+@media (forced-colors: active) {
+  .ns-icon-button {
+    border: 1px solid ButtonText;
+  }
+}

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 18.7002H5.2002V16.5H7.5V18.7002ZM6 18H6.7002V17.2002H6V18Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.7002 21H3V14.2002H9.7002V21ZM4.5 19.5H8.2002V15.7002H4.5V19.5Z" fill="currentColor"/>
+<path d="M13.5 10.5H17.2002V12H18.7002V10.5H21V12H18.7002V13.5H17.2002V15H18.7002V13.5H21V15H18.7002V16.5H17.2002V18H19.5V16.5H21V21H19.5V19.5H17.2002V21H15V19.5H17.2002V18H15V18.7002H13.5V21H12V18.7002H10.5V15.7002H12V13.5H13.5V15.7002H12V18.7002H13.5V16.5H17.2002V15H15V13.5H17.2002V12H12V13.5H7.5V12H6V13.5H3V12H6V10.5H7.5V12H12V9.7002H13.5V10.5Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 7.5H5.2002V5.2002H7.5V7.5ZM6 6.7002H6.7002V6H6V6.7002Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.7002 9.7002H3V3H9.7002V9.7002ZM4.5 8.2002H8.2002V4.5H4.5V8.2002Z" fill="currentColor"/>
+<path d="M12 9.7002H10.5V8.2002H12V9.7002Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18.7002 7.5H16.5V5.2002H18.7002V7.5ZM17.2002 6.7002H18V6H17.2002V6.7002Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M21 9.7002H14.2002V3H21V9.7002ZM15.7002 8.2002H19.5V4.5H15.7002V8.2002Z" fill="currentColor"/>
+<path d="M13.5 8.2002H12V6H13.5V8.2002Z" fill="currentColor"/>
+<path d="M13.5 4.5H12V6H10.5V3H13.5V4.5Z" fill="currentColor"/>
+</svg>

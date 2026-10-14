@@ -1,0 +1,36 @@
+/*
+ * NS Mark. Brand exception (docs/component-contract.md): fixed brand colors from the primitive and
+ * sub-brand palettes; they do not change with the color mode.
+ */
+.ns-ns-mark {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+  height: auto;
+  min-width: var(--ns-spacing-16);
+}
+
+.ns-ns-mark--red .ns-ns-mark__shape {
+  fill: var(--ns-color-red-500);
+}
+.ns-ns-mark--navy .ns-ns-mark__shape {
+  fill: var(--ns-color-blue-600);
+}
+.ns-ns-mark--yellow .ns-ns-mark__shape {
+  fill: var(--ns-palette-yellow-900);
+}
+.ns-ns-mark--wine .ns-ns-mark__shape {
+  fill: var(--ns-palette-wine-900);
+}
+.ns-ns-mark--salmon .ns-ns-mark__shape {
+  fill: var(--ns-palette-salmon-500);
+}
+.ns-ns-mark--cyan .ns-ns-mark__shape {
+  fill: var(--ns-palette-cyan-500);
+}
+
+@media (forced-colors: active) {
+  .ns-ns-mark .ns-ns-mark__shape {
+    fill: CanvasText;
+  }
+}

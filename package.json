@@ -1,0 +1,86 @@
+{
+  "name": "@nicasource/ds",
+  "version": "0.1.0",
+  "description": "NicaSource Design System V2: design tokens and React components generated from the Design System V2 Figma file.",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./tokens": {
+      "types": "./dist/tokens/index.d.ts",
+      "default": "./dist/tokens/index.js"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./tokens.css": "./tokens/css/tokens.css",
+    "./text-styles.css": "./tokens/css/text-styles.css",
+    "./tokens.json": "./tokens/tokens.json"
+  },
+  "files": [
+    "dist",
+    "tokens/css",
+    "tokens/tokens.json",
+    "AI-GUIDE.md",
+    "docs"
+  ],
+  "scripts": {
+    "prepare": "node scripts/install-hooks.mjs && npm run build",
+    "build": "npm run gen:tokens && tsc -p tsconfig.build.json && node scripts/build-css.mjs",
+    "build:tokens": "node scripts/build-tokens.mjs && npm run gen:tokens",
+    "gen:tokens": "node scripts/gen-tokens-ts.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src .storybook docs/storybook",
+    "lint:tokens": "node scripts/lint-tokens.mjs",
+    "format": "prettier --write src",
+    "format:check": "prettier --check src",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "verify": "npm run gen:tokens && npm run typecheck && npm run lint:tokens && npm run lint && npm test && npm run guard:test",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build -o storybook-static",
+    "guard:test": "node scripts/guard-main.mjs --test",
+    "gen:icons": "node scripts/gen-icons.mjs"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@storybook/addon-a11y": "^10.6.2",
+    "@storybook/addon-docs": "^10.6.2",
+    "@storybook/react-vite": "^10.6.2",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
+    "@types/jest-axe": "^3.5.9",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "eslint": "^9.39.5",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "jest-axe": "^11.0.0",
+    "jsdom": "^30.1.2",
+    "prettier": "^3.9.9",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remark-gfm": "^4.0.1",
+    "storybook": "^10.6.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.71.2",
+    "vite": "^8.3.4",
+    "vitest": "^5.0.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

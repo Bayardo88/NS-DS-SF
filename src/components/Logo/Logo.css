@@ -1,0 +1,38 @@
+/*
+ * Logo. Brand exception (docs/component-contract.md): colors are fixed brand primitives and do not
+ * change with the color mode. The variant is chosen by background.
+ */
+.ns-logo {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+  height: auto;
+  min-width: var(--ns-spacing-96);
+}
+
+.ns-logo--main .ns-logo__wordmark {
+  fill: var(--ns-color-blue-600);
+}
+.ns-logo--main .ns-logo__mark {
+  fill: var(--ns-color-red-500);
+}
+
+.ns-logo--on-dark .ns-logo__wordmark {
+  fill: var(--ns-color-cream-900);
+}
+.ns-logo--on-dark .ns-logo__mark {
+  fill: var(--ns-color-red-500);
+}
+
+.ns-logo--mono-light .ns-logo__wordmark,
+.ns-logo--mono-light .ns-logo__mark {
+  fill: var(--ns-color-cream-900);
+}
+
+/* Windows High Contrast / forced colors: keep the logo visible in the system text color. */
+@media (forced-colors: active) {
+  .ns-logo .ns-logo__wordmark,
+  .ns-logo .ns-logo__mark {
+    fill: CanvasText;
+  }
+}

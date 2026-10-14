@@ -1,0 +1,140 @@
+/*
+ * SiteFooter — Figma "Footer" (page Footer), Breakpoint Desktop | Mobile.
+ * Desktop (≥768px): row, space-between, padding spacing/48 × spacing/80.
+ * Mobile: stacked and centered, gap spacing/24, padding spacing/40 × spacing/20.
+ * Surface: bg/inverse with text/inverse in Light; bg/canvas with text/secondary in Dark and
+ * Web 2025 (where bg/inverse turns light). Social: Icon Button / Text M, 8px apart (spacing/8).
+ * Legal: copyright + underlined links, Secondary/Body SM, 8px apart.
+ */
+
+.ns-site-footer {
+  --_text: var(--ns-color-text-inverse);
+  --_icon: var(--ns-color-icon-inverse);
+  --_focus: var(--ns-color-border-focus);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--ns-spacing-24);
+  padding: var(--ns-spacing-40) var(--ns-spacing-20);
+  color: var(--_text);
+  text-align: center;
+}
+
+.ns-site-footer--inverse {
+  /* text/inverse also serves as the focus ring: border/focus is too close to the navy surface. */
+  --_focus: var(--ns-color-text-inverse);
+  background: var(--ns-color-bg-inverse);
+}
+
+.ns-site-footer--canvas {
+  --_text: var(--ns-color-text-secondary);
+  --_icon: var(--ns-color-icon-secondary);
+  background: var(--ns-color-bg-canvas);
+}
+
+.ns-site-footer.ns-site-footer :is(a, button):focus-visible {
+  outline: var(--ns-border-width-medium) solid var(--_focus);
+  outline-offset: var(--ns-spacing-2);
+}
+
+/* ---------- Logo ---------- */
+
+.ns-site-footer__logo {
+  display: inline-flex;
+  flex: none;
+  border-radius: var(--ns-radius-xs);
+  color: inherit;
+  text-decoration: none;
+}
+
+.ns-site-footer__logo-mark {
+  display: block;
+  width: var(--ns-spacing-96);
+  height: auto;
+}
+
+/* ---------- Social ---------- */
+
+.ns-site-footer__social {
+  display: flex;
+  gap: var(--ns-spacing-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ns-site-footer .ns-site-footer__social .ns-site-footer__social-link {
+  --_icon: inherit;
+  color: var(--_icon);
+}
+
+.ns-site-footer .ns-site-footer__social .ns-site-footer__social-link:hover,
+.ns-site-footer .ns-site-footer__social .ns-site-footer__social-link:active {
+  --_fill: var(--ns-color-bg-glass);
+}
+
+/* ---------- Legal ---------- */
+
+.ns-site-footer__legal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--ns-spacing-8);
+}
+
+.ns-site-footer__copyright {
+  margin: 0;
+}
+
+.ns-site-footer__legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--ns-spacing-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ns-site-footer__legal-item {
+  display: inline-flex;
+  gap: var(--ns-spacing-8);
+}
+
+.ns-site-footer__legal-item + .ns-site-footer__legal-item::before {
+  content: '|';
+  content: '|' / '';
+}
+
+.ns-site-footer__legal-link {
+  border-radius: var(--ns-radius-xs);
+  color: var(--_text);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.ns-site-footer__legal-link:hover {
+  text-decoration: none;
+}
+
+/* ---------- Desktop (≥768px): one row ---------- */
+
+@media (min-width: 768px) {
+  .ns-site-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--ns-spacing-32);
+    padding: var(--ns-spacing-48) var(--ns-spacing-80);
+    text-align: start;
+  }
+
+  .ns-site-footer__legal {
+    align-items: flex-end;
+    text-align: end;
+  }
+
+  .ns-site-footer__legal-links {
+    justify-content: flex-end;
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "storybook", "runtimeExecutable": "npm", "runtimeArgs": ["run", "storybook", "--", "--no-open"], "port": 6006 },
+    { "name": "storybook-static", "runtimeExecutable": "python3", "runtimeArgs": ["-m", "http.server", "6007", "-d", "storybook-static"], "port": 6007 }
+  ]
+}

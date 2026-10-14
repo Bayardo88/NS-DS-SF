@@ -1,0 +1,37 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { TextStyleList, TextStyleCount } from '../blocks/TextStyles';
+
+<Meta title="Foundations/Typography" />
+
+# Typography
+
+Every Figma text style is a class: `.ns-text-<family>-<size>-<weight>`. <TextStyleCount />.
+The typed list is exported as `textStyles`.
+
+```tsx
+<h1 className="ns-text-web-h1-black">We build software</h1>
+<p className="ns-text-primary-body-md-regular">Body copy</p>
+```
+
+Use a whole style. Inside component CSS, use the style's `--ns-font-family-*`, `--ns-font-size-*`,
+`--ns-font-weight-*`, `--ns-line-height-*` and `--ns-letter-spacing-*` together; never mix values
+from two styles (AI-GUIDE R11). The `web-*` and `web-2023-*` sizes shrink below 768px wide.
+
+Fonts: Fira Code (Primary), Greycliff CF (Secondary, shown in Plus Jakarta Sans until it's installed),
+Public Sans (Web), Open Sans (Web 2023 body).
+
+## Primary (Fira Code)
+
+<TextStyleList family="primary" />
+
+## Secondary (Greycliff CF)
+
+<TextStyleList family="secondary" />
+
+## Web (Web 2025 site)
+
+<TextStyleList family="web" />
+
+## Web 2023
+
+<TextStyleList family="web-2023" />

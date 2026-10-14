@@ -1,0 +1,46 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { ColorSwatches } from '../blocks/ColorSwatches';
+
+<Meta title="Foundations/Colors" />
+
+# Colors
+
+The semantic `Color` collection: 67 tokens in four roles, each with a value for **Light**, **Dark** and
+**Web 2025**. Components use these and nothing else (AI-GUIDE R1). Each row shows the token on its
+real canvas in all three themes; the label under a swatch is the primitive it aliases in that theme.
+
+Every filled background has a matching on-color: `bg-brand` pairs with `text-on-brand`,
+`bg-warning` with `text-on-warning`. See AI-GUIDE §4 for which token to pick.
+
+```css
+.card {
+  background: var(--ns-color-bg-surface);
+  color: var(--ns-color-text-primary);
+  border: var(--ns-border-width-thin) solid var(--ns-color-border-default);
+}
+```
+
+## Background `--ns-color-bg-*`
+
+<ColorSwatches group="bg" />
+
+## Text `--ns-color-text-*`
+
+<ColorSwatches group="text" />
+
+## Border `--ns-color-border-*`
+
+<ColorSwatches group="border" />
+
+## Icon `--ns-color-icon-*`
+
+Icons use `currentColor`, so set `color` to one of these on the icon or its parent.
+
+<ColorSwatches group="icon" />
+
+## Not for components
+
+Primitives (`--ns-color-blue-600`, `--ns-color-night-900`, `--ns-color-alpha-*`) are the raw palette
+the semantic tokens point to. They don't change with the theme. Brand palettes (`--ns-palette-*`)
+are sub-brand colors, used only by `Logo` and `NSMark` and on sub-brand pages. `npm run lint:tokens`
+fails if either appears in a component.

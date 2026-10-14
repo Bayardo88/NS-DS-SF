@@ -1,0 +1,39 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { SpacingScale, RadiusScale, BorderWidthScale, SizeScale } from '../blocks/Scales';
+
+<Meta title="Foundations/Spacing" />
+
+# Spacing, size and shape
+
+These tokens are the same in every theme. Spacing is for padding, gap and margin; size is for width
+and height. Don't cross them (AI-GUIDE §4).
+
+## Spacing `--ns-spacing-*`
+
+The name is the px value.
+
+<SpacingScale />
+
+## Radius `--ns-radius-*`
+
+Use `full` for pills and circles.
+
+<RadiusScale />
+
+## Border width `--ns-border-width-*`
+
+`thin` is the hairline, `regular` is the 1.5px component stroke, `medium` is the focus ring.
+
+<BorderWidthScale />
+
+## Icon size `--ns-size-icon-*`
+
+`<Icon size="md">` uses these.
+
+<SizeScale kind="icon" />
+
+## Control height `--ns-size-control-*`
+
+Heights of buttons, icon buttons and text fields at `sm`, `md` and `lg`.
+
+<SizeScale kind="control" />

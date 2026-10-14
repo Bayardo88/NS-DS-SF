@@ -5,6 +5,44 @@ Figma file **Design System V2** (`JdINnstfRHeLRPZjeEla4U`). Every token here mir
 Figma variable or style, and every CSS custom property uses the variable's WEB code syntax
 from Figma exactly, so a name you see in Figma's inspect panel is the name you write in code.
 
+## Using the React package
+
+`@nicasource/ds` ships the tokens below plus React + TypeScript components for every Figma component
+set. Install it from GitHub, pinned to a release tag (never a branch):
+
+```bash
+npm install github:Bayardo88/NS-DS-SF#v0.1.0
+```
+
+npm builds `dist/` on install through the package's `prepare` script. npm 11 holds install scripts
+for approval, so if `dist/` is missing after install, run `npm approve-scripts @nicasource/ds` and
+reinstall.
+
+Import the stylesheet once, then wrap your app (or any subtree) in a theme:
+
+```tsx
+import '@nicasource/ds/styles.css'; // tokens + text styles + base layer + all components
+import { ThemeProvider, Button } from '@nicasource/ds';
+
+export function App() {
+  return (
+    <ThemeProvider theme="light"> {/* light | dark | web-2025 */}
+      <Button variant="filled">Contact us</Button>
+    </ThemeProvider>
+  );
+}
+```
+
+`ThemeProvider` sets `data-theme` on a wrapper `div`. To theme the whole page instead, set
+`data-theme` on `<html>` (see [Themes](#themes)).
+
+- **Storybook:** <https://bayardo88.github.io/NS-DS-SF/> (every component in all three themes, plus
+  Foundations pages for color, type, spacing and effects).
+- **Rules for building with it** (developers and AI agents): [AI-GUIDE.md](AI-GUIDE.md).
+- **Contributing** (developers, designers, AI agents): [CONTRIBUTING.md](CONTRIBUTING.md).
+  Nobody commits to `main`; every change is a reviewed PR.
+- **Changes:** [CHANGELOG.md](CHANGELOG.md).
+
 ## Components
 
 The Figma file also holds the component library: one page per component (Icons, Brand, Button,
@@ -12,7 +50,9 @@ Icon Button, Text Field, Tag, Card, Stepper, Step Number, Navigation Bar, Footer
 total, every one bound to these tokens and working in all three color modes. Start with the
 **📖 Read me first** page. Each component page has a documentation panel with anatomy, the Figma
 properties and the code props they map to, states and behavior, accessibility, a React example and
-a JSON spec for AI agents. The components aren't implemented in code in this repo yet.
+a JSON spec for AI agents. Those panels are the spec for the React components in
+`src/components/` (one folder per Figma component, exported from the package root); the props are
+summarized in [AI-GUIDE.md › Component API](AI-GUIDE.md#5-component-api).
 
 ## Accessibility
 

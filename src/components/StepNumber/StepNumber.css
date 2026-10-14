@@ -1,0 +1,73 @@
+/* StepNumber — Figma "Step Number" (page Step Number, set 43:29). Static. Semantic tokens only. */
+
+.ns-step-number {
+  --ns-step-number-color: var(--ns-color-text-brand);
+
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--ns-spacing-4);
+}
+
+/* Number — Primary (Fira Code) Display, Bold */
+.ns-step-number__value {
+  color: var(--ns-step-number-color);
+  font-family: var(--ns-font-family-primary);
+  font-weight: var(--ns-font-weight-bold);
+  letter-spacing: var(--ns-letter-spacing-default);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Caption — Secondary, Demi Bold, text/primary */
+.ns-step-number__caption {
+  color: var(--ns-color-text-primary);
+  font-family: var(--ns-font-family-secondary);
+  font-weight: var(--ns-font-weight-semibold);
+  letter-spacing: var(--ns-letter-spacing-default);
+}
+
+/* Size S — Primary/Display SM/Bold (28px) · Secondary/Label SM/Demi Bold · gap spacing/4 */
+.ns-step-number--sm .ns-step-number__value {
+  font-size: var(--ns-font-size-display-sm);
+  line-height: var(--ns-line-height-display-sm);
+}
+
+.ns-step-number--sm .ns-step-number__caption {
+  font-size: var(--ns-font-size-label-sm);
+  line-height: var(--ns-line-height-label-sm);
+}
+
+/* Size M — Primary/Display LG/Bold (48px) · Secondary/Body LG/Demi Bold · gap spacing/4 */
+.ns-step-number--md .ns-step-number__value {
+  font-size: var(--ns-font-size-display-lg);
+  line-height: var(--ns-line-height-display-lg);
+}
+
+/* Size L — Primary/Display 2XL/Bold (64px) · Secondary/Body LG/Demi Bold · gap spacing/8 */
+.ns-step-number--lg {
+  gap: var(--ns-spacing-8);
+}
+
+.ns-step-number--lg .ns-step-number__value {
+  font-size: var(--ns-font-size-display-2xl);
+  line-height: var(--ns-line-height-display-2xl);
+}
+
+.ns-step-number--md .ns-step-number__caption,
+.ns-step-number--lg .ns-step-number__caption {
+  font-size: var(--ns-font-size-body-lg);
+  line-height: var(--ns-line-height-body-lg);
+}
+
+/* Tones */
+.ns-step-number--brand {
+  --ns-step-number-color: var(--ns-color-text-brand);
+}
+
+.ns-step-number--highlight {
+  --ns-step-number-color: var(--ns-color-text-highlight);
+}
+
+.ns-step-number--accent {
+  --ns-step-number-color: var(--ns-color-text-accent);
+}

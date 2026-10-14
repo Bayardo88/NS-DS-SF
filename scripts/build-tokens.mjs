@@ -55,6 +55,9 @@ const GROUP = {
 //   changed   only emit variables whose value differs from the default mode
 const MODE_CSS = {
   Color: {
+    // The default mode also gets an explicit selector so a light subtree inside a dark page
+    // (or under a dark OS preference) re-points the semantic colors back to Light.
+    Light: { selector: '[data-theme="light"]' },
     Dark: {
       selector: '[data-theme="dark"]',
       media: ['(prefers-color-scheme: dark)', ':root:not([data-theme])', 'system preference, when no data-theme is set'],
@@ -441,6 +444,13 @@ for (const [collection, title] of SECTIONS) {
     return [...note, line];
   });
   rootLines.push(...section(title + label, lines));
+
+  const defaultConfig = MODE_CSS[collection]?.[defaultMode];
+  if (defaultConfig?.selector) {
+    const explicit = group.map((t) => decl(t.css, cssValue(t, defaultValue(t)), ''));
+    if (collection === 'Color') explicit.unshift(`color-scheme: ${colorScheme(defaultMode)};`);
+    modeBlocks.push({ comment: `${title} — ${defaultMode.toLowerCase()} (explicit opt-in)`, selector: defaultConfig.selector, lines: explicit });
+  }
 
   for (const mode of otherModes) {
     const config = MODE_CSS[collection]?.[mode];

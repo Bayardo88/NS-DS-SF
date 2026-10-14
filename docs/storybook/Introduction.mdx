@@ -1,0 +1,34 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Introduction" />
+
+# NicaSource Design System V2
+
+React components and design tokens built from the **Design System V2** Figma file
+(`JdINnstfRHeLRPZjeEla4U`). Every token here mirrors a Figma variable, and every component mirrors a
+Figma component set.
+
+## Install
+
+```bash
+npm install github:Bayardo88/NS-DS-SF#v0.1.0
+```
+
+```tsx
+import '@nicasource/ds/styles.css';
+import { ThemeProvider, Button } from '@nicasource/ds';
+
+export function App() {
+  return (
+    <ThemeProvider theme="light">
+      <Button variant="filled">Contact us</Button>
+    </ThemeProvider>
+  );
+}
+```
+
+## Themes
+
+Use the **Theme** button in the toolbar to switch every story between the three Figma color modes:
+**Light**, **Dark** and **Web 2025**. In an app, wrap a subtree in `ThemeProvider`, or set
+`data-theme` on `<html>`.

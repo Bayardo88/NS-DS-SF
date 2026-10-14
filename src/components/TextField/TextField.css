@@ -1,0 +1,167 @@
+/* TextField — Figma "Text Field" (page Text Field, set 39:56). Semantic tokens only. */
+
+.ns-text-field {
+  --ns-text-field-border-color: var(--ns-color-border-input);
+  --ns-text-field-border-width: var(--ns-border-width-thin);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-8);
+  min-width: 0;
+}
+
+/* 1 · Label — Secondary/Label SM/Demi Bold */
+.ns-text-field__label {
+  color: var(--ns-color-text-primary);
+  font-family: var(--ns-font-family-secondary);
+  font-size: var(--ns-font-size-label-sm);
+  font-weight: var(--ns-font-weight-semibold);
+  line-height: var(--ns-line-height-label-sm);
+  letter-spacing: var(--ns-letter-spacing-default);
+}
+
+.ns-text-field__required {
+  color: var(--ns-color-text-secondary);
+  font-weight: var(--ns-font-weight-regular);
+}
+
+/* 2 · Input box — control/lg, radius/sm, 16px side padding, bg/surface, border/input */
+.ns-text-field__control {
+  display: flex;
+  align-items: center;
+  gap: var(--ns-spacing-8);
+  height: var(--ns-size-control-lg);
+  /* Keep the content still when the border thickens (1px → 1.5px → 2px). */
+  padding-inline: calc(var(--ns-spacing-16) - (var(--ns-text-field-border-width) - var(--ns-border-width-thin)));
+  background: var(--ns-color-bg-surface);
+  border: var(--ns-text-field-border-width) solid var(--ns-text-field-border-color);
+  border-radius: var(--ns-radius-sm);
+  transition:
+    border-color 120ms ease,
+    border-width 120ms ease;
+}
+
+/* 3 · Placeholder / value — Secondary/Body MD/Regular */
+.ns-text-field__input {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ns-color-text-primary);
+  font-family: var(--ns-font-family-secondary);
+  font-size: var(--ns-font-size-body-md);
+  font-weight: var(--ns-font-weight-regular);
+  line-height: var(--ns-line-height-body-md);
+  letter-spacing: var(--ns-letter-spacing-default);
+  text-overflow: ellipsis;
+  /* The focus indicator is the 2px border/focus outline on the input box (see :focus-within below). */
+  outline: none;
+}
+
+.ns-text-field__input::placeholder {
+  color: var(--ns-color-text-tertiary);
+  opacity: 1;
+}
+
+/* 4 · Trailing and status icons */
+.ns-text-field__icon {
+  flex: none;
+  color: var(--ns-color-icon-secondary);
+}
+
+.ns-text-field__status-icon {
+  flex: none;
+}
+
+/* 5 · Helper / validation message — Secondary/Body SM/Regular */
+.ns-text-field__message {
+  margin: 0;
+  color: var(--ns-color-text-secondary);
+  font-family: var(--ns-font-family-secondary);
+  font-size: var(--ns-font-size-body-sm);
+  font-weight: var(--ns-font-weight-regular);
+  line-height: var(--ns-line-height-body-sm);
+  letter-spacing: var(--ns-letter-spacing-default);
+}
+
+/* Hover — border/brand */
+.ns-text-field:not(.ns-text-field--disabled) .ns-text-field__control:hover {
+  --ns-text-field-border-color: var(--ns-color-border-brand);
+}
+
+/* Success — border/success (1.5px) · icon/success · text/success */
+.ns-text-field--success {
+  --ns-text-field-border-color: var(--ns-color-border-success);
+  --ns-text-field-border-width: var(--ns-border-width-regular);
+}
+
+.ns-text-field--success .ns-text-field__control:hover {
+  --ns-text-field-border-color: var(--ns-color-border-success);
+}
+
+.ns-text-field--success .ns-text-field__status-icon {
+  color: var(--ns-color-icon-success);
+}
+
+.ns-text-field--success .ns-text-field__message {
+  color: var(--ns-color-text-success);
+}
+
+/* Error — border/error (1.5px) · icon/error · text/error */
+.ns-text-field--error {
+  --ns-text-field-border-color: var(--ns-color-border-error);
+  --ns-text-field-border-width: var(--ns-border-width-regular);
+}
+
+.ns-text-field--error .ns-text-field__control:hover {
+  --ns-text-field-border-color: var(--ns-color-border-error);
+}
+
+.ns-text-field--error .ns-text-field__status-icon {
+  color: var(--ns-color-icon-error);
+}
+
+.ns-text-field--error .ns-text-field__message {
+  color: var(--ns-color-text-error);
+}
+
+/* Focused — 2px border/focus (keyboard or pointer). Wins over hover, success and error. */
+.ns-text-field .ns-text-field__control:focus-within,
+.ns-text-field .ns-text-field__control:focus-within:hover {
+  --ns-text-field-border-color: var(--ns-color-border-focus);
+  --ns-text-field-border-width: var(--ns-border-width-medium);
+}
+
+/* Disabled — bg/disabled · border/disabled · text/disabled */
+.ns-text-field--disabled .ns-text-field__label,
+.ns-text-field--disabled .ns-text-field__required,
+.ns-text-field--disabled .ns-text-field__message,
+.ns-text-field--disabled .ns-text-field__input,
+.ns-text-field--disabled .ns-text-field__input::placeholder {
+  color: var(--ns-color-text-disabled);
+}
+
+.ns-text-field--disabled .ns-text-field__control {
+  --ns-text-field-border-color: var(--ns-color-border-disabled);
+  --ns-text-field-border-width: var(--ns-border-width-thin);
+  background: var(--ns-color-bg-disabled);
+  cursor: not-allowed;
+}
+
+.ns-text-field--disabled .ns-text-field__input {
+  cursor: not-allowed;
+}
+
+.ns-text-field--disabled .ns-text-field__icon {
+  color: var(--ns-color-icon-disabled);
+}
+
+/* Windows High Contrast: keep a visible focus indicator. */
+@media (forced-colors: active) {
+  .ns-text-field .ns-text-field__control:focus-within {
+    outline: var(--ns-border-width-thin) solid Highlight;
+  }
+}

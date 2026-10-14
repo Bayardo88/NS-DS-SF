@@ -1,0 +1,39 @@
+#!/bin/sh
+# NS-DS pre-commit: refuse commits on main/master, then run the fast token linter.
+# Installed by `npm install` (scripts/install-hooks.mjs sets core.hooksPath=.githooks).
+# Release maintainers only: NS_DS_ALLOW_MAIN=1 git commit ...   (see CONTRIBUTING.md › Releases)
+
+branch=$(git symbolic-ref --short -q HEAD 2>/dev/null)
+
+case "$branch" in
+  main|master)
+    if [ "$NS_DS_ALLOW_MAIN" != "1" ]; then
+      cat >&2 <<MSG
+
+  ✋ Commit refused: you're on '$branch'.
+
+  Nobody commits to $branch directly in this repo. Move your work to a branch:
+
+      git switch -c feature/<short-name>     # or fix/, chore/, tokens/, docs/
+      git commit ...
+      git push -u origin HEAD                # then open a pull request
+
+  Your staged changes come with you when you switch. See CONTRIBUTING.md.
+
+MSG
+      exit 1
+    fi
+    echo "pre-commit: NS_DS_ALLOW_MAIN=1 set, allowing a commit on $branch (release maintainers only)." >&2
+    ;;
+esac
+
+# Token contract (raw hex/px, primitives, unresolved var()). Fast, no build needed.
+if [ -f scripts/lint-tokens.mjs ]; then
+  node scripts/lint-tokens.mjs || {
+    echo "" >&2
+    echo "  Commit refused: token-contract violations above. Fix them, or see AI-GUIDE.md §2." >&2
+    exit 1
+  }
+fi
+
+exit 0

@@ -1,0 +1,50 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { ShadowTiles, GlassTiles, GradientSwatches, BlurList } from '../blocks/Effects';
+
+<Meta title="Foundations/Effects" />
+
+# Effects
+
+Shadows, glass, glow and gradients come from Figma effect and paint styles. Use the token for the
+whole effect; never write your own `box-shadow` or `blur()`.
+
+## Elevation `--ns-elevation-*`
+
+A ladder from `xs` to `xl`. Higher means closer to the user (menus, dialogs).
+
+<ShadowTiles group="elevation" />
+
+## Inset and special shadows
+
+`--ns-inset-hairline` is a 1px inner edge. `--ns-shadow-hard`, `-wine` and `-float` belong to
+sub-brand and Web 2023 pages.
+
+<ShadowTiles group="inset" />
+
+<ShadowTiles group="shadow" />
+
+## Glass `--ns-glass-*`
+
+`backdrop-filter` blur. Always pair with `--ns-color-bg-glass`. `Glass/XL` adds
+`--ns-glass-xl-shadow`.
+
+```css
+.glass-panel {
+  background: var(--ns-color-bg-glass);
+  backdrop-filter: var(--ns-glass-lg);
+  box-shadow: var(--ns-inset-hairline);
+}
+```
+
+<GlassTiles />
+
+## Blur and glow
+
+<BlurList />
+
+## Gradients `--ns-gradient-*`
+
+Corporate (`blue-*`, `red-*`) and Web (`night-fade`, `web-2023-sunset`) gradients can be used in
+shared components. The rest are sub-brand gradients for sub-brand pages.
+
+<GradientSwatches />

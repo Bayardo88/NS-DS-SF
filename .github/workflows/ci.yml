@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  # The job id "verify" is the required status check in branch protection (docs/branch-protection.md).
+  verify:
+    name: verify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # gen:tokens + typecheck + lint:tokens + ESLint (hooks, a11y) + unit tests
+      - run: npm run verify
+      - name: Generated token files are committed and current
+        run: git diff --exit-code -- src/tokens/generated.ts
+      - run: npm run build
+      - run: npm run build-storybook

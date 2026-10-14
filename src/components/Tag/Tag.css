@@ -1,0 +1,67 @@
+/* Tag — Figma "Tag" (page Tag, set 40:34). Static: no hover, focus or pressed states. Semantic tokens only. */
+
+.ns-tag {
+  --ns-tag-color: var(--ns-color-text-brand);
+  --ns-tag-bg: var(--ns-color-bg-brand-subtle);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  border: var(--ns-border-width-thin) solid var(--ns-tag-color);
+  border-radius: var(--ns-radius-full);
+  color: var(--ns-tag-color);
+  font-family: var(--ns-font-family-secondary);
+  font-weight: var(--ns-font-weight-semibold);
+  letter-spacing: var(--ns-letter-spacing-default);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+/* Size S — 24px high, 8px side padding, Secondary/Label XS/Demi Bold */
+.ns-tag--sm {
+  min-height: var(--ns-size-icon-lg);
+  padding-inline: var(--ns-spacing-8);
+  font-size: var(--ns-font-size-label-xs);
+  line-height: var(--ns-line-height-label-xs);
+}
+
+/* Size M — 28px high (24 + 4), 12px side padding, Secondary/Label SM/Demi Bold */
+.ns-tag--md {
+  min-height: calc(var(--ns-size-icon-lg) + var(--ns-spacing-4));
+  padding-inline: var(--ns-spacing-12);
+  font-size: var(--ns-font-size-label-sm);
+  line-height: var(--ns-line-height-label-sm);
+}
+
+/* Colors — label (and outline) color + subtle fill */
+.ns-tag--brand {
+  --ns-tag-color: var(--ns-color-text-brand);
+  --ns-tag-bg: var(--ns-color-bg-brand-subtle);
+}
+
+.ns-tag--highlight {
+  --ns-tag-color: var(--ns-color-text-highlight);
+  --ns-tag-bg: var(--ns-color-bg-highlight-subtle);
+}
+
+.ns-tag--accent {
+  --ns-tag-color: var(--ns-color-text-accent);
+  --ns-tag-bg: var(--ns-color-bg-accent-subtle);
+}
+
+.ns-tag--neutral {
+  --ns-tag-color: var(--ns-color-text-secondary);
+  --ns-tag-bg: var(--ns-color-bg-surface-subtle);
+}
+
+/* Styles */
+.ns-tag--outlined {
+  background: transparent;
+}
+
+.ns-tag--filled {
+  background: var(--ns-tag-bg);
+  /* Transparent border keeps S/M heights equal to Outlined and stays visible in forced-colors mode. */
+  border-color: transparent;
+}
