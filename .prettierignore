@@ -1,0 +1,4 @@
+src/tokens/generated.ts
+src/icons/generated.ts
+dist/
+storybook-static/

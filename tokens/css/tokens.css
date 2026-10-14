@@ -615,6 +615,78 @@
   --ns-gradient-talks-salmon: linear-gradient(90deg, var(--ns-palette-salmon-500) 0%, var(--ns-palette-salmon-900) 100%);
 }
 
+/* Semantic color — light (explicit opt-in) */
+[data-theme="light"] {
+  color-scheme: light;
+  --ns-color-bg-canvas: var(--ns-color-cream-300);
+  --ns-color-bg-surface: var(--ns-color-base-white);
+  --ns-color-bg-surface-subtle: var(--ns-color-gray-50);
+  --ns-color-bg-surface-warm: var(--ns-color-cream-900);
+  --ns-color-bg-inverse: var(--ns-color-blue-600);
+  --ns-color-bg-brand: var(--ns-color-blue-600);
+  --ns-color-bg-brand-hover: var(--ns-color-blue-700);
+  --ns-color-bg-brand-pressed: var(--ns-color-blue-800);
+  --ns-color-bg-brand-subtle: var(--ns-color-blue-50);
+  --ns-color-bg-accent: var(--ns-color-golden-400);
+  --ns-color-bg-accent-hover: var(--ns-color-golden-500);
+  --ns-color-bg-accent-subtle: var(--ns-color-golden-50);
+  --ns-color-bg-highlight: var(--ns-color-red-700);
+  --ns-color-bg-highlight-hover: var(--ns-color-red-800);
+  --ns-color-bg-highlight-subtle: var(--ns-color-red-50);
+  --ns-color-bg-disabled: var(--ns-color-gray-200);
+  --ns-color-bg-info: var(--ns-color-blue-500);
+  --ns-color-bg-info-subtle: var(--ns-color-blue-50);
+  --ns-color-bg-success: var(--ns-color-green-900);
+  --ns-color-bg-success-subtle: var(--ns-color-green-50);
+  --ns-color-bg-warning: var(--ns-color-orange-500);
+  --ns-color-bg-warning-subtle: var(--ns-color-orange-50);
+  --ns-color-bg-error: var(--ns-color-red-700);
+  --ns-color-bg-error-subtle: var(--ns-color-red-50);
+  --ns-color-bg-overlay: var(--ns-color-alpha-black-50);
+  --ns-color-text-primary: var(--ns-color-gray-900);
+  --ns-color-text-secondary: var(--ns-color-gray-700);
+  --ns-color-text-tertiary: var(--ns-color-gray-600);
+  --ns-color-text-disabled: var(--ns-color-gray-400);
+  --ns-color-text-inverse: var(--ns-color-base-white);
+  --ns-color-text-on-brand: var(--ns-color-base-white);
+  --ns-color-text-on-accent: var(--ns-color-blue-900);
+  --ns-color-text-on-highlight: var(--ns-color-base-white);
+  --ns-color-text-on-status: var(--ns-color-base-white);
+  --ns-color-text-on-warning: var(--ns-color-gray-900);
+  --ns-color-text-brand: var(--ns-color-blue-600);
+  --ns-color-text-accent: var(--ns-color-golden-800);
+  --ns-color-text-highlight: var(--ns-color-red-700);
+  --ns-color-text-link: var(--ns-color-blue-500);
+  --ns-color-text-link-hover: var(--ns-color-blue-700);
+  --ns-color-text-info: var(--ns-color-blue-600);
+  --ns-color-text-success: var(--ns-color-green-900);
+  --ns-color-text-warning: var(--ns-color-orange-800);
+  --ns-color-text-error: var(--ns-color-red-700);
+  --ns-color-border-default: var(--ns-color-gray-200);
+  --ns-color-border-subtle: var(--ns-color-gray-100);
+  --ns-color-border-strong: var(--ns-color-gray-500);
+  --ns-color-border-brand: var(--ns-color-blue-600);
+  --ns-color-border-accent: var(--ns-color-golden-500);
+  --ns-color-border-focus: var(--ns-color-blue-400);
+  --ns-color-border-disabled: var(--ns-color-gray-300);
+  --ns-color-border-info: var(--ns-color-blue-500);
+  --ns-color-border-success: var(--ns-color-green-800);
+  --ns-color-border-warning: var(--ns-color-orange-700);
+  --ns-color-border-error: var(--ns-color-red-700);
+  --ns-color-icon-primary: var(--ns-color-gray-900);
+  --ns-color-icon-secondary: var(--ns-color-gray-700);
+  --ns-color-icon-disabled: var(--ns-color-gray-400);
+  --ns-color-icon-inverse: var(--ns-color-base-white);
+  --ns-color-icon-brand: var(--ns-color-blue-600);
+  --ns-color-icon-accent: var(--ns-color-golden-500);
+  --ns-color-icon-highlight: var(--ns-color-red-700);
+  --ns-color-icon-success: var(--ns-color-green-900);
+  --ns-color-icon-warning: var(--ns-color-orange-700);
+  --ns-color-icon-error: var(--ns-color-red-700);
+  --ns-color-bg-glass: var(--ns-color-alpha-black-5);
+  --ns-color-border-input: var(--ns-color-gray-500);
+}
+
 /* Semantic color — dark (explicit opt-in) */
 [data-theme="dark"] {
   color-scheme: dark;

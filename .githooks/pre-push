@@ -1,0 +1,35 @@
+#!/bin/sh
+# NS-DS pre-push: refuse any push that updates main/master on the remote.
+# git passes one line per ref on stdin: <local ref> <local sha> <remote ref> <remote sha>
+# Release maintainers only: NS_DS_ALLOW_MAIN=1 git push ...   (see CONTRIBUTING.md › Releases)
+
+remote="$1"
+status=0
+
+while read -r local_ref local_sha remote_ref remote_sha; do
+  case "$remote_ref" in
+    refs/heads/main|refs/heads/master)
+      if [ "$NS_DS_ALLOW_MAIN" = "1" ]; then
+        echo "pre-push: NS_DS_ALLOW_MAIN=1 set, allowing push to $remote_ref (release maintainers only)." >&2
+        continue
+      fi
+      target=${remote_ref#refs/heads/}
+      cat >&2 <<MSG
+
+  ✋ Push refused: '$local_ref' would update '$target' on '$remote'.
+
+  $target only changes through reviewed pull requests. Push a branch instead:
+
+      git switch -c feature/<short-name>     # if you're on $target, your commits come with you
+      git push -u origin HEAD
+      gh pr create --fill                    # or open the PR on GitHub
+
+  See CONTRIBUTING.md › Pull requests.
+
+MSG
+      status=1
+      ;;
+  esac
+done
+
+exit $status

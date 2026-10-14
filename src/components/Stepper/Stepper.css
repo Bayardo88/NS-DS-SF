@@ -1,0 +1,147 @@
+/* Stepper — Figma `Stepper` (42:131) composed of `Stepper / Step` (42:30). */
+.ns-stepper {
+  container-type: inline-size;
+  --ns-stepper-notch: var(--ns-spacing-10);
+}
+
+.ns-stepper__list {
+  display: flex;
+  gap: var(--ns-spacing-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ns-stepper__step {
+  display: flex;
+  flex: 0 1 auto;
+  min-inline-size: calc(var(--ns-spacing-100) + var(--ns-spacing-12)); /* 112, Figma step width */
+}
+
+/* The chevron. The fill lives on ::before so the clip-path never clips the focus outline. */
+.ns-stepper__shape {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ns-spacing-4);
+  min-block-size: var(--ns-size-control-sm);
+  padding-block: var(--ns-spacing-4);
+  padding-inline: var(--ns-spacing-12) calc(var(--ns-stepper-notch) + var(--ns-spacing-8));
+  color: var(--ns-stepper-fg);
+  text-align: center;
+}
+.ns-stepper__shape::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--ns-stepper-bg);
+  /* First: flat left edge, pointed right edge. */
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--ns-stepper-notch)) 0,
+    100% 50%,
+    calc(100% - var(--ns-stepper-notch)) 100%,
+    0 100%
+  );
+}
+.ns-stepper__step--middle .ns-stepper__shape {
+  padding-inline-start: calc(var(--ns-stepper-notch) + var(--ns-spacing-8));
+}
+/* Middle: notched left edge. */
+.ns-stepper__step--middle .ns-stepper__shape::before {
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--ns-stepper-notch)) 0,
+    100% 50%,
+    calc(100% - var(--ns-stepper-notch)) 100%,
+    0 100%,
+    var(--ns-stepper-notch) 50%
+  );
+}
+
+/* Right-to-left: mirror the chevrons, not the text. */
+[dir='rtl'] .ns-stepper__shape::before {
+  clip-path: polygon(100% 0, var(--ns-stepper-notch) 0, 0 50%, var(--ns-stepper-notch) 100%, 100% 100%);
+}
+[dir='rtl'] .ns-stepper__step--middle .ns-stepper__shape::before {
+  clip-path: polygon(
+    100% 0,
+    var(--ns-stepper-notch) 0,
+    0 50%,
+    var(--ns-stepper-notch) 100%,
+    100% 100%,
+    calc(100% - var(--ns-stepper-notch)) 50%
+  );
+}
+
+.ns-stepper__label {
+  text-transform: uppercase;
+}
+
+/* States (Figma `Stepper / Step › State`). */
+.ns-stepper__step--done {
+  --ns-stepper-bg: var(--ns-color-bg-success);
+  --ns-stepper-fg: var(--ns-color-text-on-status);
+}
+.ns-stepper__step--current {
+  --ns-stepper-bg: var(--ns-color-bg-brand);
+  --ns-stepper-fg: var(--ns-color-text-on-brand);
+}
+.ns-stepper__step--upcoming {
+  --ns-stepper-bg: var(--ns-color-bg-brand-subtle);
+  --ns-stepper-fg: var(--ns-color-text-brand);
+}
+
+/* Done steps become buttons when `onStepClick` is set. */
+.ns-stepper__action {
+  margin: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
+.ns-stepper__action:focus-visible {
+  outline: var(--ns-border-width-medium) solid var(--ns-color-border-focus);
+  outline-offset: var(--ns-spacing-2);
+}
+
+/* Collapsed text mode: more than 5 steps, `compact`, or narrower than 600px. */
+.ns-stepper__summary {
+  display: none;
+  margin: 0;
+  color: var(--ns-color-text-primary);
+}
+.ns-stepper--compact .ns-stepper__list {
+  display: none;
+}
+.ns-stepper--compact .ns-stepper__summary {
+  display: block;
+}
+@container (max-width: 37.5rem) {
+  .ns-stepper__list {
+    display: none;
+  }
+  .ns-stepper__summary {
+    display: block;
+  }
+}
+
+@media (forced-colors: active) {
+  .ns-stepper__shape::before {
+    background: Canvas;
+    border: 1px solid CanvasText;
+  }
+  .ns-stepper__step--current .ns-stepper__shape::before {
+    background: Highlight;
+  }
+  .ns-stepper__shape {
+    color: CanvasText;
+  }
+  .ns-stepper__step--current .ns-stepper__shape {
+    color: HighlightText;
+  }
+}

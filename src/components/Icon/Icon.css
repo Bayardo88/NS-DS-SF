@@ -1,0 +1,76 @@
+.ns-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+  color: inherit;
+}
+.ns-icon--xs {
+  width: var(--ns-size-icon-xs);
+  height: var(--ns-size-icon-xs);
+}
+.ns-icon--sm {
+  width: var(--ns-size-icon-sm);
+  height: var(--ns-size-icon-sm);
+}
+.ns-icon--md {
+  width: var(--ns-size-icon-md);
+  height: var(--ns-size-icon-md);
+}
+.ns-icon--lg {
+  width: var(--ns-size-icon-lg);
+  height: var(--ns-size-icon-lg);
+}
+.ns-icon--xl {
+  width: var(--ns-size-icon-xl);
+  height: var(--ns-size-icon-xl);
+}
+
+/* Optional semantic color (default: inherit the parent's currentColor). */
+.ns-icon--primary {
+  color: var(--ns-color-icon-primary);
+}
+.ns-icon--secondary {
+  color: var(--ns-color-icon-secondary);
+}
+.ns-icon--brand {
+  color: var(--ns-color-icon-brand);
+}
+.ns-icon--accent {
+  color: var(--ns-color-icon-accent);
+}
+.ns-icon--success {
+  color: var(--ns-color-icon-success);
+}
+.ns-icon--warning {
+  color: var(--ns-color-icon-warning);
+}
+.ns-icon--error {
+  color: var(--ns-color-icon-error);
+}
+.ns-icon--inverse {
+  color: var(--ns-color-icon-inverse);
+}
+.ns-icon--disabled {
+  color: var(--ns-color-icon-disabled);
+}
+.ns-icon--highlight {
+  color: var(--ns-color-icon-highlight);
+}
+
+/* Spinner (Figma Loader: 360° in 800ms, linear, infinite). */
+.ns-icon--spin {
+  animation: ns-icon-spin 800ms linear infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes ns-icon-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ns-icon--spin {
+    animation: none;
+  }
+}

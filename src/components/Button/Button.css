@@ -1,0 +1,233 @@
+/*
+ * Button — Figma "Button / Filled · Outlined · Text" (page Button).
+ * Anatomy: root (focus ring) > pill (label) + arrow bubble, 4px apart (spacing/4).
+ * Motion: the bubble trails the label; on hover, focus and press it slides in front of it
+ * (200ms, cubic-bezier(0.2, 0.8, 0.2, 1)) and the pill shifts by bubble width + 4px.
+ * Reduced motion: base.css collapses transitions (instant swap) and the spinner is stopped below.
+ */
+
+.ns-button {
+  /* Private, per-size custom properties (not tokens). */
+  --_bubble: var(--ns-size-control-md);
+  --_gap: var(--ns-spacing-4);
+  --_motion: 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  --_color: 120ms ease;
+
+  /* Per-variant colors, overridden below. */
+  --_fill: transparent;
+  --_bubble-fill: var(--_fill);
+  --_ring-width: 0;
+  --_ring-color: transparent;
+  --_label: var(--ns-color-text-brand);
+  --_icon: var(--ns-color-icon-brand);
+
+  position: relative;
+  display: inline-flex;
+  align-items: stretch;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--ns-radius-full);
+  background: none;
+  color: var(--_label);
+  font-family: var(--ns-font-family-secondary);
+  font-weight: var(--ns-font-weight-semibold);
+  letter-spacing: var(--ns-letter-spacing-default);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ns-button:focus-visible {
+  outline: var(--ns-border-width-medium) solid var(--ns-color-border-focus);
+  outline-offset: var(--ns-spacing-2);
+}
+
+/* ---------- Sizes ---------- */
+
+.ns-button--sm {
+  --_bubble: var(--ns-size-control-sm);
+  --_pad: var(--ns-spacing-16);
+  font-size: var(--ns-font-size-label-sm);
+  line-height: var(--ns-line-height-label-sm);
+}
+
+.ns-button--md {
+  --_bubble: var(--ns-size-control-md);
+  --_pad: var(--ns-spacing-24);
+  font-size: var(--ns-font-size-label-md);
+  line-height: var(--ns-line-height-label-md);
+}
+
+.ns-button--lg {
+  --_bubble: var(--ns-size-control-lg);
+  --_pad: var(--ns-spacing-32);
+  font-size: var(--ns-font-size-label-lg);
+  line-height: var(--ns-line-height-label-lg);
+}
+
+/* Text style: tight 8px padding at every size. */
+.ns-button--text {
+  --_pad: var(--ns-spacing-8);
+}
+
+/* ---------- Parts ---------- */
+
+.ns-button__pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* min-height, not height, so the label survives 200% zoom and text-spacing overrides. */
+  min-height: var(--_bubble);
+  padding-inline: var(--_pad);
+  border-radius: var(--ns-radius-full);
+  background: var(--_fill);
+  box-shadow: inset 0 0 0 var(--_ring-width) var(--_ring-color);
+  transition:
+    transform var(--_motion),
+    background-color var(--_color),
+    box-shadow var(--_color),
+    color var(--_color);
+}
+
+.ns-button__label {
+  text-underline-offset: 0.2em;
+}
+
+/* Reserve the bubble's slot after the pill; the bubble itself is positioned so it can slide. */
+.ns-button--with-bubble {
+  padding-inline-end: calc(var(--_bubble) + var(--_gap));
+}
+
+.ns-button__bubble {
+  position: absolute;
+  top: 0;
+  left: calc(100% - var(--_bubble));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--_bubble);
+  height: var(--_bubble);
+  border-radius: var(--ns-radius-full);
+  background: var(--_bubble-fill);
+  box-shadow: inset 0 0 0 var(--_ring-width) var(--_ring-color);
+  color: var(--_icon);
+  transition:
+    left var(--_motion),
+    background-color var(--_color),
+    box-shadow var(--_color),
+    color var(--_color);
+}
+
+.ns-button__icon {
+  flex: none;
+}
+
+/* ---------- Variants ---------- */
+
+.ns-button--filled {
+  --_fill: var(--ns-color-bg-brand);
+  --_label: var(--ns-color-text-on-brand);
+  --_icon: var(--ns-color-icon-inverse);
+}
+
+.ns-button--outlined {
+  --_ring-width: var(--ns-border-width-regular);
+  --_ring-color: var(--ns-color-border-brand);
+}
+
+.ns-button--text {
+  --_bubble-fill: transparent;
+}
+
+/* ---------- Interaction states (not props) ---------- */
+
+/* Arrow leads on hover, keyboard focus and press. */
+.ns-button--with-bubble:not(:disabled, [aria-disabled='true'], [aria-busy='true']):is(:hover, :focus-visible, :active)
+  .ns-button__bubble {
+  left: 0;
+}
+
+.ns-button--with-bubble:not(:disabled, [aria-disabled='true'], [aria-busy='true']):is(:hover, :focus-visible, :active)
+  .ns-button__pill {
+  transform: translateX(calc(var(--_bubble) + var(--_gap)));
+}
+
+/* Hover */
+.ns-button--filled:not(:disabled, [aria-disabled='true'], [aria-busy='true']):hover {
+  --_fill: var(--ns-color-bg-brand-hover);
+}
+
+.ns-button--outlined:not(:disabled, [aria-disabled='true'], [aria-busy='true']):hover {
+  --_fill: var(--ns-color-bg-brand-subtle);
+}
+
+.ns-button--text:not(:disabled, [aria-disabled='true'], [aria-busy='true']):hover {
+  --_bubble-fill: var(--ns-color-bg-brand-subtle);
+}
+
+.ns-button--text:not(:disabled, [aria-disabled='true'], [aria-busy='true']):hover .ns-button__label {
+  text-decoration: underline;
+}
+
+/* Pressed */
+.ns-button--filled:not(:disabled, [aria-disabled='true'], [aria-busy='true']):active {
+  --_fill: var(--ns-color-bg-brand-pressed);
+}
+
+.ns-button--outlined:not(:disabled, [aria-disabled='true'], [aria-busy='true']):active {
+  --_fill: var(--ns-color-bg-brand-subtle);
+  --_ring-width: var(--ns-border-width-medium);
+}
+
+.ns-button--text:not(:disabled, [aria-disabled='true'], [aria-busy='true']):active {
+  --_bubble-fill: var(--ns-color-bg-brand-subtle);
+  --_label: var(--ns-color-text-link-hover);
+}
+
+/* Disabled: greyed out, no motion, cursor not-allowed. */
+.ns-button:is(:disabled, [aria-disabled='true']) {
+  --_label: var(--ns-color-text-disabled);
+  --_icon: var(--ns-color-icon-disabled);
+  cursor: not-allowed;
+}
+
+.ns-button--filled:is(:disabled, [aria-disabled='true']) {
+  --_fill: var(--ns-color-bg-disabled);
+}
+
+.ns-button--outlined:is(:disabled, [aria-disabled='true']) {
+  --_ring-color: var(--ns-color-border-disabled);
+}
+
+/* Loading: label stays, loader spins in the bubble, clicks ignored (see Button.tsx). */
+.ns-button--loading {
+  cursor: progress;
+}
+
+.ns-button__spinner {
+  animation: ns-button-spin 800ms linear infinite;
+}
+
+@keyframes ns-button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ns-button__spinner {
+    animation: none;
+  }
+}
+
+/* Windows High Contrast: keep the shapes visible when backgrounds are dropped. */
+@media (forced-colors: active) {
+  .ns-button__pill,
+  .ns-button__bubble {
+    border: 1px solid ButtonText;
+  }
+}

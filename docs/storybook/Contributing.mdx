@@ -1,0 +1,57 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Contributing" />
+
+# Contributing
+
+Figma (**Design System V2**, `JdINnstfRHeLRPZjeEla4U`) is the source of truth. Code follows it through
+reviewed pull requests. The full rules live in the repository:
+
+| Document | For |
+| --- | --- |
+| [AI-GUIDE.md](https://github.com/Bayardo88/NS-DS-SF/blob/main/AI-GUIDE.md) | The contract: hard rules, React rules and checklist, token decision tables, component API |
+| [CONTRIBUTING.md](https://github.com/Bayardo88/NS-DS-SF/blob/main/CONTRIBUTING.md) | Workflow for developers, designers and AI agents; branches, PRs, releases |
+| [docs/component-contract.md](https://github.com/Bayardo88/NS-DS-SF/blob/main/docs/component-contract.md) | Files, API, styling, tests and stories for every component |
+| [CLAUDE.md](https://github.com/Bayardo88/NS-DS-SF/blob/main/CLAUDE.md) · [AGENTS.md](https://github.com/Bayardo88/NS-DS-SF/blob/main/AGENTS.md) | Short orientation for AI coding agents |
+| [docs/branch-protection.md](https://github.com/Bayardo88/NS-DS-SF/blob/main/docs/branch-protection.md) | GitHub settings that protect `main` |
+
+## Hard rules (summary)
+
+| # | Rule |
+| --- | --- |
+| R1 | Semantic tokens only (`--ns-color-{bg,text,border,icon}-*`). No primitives, no `--ns-palette-*` except in Logo and NSMark. |
+| R2 | No raw hex, `rgb()` or `hsl()`. |
+| R3 | No raw px: spacing, size, radius, border width and type come from tokens (`0`, `1px` and media queries are fine). |
+| R4 | Every interactive element has a visible `:focus-visible` outline with an offset. |
+| R5 | Everything works in **Light**, **Dark** and **Web 2025**. Check with the Theme toolbar. |
+| R6 | WCAG 2.1 AA: text 4.5:1, icons/inputs/focus 3:1, keyboard operable, accessible names. |
+| R7 | Color never carries meaning alone. |
+| R8 | Hover, focus, pressed and disabled are CSS states, not props. Only `loading` is a prop. |
+| R9 | Tokens change in Figma first, then `npm run build:tokens`. |
+| R10 | Generated files are never hand-edited. |
+| R12 | Never commit or push to `main`. Branch, then open a PR. |
+
+`npm run lint:tokens` enforces R1–R3 and catches `var(--ns-…)` typos.
+
+## React checklist
+
+Before emitting any component, every answer is yes:
+
+1. Every component is defined once, at module top level.
+2. Hooks are unconditional and at the top level.
+3. Props and state are never mutated.
+4. List keys are stable ids from the data.
+5. No state that can be computed from props or other state.
+6. Handlers are passed as references, named `on*` (props) and `handle*` (implementations).
+7. Effects only sync with external systems, list complete dependencies, and clean up.
+
+## Workflow
+
+| Step | Command or action |
+| --- | --- |
+| Branch | `git switch -c feature/<name>` (also `fix/`, `chore/`, `tokens/`, `docs/`) |
+| Check | `npm run verify` |
+| Push | `git push -u origin HEAD` |
+| PR | Fill in the template: Figma link, screenshots in all three themes, checklists |
+| Merge | One code-owner approval and a green `verify` check |
+| Release | Version bump PR, then a `vX.Y.Z` tag. Consumers install `github:Bayardo88/NS-DS-SF#vX.Y.Z`. |
