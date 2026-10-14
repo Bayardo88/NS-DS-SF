@@ -201,7 +201,8 @@
         ["icon/success", "COLOR", "var(--ns-color-icon-success)", ["SHAPE_FILL", "STROKE_COLOR"], ["@Primitives/green/900", "@Primitives/green/300", "@Primitives/green/300"]],
         ["icon/warning", "COLOR", "var(--ns-color-icon-warning)", ["SHAPE_FILL", "STROKE_COLOR"], ["@Primitives/orange/600", "@Primitives/orange/300", "@Primitives/orange/300"]],
         ["icon/error", "COLOR", "var(--ns-color-icon-error)", ["SHAPE_FILL", "STROKE_COLOR"], ["@Primitives/red/700", "@Primitives/red/300", "@Primitives/red/300"]],
-        ["bg/glass", "COLOR", "var(--ns-color-bg-glass)", ["FRAME_FILL", "SHAPE_FILL"], ["@Primitives/alpha/black-5", "@Primitives/alpha/white-10", "@Primitives/alpha/white-8"]]
+        ["bg/glass", "COLOR", "var(--ns-color-bg-glass)", ["FRAME_FILL", "SHAPE_FILL"], ["@Primitives/alpha/black-5", "@Primitives/alpha/white-10", "@Primitives/alpha/white-8"]],
+        ["border/input", "COLOR", "var(--ns-color-border-input)", ["STROKE_COLOR"], ["@Primitives/gray/500", "@Primitives/gray/500", "@Primitives/night/400"], "Resting outline of form inputs; ≥3:1 against bg/surface and bg/canvas in every mode (WCAG 1.4.11)."]
       ]
     },
     "Spacing": {

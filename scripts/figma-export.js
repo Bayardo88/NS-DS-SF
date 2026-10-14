@@ -114,18 +114,27 @@ if (PART === 'effects') {
 
 if (PART === 'text') {
   return {
-    columns: ['name', 'fontFamily', 'fontStyle', 'fontSize', 'lineHeightPx', 'letterSpacingPx', 'boundVariables'],
+    columns: ['name', 'fontFamily', 'fontStyle', 'fontSize', 'lineHeightPx', 'letterSpacingPx', 'boundVariables', 'extras (when set)'],
     textStyles: (await figma.getLocalTextStylesAsync())
       .filter((s) => !ONLY || ONLY.some((prefix) => s.name.startsWith(prefix)))
-      .map((s) => [
-        s.name,
-        s.fontName.family,
-        s.fontName.style,
-        s.fontSize,
-        s.lineHeight.unit === 'PIXELS' ? round(s.lineHeight.value) : null,
-        s.letterSpacing.unit === 'PIXELS' ? round(s.letterSpacing.value) : null,
-        bound(s),
-      ]),
+      .map((s) => {
+        const row = [
+          s.name,
+          s.fontName.family,
+          s.fontName.style,
+          s.fontSize,
+          s.lineHeight.unit === 'PIXELS' ? round(s.lineHeight.value) : null,
+          s.letterSpacing.unit === 'PIXELS' ? round(s.letterSpacing.value) : null,
+          bound(s),
+        ];
+        // Only for styles that need it, so other rows stay unchanged: percent
+        // tracking (letterSpacingPx is then null) and a text case other than ORIGINAL.
+        const extras = {};
+        if (s.letterSpacing.unit === 'PERCENT') extras.letterSpacingPercent = round(s.letterSpacing.value);
+        if (s.textCase !== 'ORIGINAL') extras.textCase = s.textCase;
+        if (Object.keys(extras).length) row.push(extras);
+        return row;
+      }),
   };
 }
 

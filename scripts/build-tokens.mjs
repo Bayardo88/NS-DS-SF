@@ -235,7 +235,17 @@ const FAMILY_BY_GROUP = {
   'Web 2023': 'font-family/secondary',
 };
 
-const textStyle = textStyles.map(([name, family, fontStyle, fontSize, lineHeight, letterSpacing, bound]) => {
+// Figma text case -> CSS. DTCG typography has no text-transform, so it is recorded
+// under $extensions["com.nicasource.css"].
+const TEXT_CASE_CSS = {
+  UPPER: ['text-transform', 'uppercase'],
+  LOWER: ['text-transform', 'lowercase'],
+  TITLE: ['text-transform', 'capitalize'],
+  SMALL_CAPS: ['font-variant-caps', 'small-caps'],
+  SMALL_CAPS_FORCED: ['font-variant-caps', 'all-small-caps'],
+};
+
+const textStyle = textStyles.map(([name, family, fontStyle, fontSize, lineHeight, letterSpacing, bound, extras = {}]) => {
   const [groupName, size, weightName] = name.split('/');
   const weight = WEIGHT_BY_STYLE[weightName];
   if (!weight || !FAMILY_BY_GROUP[groupName]) throw new Error(`Cannot map text style ${name}`);
@@ -251,12 +261,21 @@ const textStyle = textStyles.map(([name, family, fontStyle, fontSize, lineHeight
     fontSize: pick('fontSize', `font-size/${sizeKey}`),
     fontWeight: typo(`font-weight/${weight}`),
     lineHeight: pick('lineHeight', `line-height/${sizeKey}`),
-    letterSpacing: pick('letterSpacing', 'letter-spacing/default'),
   };
+  // Percent tracking has no variable: it scales with the font size, so it stays a
+  // literal (em in CSS, px at the style's size in DTCG).
+  const percent = extras.letterSpacingPercent;
+  if (percent === undefined) parts.letterSpacing = pick('letterSpacing', 'letter-spacing/default');
+  else if (bound.letterSpacing || letterSpacing !== null) throw new Error(`Text style ${name} mixes percent and px letter spacing`);
+  if (extras.textCase && !TEXT_CASE_CSS[extras.textCase]) throw new Error(`Text style ${name} has unmapped text case ${extras.textCase}`);
   // Guard against the snapshot and the referenced variables drifting apart. Figma
   // shows text styles in the default (Desktop) mode.
   const resolved = defaultValue;
-  if (resolved(parts.fontSize) !== fontSize || resolved(parts.lineHeight) !== lineHeight || resolved(parts.letterSpacing) !== letterSpacing) {
+  if (
+    resolved(parts.fontSize) !== fontSize ||
+    resolved(parts.lineHeight) !== lineHeight ||
+    (parts.letterSpacing && resolved(parts.letterSpacing) !== letterSpacing)
+  ) {
     throw new Error(`Text style ${name} does not match its typography variables`);
   }
   const standIn = family !== resolved(parts.fontFamily);
@@ -267,6 +286,8 @@ const textStyle = textStyles.map(([name, family, fontStyle, fontSize, lineHeight
     parts,
     figmaFont: { family, style: fontStyle },
     standIn,
+    percent,
+    textCase: extras.textCase,
   };
 });
 
@@ -341,10 +362,23 @@ for (const g of gradient) {
 for (const s of textStyle) {
   const figmaExt = { textStyle: s.name, fontName: s.figmaFont };
   if (s.standIn) figmaExt.standInFor = defaultValue(s.parts.fontFamily);
+  const cssExt = { className: s.className };
+  const value = Object.fromEntries(Object.entries(s.parts).map(([k, t]) => [k, ref(t)]));
+  if (s.percent !== undefined) {
+    const size = defaultValue(s.parts.fontSize);
+    value.letterSpacing = { value: Math.round(size * s.percent * 10) / 1000, unit: 'px' };
+    figmaExt.letterSpacing = { unit: 'PERCENT', value: s.percent };
+    cssExt.letterSpacing = `${s.percent / 100}em`;
+  }
+  if (s.textCase) {
+    figmaExt.textCase = s.textCase;
+    const [prop, val] = TEXT_CASE_CSS[s.textCase];
+    cssExt[prop.replace(/-(.)/g, (_, c) => c.toUpperCase())] = val;
+  }
   setPath(json, ['text-style', ...s.path], {
     $type: 'typography',
-    $value: Object.fromEntries(Object.entries(s.parts).map(([k, t]) => [k, ref(t)])),
-    $extensions: { 'com.figma': figmaExt, 'com.nicasource.css': { className: s.className } },
+    $value: value,
+    $extensions: { 'com.figma': figmaExt, 'com.nicasource.css': cssExt },
   });
 }
 
@@ -481,7 +515,9 @@ ${textStyle
   font-size: var(${p.fontSize.css});
   font-weight: var(${p.fontWeight.css});
   line-height: var(${p.lineHeight.css});
-  letter-spacing: var(${p.letterSpacing.css});
+  letter-spacing: ${s.percent === undefined ? `var(${p.letterSpacing.css})` : `${s.percent / 100}em`};${
+    s.textCase ? `\n  ${TEXT_CASE_CSS[s.textCase].join(': ')};` : ''
+  }
 }`;
   })
   .join('\n\n')}

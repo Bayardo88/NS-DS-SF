@@ -401,6 +401,8 @@
   --ns-color-icon-warning: var(--ns-color-orange-600);
   --ns-color-icon-error: var(--ns-color-red-700);
   --ns-color-bg-glass: var(--ns-color-alpha-black-5);
+  /* Resting outline of form inputs; ≥3:1 against bg/surface and bg/canvas in every mode (WCAG 1.4.11). */
+  --ns-color-border-input: var(--ns-color-gray-500);
 
   /* Spacing */
   --ns-spacing-0: 0px;
@@ -682,6 +684,7 @@
   --ns-color-icon-warning: var(--ns-color-orange-300);
   --ns-color-icon-error: var(--ns-color-red-300);
   --ns-color-bg-glass: var(--ns-color-alpha-white-10);
+  --ns-color-border-input: var(--ns-color-gray-500);
 }
 
 /* Semantic color — dark (system preference, when no data-theme is set) */
@@ -754,6 +757,7 @@
     --ns-color-icon-warning: var(--ns-color-orange-300);
     --ns-color-icon-error: var(--ns-color-red-300);
     --ns-color-bg-glass: var(--ns-color-alpha-white-10);
+    --ns-color-border-input: var(--ns-color-gray-500);
   }
 }
 
@@ -826,6 +830,7 @@
   --ns-color-icon-warning: var(--ns-color-orange-300);
   --ns-color-icon-error: var(--ns-color-red-300);
   --ns-color-bg-glass: var(--ns-color-alpha-white-8);
+  --ns-color-border-input: var(--ns-color-night-400);
 }
 
 /* Typography — mobile (viewports up to 767px; only the 41 values that differ) */

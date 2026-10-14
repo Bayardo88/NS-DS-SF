@@ -681,6 +681,16 @@
   letter-spacing: var(--ns-letter-spacing-default);
 }
 
+/* Secondary/Overline SM/Demi Bold */
+.ns-text-secondary-overline-sm-demi-bold {
+  font-family: var(--ns-font-family-secondary);
+  font-size: var(--ns-font-size-label-sm);
+  font-weight: var(--ns-font-weight-semibold);
+  line-height: var(--ns-line-height-label-sm);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 /* Web/Callout XL/Black */
 .ns-text-web-callout-xl-black {
   font-family: var(--ns-font-family-web);

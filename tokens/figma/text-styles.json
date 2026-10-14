@@ -1,5 +1,5 @@
 {
-  "columns": ["name", "fontFamily", "fontStyle", "fontSize", "lineHeightPx", "letterSpacingPx", "boundVariables"],
+  "columns": ["name", "fontFamily", "fontStyle", "fontSize", "lineHeightPx", "letterSpacingPx", "boundVariables", "extras (when set)"],
   "textStyles": [
     ["Primary/Display 2XL/Bold", "Fira Code", "Bold", 64, 76, 0, {"lineHeight": "@Typography/line-height/display-2xl", "letterSpacing": "@Typography/letter-spacing/default", "fontFamily": "@Typography/font-family/primary", "fontSize": "@Typography/font-size/display-2xl"}],
     ["Primary/Display 2XL/SemiBold", "Fira Code", "SemiBold", 64, 76, 0, {"lineHeight": "@Typography/line-height/display-2xl", "letterSpacing": "@Typography/letter-spacing/default", "fontFamily": "@Typography/font-family/primary", "fontSize": "@Typography/font-size/display-2xl"}],
@@ -76,6 +76,7 @@
     ["Secondary/Label SM/Demi Bold", "Plus Jakarta Sans", "SemiBold", 14, 14, 0, {"lineHeight": "@Typography/line-height/label-sm", "letterSpacing": "@Typography/letter-spacing/default", "fontSize": "@Typography/font-size/label-sm"}],
     ["Secondary/Label XS/Regular", "Plus Jakarta Sans", "Regular", 12, 12, 0, {"lineHeight": "@Typography/line-height/label-xs", "letterSpacing": "@Typography/letter-spacing/default", "fontSize": "@Typography/font-size/label-xs"}],
     ["Secondary/Label XS/Demi Bold", "Plus Jakarta Sans", "SemiBold", 12, 12, 0, {"lineHeight": "@Typography/line-height/label-xs", "letterSpacing": "@Typography/letter-spacing/default", "fontSize": "@Typography/font-size/label-xs"}],
+    ["Secondary/Overline SM/Demi Bold", "Plus Jakarta Sans", "SemiBold", 14, 14, null, {"lineHeight": "@Typography/line-height/label-sm", "fontSize": "@Typography/font-size/label-sm"}, {"letterSpacingPercent": 4, "textCase": "UPPER"}],
     ["Web/Callout XL/Black", "Public Sans", "Black", 225, 181, 0, {"lineHeight": "@Typography/line-height/web-callout-xl", "letterSpacing": "@Typography/letter-spacing/default", "fontFamily": "@Typography/font-family/web", "fontSize": "@Typography/font-size/web-callout-xl"}],
     ["Web/Callout LG/Black", "Public Sans", "Black", 160, 150, 0, {"lineHeight": "@Typography/line-height/web-callout-lg", "letterSpacing": "@Typography/letter-spacing/default", "fontFamily": "@Typography/font-family/web", "fontSize": "@Typography/font-size/web-callout-lg"}],
     ["Web/Banner/Black", "Public Sans", "Black", 80, 88, 0, {"lineHeight": "@Typography/line-height/web-banner", "letterSpacing": "@Typography/letter-spacing/default", "fontFamily": "@Typography/font-family/web", "fontSize": "@Typography/font-size/web-banner"}],

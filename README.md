@@ -5,11 +5,20 @@ Figma file **Design System V2** (`JdINnstfRHeLRPZjeEla4U`). Every token here mir
 Figma variable or style, and every CSS custom property uses the variable's WEB code syntax
 from Figma exactly, so a name you see in Figma's inspect panel is the name you write in code.
 
+## Components
+
+The Figma file also holds the component library: one page per component (Icons, Brand, Button,
+Icon Button, Text Field, Tag, Card, Stepper, Step Number, Navigation Bar, Footer), 342 variants in
+total, every one bound to these tokens and working in all three color modes. Start with the
+**📖 Read me first** page. Each component page has a documentation panel with anatomy, the Figma
+properties and the code props they map to, states and behavior, accessibility, a React example and
+a JSON spec for AI agents. The components aren't implemented in code in this repo yet.
+
 ## Using the tokens
 
 ```html
 <link rel="stylesheet" href="tokens/css/tokens.css" />
-<!-- optional: utility classes for the 104 Figma text styles -->
+<!-- optional: utility classes for the 105 Figma text styles -->
 <link rel="stylesheet" href="tokens/css/text-styles.css" />
 ```
 
@@ -78,7 +87,7 @@ pickers. **Brand palettes** sit apart from both tiers; see below.
 | Figma collection | Modes | Count | DTCG group | CSS prefix | Examples |
 | --- | --- | ---: | --- | --- | --- |
 | Primitives | Value | 126 | `primitives` | `--ns-color-*` | `--ns-color-blue-600`, `--ns-color-night-900`, `--ns-color-alpha-wine-50` |
-| Color (semantic) | Light, Dark, Web 2025 | 66 | `color` | `--ns-color-{bg,text,border,icon}-*` | `--ns-color-bg-brand`, `--ns-color-bg-glass`, `--ns-color-text-on-brand` |
+| Color (semantic) | Light, Dark, Web 2025 | 67 | `color` | `--ns-color-{bg,text,border,icon}-*` | `--ns-color-bg-brand`, `--ns-color-bg-glass`, `--ns-color-border-input` |
 | Spacing | Value | 22 | `spacing` | `--ns-spacing-*` | `--ns-spacing-16` (the name is the px value) |
 | Shape | Value | 14 | `shape` | `--ns-radius-*`, `--ns-border-width-*` | `--ns-radius-3xl` (40px), `--ns-border-width-regular` (1.5px) |
 | Size | Value | 8 | `size` | `--ns-size-{icon,control}-*` | `--ns-size-icon-md`, `--ns-size-control-lg` |
@@ -86,7 +95,7 @@ pickers. **Brand palettes** sit apart from both tiers; see below.
 | Effects | Value | 5 | `effects` | `--ns-blur-*` | `--ns-blur-sm` (6px), `--ns-blur-lg` (24px), `--ns-blur-xl` (40px), `--ns-blur-2xl` (80px), `--ns-blur-glow` (240px) |
 | Brand Palettes | Value | 180 | `palette` | `--ns-palette-*` | `--ns-palette-navy-800`, `--ns-palette-crimson-500`, `--ns-palette-chalk-900` |
 
-That's 520 variables in total.
+That's 521 variables in total.
 
 ### Brand palettes
 
@@ -125,7 +134,7 @@ Styles, which are composite tokens:
 | `Glass/SM`, `Glass/LG`, `Glass/XL` effect styles | 3 | `glass` / `dimension` | `--ns-glass-sm`, `--ns-glass-lg`, `--ns-glass-xl` for `backdrop-filter`, e.g. `blur(var(--ns-blur-sm))`. Pair with `--ns-color-bg-glass`. `Glass/XL` also has a drop shadow, exported separately as `--ns-glass-xl-shadow` (`glass.xl-shadow`, a `shadow` token) for `box-shadow`. |
 | `Glow/LG`, `Glow/XL` effect styles | 2 | `glow` / `dimension` | `--ns-glow-lg` (80px), `--ns-glow-xl` (240px) for `filter`, used for background light blobs |
 | `Gradient/*` paint styles | 18 | `gradient` / `gradient` | Corporate: `--ns-gradient-blue-light-to-dark`, `-red-light-to-dark`, `-blue-base-to-dark`, `-red-base-to-dark`. Web: `-night-fade`, `-web-2023-sunset`. Sub-brands: `-careers-gold`, `-careers-gold-light`, `-careers-sky`, `-red-to-wine`, `-red-to-yellow`, `-cyan-to-navy`, `-salmon-to-red`, `-bites-violet`, `-insights-purple`, `-awards-gold`, `-talks-teal`, `-talks-salmon` |
-| `Primary/*`, `Secondary/*`, `Web/*`, `Web 2023/*` text styles | 104 | `text-style` / `typography` | `.ns-text-{primary,secondary,web,web-2023}-{size}-{weight}`, e.g. `.ns-text-primary-body-md-semibold`, `.ns-text-web-h1-black`, `.ns-text-web-2023-hero-xl-extra-bold` |
+| `Primary/*`, `Secondary/*`, `Web/*`, `Web 2023/*` text styles | 105 | `text-style` / `typography` | `.ns-text-{primary,secondary,web,web-2023}-{size}-{weight}`, e.g. `.ns-text-primary-body-md-semibold`, `.ns-text-web-h1-black`, `.ns-text-web-2023-hero-xl-extra-bold` |
 
 ```css
 .glass-panel {
@@ -168,6 +177,10 @@ Styles, which are composite tokens:
   Night Fade's `#000000` becomes `{palette.neutral.900}`. A color with no match stays literal, like the two Careers Gold stops.
   The CSS angle is computed from the Figma gradient transform: `90deg` is left to right and Night Fade's
   `180deg` is top to bottom.
+- `Secondary/Overline SM/Demi Bold` is the one text style with percent letter spacing (4%) and a
+  text case (uppercase). The snapshot records these in an extra trailing column. In CSS the class
+  sets `letter-spacing: 0.04em` and `text-transform: uppercase`. In `tokens.json`, `letterSpacing` is
+  the px value at the style's size (0.56px), and the percent and case are under `$extensions`.
 - DTCG has no filter type. Glass and Glow are stored as their blur-radius `dimension`, and
   `$extensions["com.nicasource.css"]` records the CSS property and the `blur()` wrapper.
 
