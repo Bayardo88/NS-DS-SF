@@ -1,0 +1,28 @@
+{
+  "slug": "contact",
+  "title": "Contact Us",
+  "sections": [
+    {
+      "type": "contact-page",
+      "heading": "Ready to **Drop a Line?**",
+      "chevron": { "src": "/assets/contact/tab-bg-ns-chevron.png", "alt": "" },
+      "panels": {
+        "project": {
+          "heading": "Let’s Build **Something Great**",
+          "body": "Looking to grow your team, ship faster, or expand capacity? Let’s talk about your goals — and how we can help you get there.",
+          "image": { "src": "/assets/contact/tab-new-business-adriana-jose.png", "alt": "Adriana, COO, and Jose, CTO of NicaSource" }
+        },
+        "team": {
+          "heading": "Your Next Role **Starts Here**",
+          "body": "We’re always eager to meet sharp minds who love solving real problems with creativity, and collaboration. Think you’d thrive here? Let’s connect.",
+          "image": { "src": "/assets/contact/tab-join-team-maria-mercedes.png", "alt": "Maria Mercedes, Head of Culture at NicaSource" }
+        },
+        "general": {
+          "heading": "**Hi** to You Too",
+          "body": "Got questions, ideas, partnership thoughts — or just curious about how we work? Drop us a line. We’d love to hear from you.",
+          "image": { "src": "/assets/contact/tab-general-hansell.png", "alt": "Hansell, Marketing Manager at NicaSource" }
+        }
+      }
+    }
+  ]
+}

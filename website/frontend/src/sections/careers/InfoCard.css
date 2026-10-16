@@ -1,0 +1,35 @@
+.info-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--ns-spacing-20);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Figma: 371 × 408, padding 32, 3px border/subtle (closest token: medium), radius 2xl. */
+.info-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-8);
+  min-height: calc(var(--ns-spacing-180) * 2 + var(--ns-spacing-48));
+  padding: var(--ns-spacing-32);
+  background: var(--ns-color-bg-canvas);
+  border: var(--ns-border-width-medium) solid var(--ns-color-border-subtle);
+  border-radius: var(--ns-radius-2xl);
+}
+
+.info-card__title,
+.info-card__body {
+  color: var(--ns-color-text-secondary);
+}
+
+@media (max-width: 767px) {
+  .info-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-card {
+    min-height: 0;
+  }
+}

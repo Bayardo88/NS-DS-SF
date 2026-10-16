@@ -1,0 +1,83 @@
+.general {
+  position: relative;
+  isolation: isolate;
+  padding-block: var(--site-section-y);
+  overflow: hidden;
+}
+
+.general__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.general__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--ns-spacing-64);
+}
+
+.general__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--ns-spacing-24);
+}
+
+.general__media img {
+  width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
+
+.general--content-right .general__copy {
+  order: 2;
+}
+
+/* Background mode: the empty column lets the illustration show through. */
+.general--media-background.general--content-right .general__copy {
+  grid-column: 2;
+}
+
+.general--media-background.general--content-left .general__copy {
+  grid-column: 1;
+}
+
+@media (max-width: 767px) {
+  .general__inner {
+    /* minmax(0, …) so long headings/CTA labels can't widen the column past the viewport. */
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--ns-spacing-40);
+  }
+
+  .general--content-right .general__copy,
+  .general--media-background .general__copy {
+    order: 0;
+    grid-column: auto;
+  }
+
+  .general--mobile-media-first .general__media {
+    order: -1;
+  }
+
+  .general__cta {
+    align-self: stretch;
+    justify-content: center;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .general--media-background {
+    padding-bottom: calc(var(--site-section-y) * 4);
+  }
+
+  .general--media-background .general__bg {
+    top: auto;
+    height: 55%;
+    object-position: center bottom;
+  }
+}

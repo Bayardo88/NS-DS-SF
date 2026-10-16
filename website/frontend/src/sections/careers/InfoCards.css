@@ -1,0 +1,26 @@
+.info-cards {
+  padding-block: var(--ns-spacing-80);
+}
+
+.info-cards__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-20);
+}
+
+.info-cards__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-20);
+}
+
+.info-cards--center .info-cards__head {
+  align-items: center;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .info-cards {
+    padding-block: var(--ns-spacing-40);
+  }
+}

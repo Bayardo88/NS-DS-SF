@@ -1,0 +1,59 @@
+{
+  "slug": "exploring-the-wonders-of-the-pacific-ocean",
+  "title": "Exploring the Wonders of the Pacific Ocean",
+  "date": "2025-05-09 09:00:00",
+  "excerpt": "West Coast companies often assume nearshore means early mornings for their engineers. In practice, a Central American team starts its day two hours ahead of San Francisco and still shares six to seven working hours with it.",
+  "categories": [
+    "Remote Work",
+    "Mental Health Awareness"
+  ],
+  "meta": {
+    "image": "/assets/home/blog-pacific-ocean.jpg",
+    "tags": [
+      "Remote Work",
+      "Mental Health Awareness"
+    ],
+    "home_slot": "main",
+    "reading_time": "1 min read",
+    "author": {
+      "name": "Boyo Martínez",
+      "role": "Product Director",
+      "avatar": "/assets/blog-post/author-boyo-martinez.jpg",
+      "bio": "Boyo leads product and design at NicaSource, where he helps US companies plan, staff and run nearshore engineering teams. He has spent fifteen years shipping digital products with distributed teams across the Americas.",
+      "verified": true,
+      "years_experience": 15,
+      "expertise": [
+        "UX Design",
+        "Product Design",
+        "Product Strategy"
+      ]
+    },
+    "body": "<h2>Introduction</h2><p>West Coast companies often assume nearshore means early mornings for their engineers. In practice, a Central American team starts its day two hours ahead of San Francisco and still shares six to seven working hours with it.</p><h2>Making Pacific Time Work</h2><h3>Front-load async work</h3><p>The first two hours of the nearshore day are ideal for focused work: code review, test automation and documentation. When the Pacific team comes online, the queue is already moving.</p><h3>Late-day pairing</h3><p>The shared afternoon is perfect for pairing sessions and design reviews. Keep calendars light in the morning and dense in the overlap, and both sides get their best hours.</p><figure><img src=\"/assets/insights/post-pacific-ocean-3.jpg\" alt=\"Waves rolling onto a rocky Pacific shoreline\" loading=\"lazy\" /><figcaption>The overlap window is narrower, but it is enough.</figcaption></figure><h2>Rituals That Survive Distance</h2><ul><li>Written stand-ups posted before the overlap begins.</li><li>A weekly demo where nearshore engineers present their own work.</li><li>Rotating on-call so incidents are shared, not exported.</li></ul><blockquote><p>We stopped thinking of them as the team in another country and started thinking of them as the team that starts earlier.</p></blockquote><h2>Conclusion</h2><p>Pacific Time clients get the best of both worlds: a head start every morning and a solid block of real-time collaboration every afternoon.</p>"
+  },
+  "sections": [
+    {
+      "type": "post-hero"
+    },
+    {
+      "type": "reading-progress"
+    },
+    {
+      "type": "post-article",
+      "banner": {
+        "heading": "Team up with Nicasource for new opportunities!",
+        "cta": {
+          "label": "Partner with Us",
+          "href": "/contact"
+        },
+        "image": {
+          "src": "/assets/shared/banner-liquid-bg.jpg",
+          "alt": ""
+        }
+      }
+    },
+    {
+      "type": "related-posts",
+      "heading": "Wanna go down the rabbit hole? Check out these **related articles!**"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+/* Sticks right under the DS SiteHeader (64px mobile, 88px from 1024px). */
+.reading-progress {
+  --reading-progress-top: var(--ns-spacing-64);
+
+  position: sticky;
+  top: var(--reading-progress-top);
+  z-index: 50;
+  height: var(--ns-border-width-thick);
+  background: var(--ns-color-border-default);
+}
+
+@media (min-width: 1024px) {
+  .reading-progress {
+    --reading-progress-top: calc(var(--ns-spacing-80) + var(--ns-spacing-8));
+  }
+}
+
+.reading-progress__fill {
+  height: 100%;
+  background: var(--ns-color-bg-brand-pressed);
+  transform: scaleX(0);
+  transform-origin: left center;
+}

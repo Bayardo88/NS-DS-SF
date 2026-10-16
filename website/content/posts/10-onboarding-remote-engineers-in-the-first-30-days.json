@@ -1,0 +1,60 @@
+{
+  "slug": "onboarding-remote-engineers-in-the-first-30-days",
+  "title": "Onboarding Remote Engineers in the First 30 Days",
+  "date": "2025-08-07 09:00:00",
+  "excerpt": "A week-by-week plan to turn a new remote hire into a long-term teammate.",
+  "categories": [
+    "Remote Work",
+    "Diversity and Inclusion",
+    "Mental Health Awareness"
+  ],
+  "meta": {
+    "image": "/assets/insights/post-heart-of-city-2.jpg",
+    "tags": [
+      "Remote Work",
+      "Diversity and Inclusion",
+      "Mental Health Awareness"
+    ],
+    "reading_time": "1 min read",
+    "author": {
+      "name": "Boyo Martínez",
+      "role": "Product Director",
+      "avatar": "/assets/blog-post/author-boyo-martinez.jpg",
+      "bio": "Boyo leads product and design at NicaSource, where he helps US companies plan, staff and run nearshore engineering teams. He has spent fifteen years shipping digital products with distributed teams across the Americas.",
+      "verified": true,
+      "years_experience": 15,
+      "expertise": [
+        "UX Design",
+        "Product Design",
+        "Product Strategy"
+      ]
+    },
+    "body": "<h2>Introduction</h2><p>The first thirty days decide whether a remote engineer becomes a long-term teammate or a short-term contractor. A clear plan makes the difference.</p><h2>Week One: Access and Context</h2><p>Accounts, repositories and environments should be ready before day one. Pair the new engineer with a buddy and give them a small, real ticket by day three.</p><h2>Weeks Two and Three: Ownership</h2><h3>A first feature</h3><p>Assign a scoped feature they can carry from ticket to production, including tests and release notes.</p><h3>Feedback in both directions</h3><p>Ask what was confusing. New hires spot gaps in documentation that the rest of the team stopped seeing years ago.</p><figure><img src=\"/assets/insights/post-heart-of-city-2.jpg\" alt=\"People crossing a wide plaza in the city\" loading=\"lazy\" /><figcaption>Belonging is built in the first month.</figcaption></figure><h2>Week Four: Belonging</h2><ul><li>Invite them to present their feature in the team demo.</li><li>Introduce them to stakeholders outside engineering.</li><li>Agree on goals for the next quarter in a one-on-one.</li></ul><blockquote><p>Onboarding is the first product your team ships to a new colleague.</p></blockquote><h2>Conclusion</h2><p>A structured first month turns a remote hire into a contributor, and a contributor into someone who stays.</p>"
+  },
+  "sections": [
+    {
+      "type": "post-hero"
+    },
+    {
+      "type": "reading-progress"
+    },
+    {
+      "type": "post-article",
+      "banner": {
+        "heading": "Team up with Nicasource for new opportunities!",
+        "cta": {
+          "label": "Partner with Us",
+          "href": "/contact"
+        },
+        "image": {
+          "src": "/assets/shared/banner-liquid-bg.jpg",
+          "alt": ""
+        }
+      }
+    },
+    {
+      "type": "related-posts",
+      "heading": "Wanna go down the rabbit hole? Check out these **related articles!**"
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+/* Mirrors the DS TextField (src/components/TextField/TextField.css) for Select / TextArea / File. */
+
+.job-field {
+  --job-field-border-color: var(--ns-color-border-input);
+  --job-field-border-width: var(--ns-border-width-thin);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-8);
+  min-width: 0;
+}
+
+.job-field__label {
+  color: var(--ns-color-text-primary);
+  font-family: var(--ns-font-family-secondary);
+  font-size: var(--ns-font-size-label-sm);
+  font-weight: var(--ns-font-weight-semibold);
+  line-height: var(--ns-line-height-label-sm);
+  letter-spacing: var(--ns-letter-spacing-default);
+}
+
+.job-field__required {
+  color: var(--ns-color-text-secondary);
+  font-weight: var(--ns-font-weight-regular);
+}
+
+.job-field__control {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--ns-spacing-8);
+  height: var(--ns-size-control-lg);
+  padding-inline: calc(var(--ns-spacing-16) - (var(--job-field-border-width) - var(--ns-border-width-thin)));
+  background: var(--ns-color-bg-surface);
+  border: var(--job-field-border-width) solid var(--job-field-border-color);
+  border-radius: var(--ns-radius-sm);
+  transition:
+    border-color 120ms ease,
+    border-width 120ms ease;
+}
+
+.job-field__control:hover {
+  --job-field-border-color: var(--ns-color-border-brand);
+}
+
+.job-field--error {
+  --job-field-border-color: var(--ns-color-border-error);
+  --job-field-border-width: var(--ns-border-width-regular);
+}
+
+.job-field--error .job-field__control:hover {
+  --job-field-border-color: var(--ns-color-border-error);
+}
+
+/* Focused: 2px border/focus on the box, like TextField. */
+.job-field .job-field__control:focus-within {
+  --job-field-border-color: var(--ns-color-border-focus);
+  --job-field-border-width: var(--ns-border-width-medium);
+}
+
+.job-field__input {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ns-color-text-primary);
+  font-family: var(--ns-font-family-secondary);
+  font-size: var(--ns-font-size-body-md);
+  font-weight: var(--ns-font-weight-regular);
+  line-height: var(--ns-line-height-body-md);
+  letter-spacing: var(--ns-letter-spacing-default);
+  outline: none;
+}
+
+.job-field__input::placeholder {
+  color: var(--ns-color-text-tertiary);
+  opacity: 1;
+}
+
+/* Select: native control, custom chevron. */
+.job-field__select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.job-field__select:invalid {
+  color: var(--ns-color-text-tertiary);
+}
+
+.job-field__select option {
+  background: var(--ns-color-bg-surface);
+  color: var(--ns-color-text-primary);
+}
+
+.job-field__icon {
+  flex: none;
+  color: var(--ns-color-icon-secondary);
+  pointer-events: none;
+}
+
+.job-field__status-icon {
+  flex: none;
+  color: var(--ns-color-icon-error);
+  pointer-events: none;
+}
+
+/* TextArea */
+.job-field__control--multiline {
+  align-items: stretch;
+  height: auto;
+  padding: 0;
+}
+
+.job-field__textarea {
+  min-height: calc(var(--ns-spacing-150) - var(--ns-spacing-2));
+  padding: var(--ns-spacing-12) var(--ns-spacing-16) var(--ns-spacing-56);
+  resize: vertical;
+}
+
+.job-field__action {
+  position: absolute;
+  right: var(--ns-spacing-12);
+  bottom: var(--ns-spacing-12);
+}
+
+/* File: the real input covers the box (transparent), so click, keyboard and drop all work. */
+.job-field__control--file {
+  cursor: pointer;
+}
+
+.job-field__file-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--ns-color-text-tertiary);
+  font-family: var(--ns-font-family-secondary);
+  font-size: var(--ns-font-size-body-md);
+  font-weight: var(--ns-font-weight-regular);
+  line-height: var(--ns-line-height-body-md);
+  letter-spacing: var(--ns-letter-spacing-default);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.job-field__file-name--filled {
+  color: var(--ns-color-text-primary);
+}
+
+.job-field__file-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.job-field__message {
+  margin: 0;
+  color: var(--ns-color-text-secondary);
+  font-family: var(--ns-font-family-secondary);
+  font-size: var(--ns-font-size-body-sm);
+  font-weight: var(--ns-font-weight-regular);
+  line-height: var(--ns-line-height-body-sm);
+  letter-spacing: var(--ns-letter-spacing-default);
+}
+
+.job-field--error .job-field__message {
+  color: var(--ns-color-text-error);
+}
+
+@media (forced-colors: active) {
+  .job-field .job-field__control:focus-within {
+    outline: var(--ns-border-width-thin) solid Highlight;
+  }
+}

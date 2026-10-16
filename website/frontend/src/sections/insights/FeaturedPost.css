@@ -1,0 +1,94 @@
+.featured-post--loading {
+  min-height: calc(var(--ns-spacing-100) * 6);
+}
+
+.featured-post__card {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  min-height: calc(var(--ns-spacing-100) * 6);
+  padding-block: var(--ns-spacing-80);
+  overflow: hidden;
+}
+
+.featured-post__img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.featured-post__card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--ns-color-bg-overlay);
+}
+
+.featured-post__card:hover .featured-post__img {
+  transform: scale(1.03);
+}
+
+.featured-post__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-24);
+}
+
+.featured-post__title {
+  max-width: 18ch;
+  color: var(--ns-color-text-primary);
+  text-wrap: balance;
+}
+
+.featured-post__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* The whole card is the hit area; tags sit above it. */
+.featured-post__link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.featured-post__link:hover {
+  text-decoration: underline;
+}
+
+.featured-post__link:focus-visible {
+  outline: none;
+}
+
+.featured-post__card:has(.featured-post__link:focus-visible) {
+  outline: var(--ns-border-width-medium) solid var(--ns-color-border-focus);
+  outline-offset: calc(-1 * var(--ns-spacing-4));
+}
+
+@media (max-width: 767px) {
+  .featured-post {
+    padding: var(--ns-spacing-40) var(--site-gutter);
+  }
+
+  .featured-post__card {
+    min-height: calc(var(--ns-spacing-100) * 4);
+    padding: var(--ns-spacing-32);
+    border-radius: var(--ns-radius-2xl);
+  }
+
+  .featured-post__content {
+    padding: 0;
+  }
+
+  .featured-post__title {
+    font-size: var(--ns-font-size-web-h2);
+    line-height: var(--ns-line-height-web-h2);
+    letter-spacing: var(--ns-letter-spacing-default);
+  }
+}

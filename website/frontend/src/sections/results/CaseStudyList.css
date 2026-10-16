@@ -1,0 +1,120 @@
+.cs-list {
+  padding-block: var(--ns-spacing-80);
+  background: var(--ns-color-bg-canvas);
+}
+
+.cs-list__inner {
+  display: flex;
+  flex-direction: column;
+  /* Figma: each row is its own 80px-padded band, so 160 between rows. */
+  gap: calc(var(--ns-spacing-80) * 2);
+}
+
+/* Featured card: container width, 380 tall (Figma 1:88633). */
+.cs-list__featured {
+  min-height: calc(var(--ns-spacing-180) * 2 + var(--ns-spacing-20));
+  justify-content: flex-end;
+}
+
+.cs-list__featured .overlay-card__title {
+  margin-top: 0;
+  color: var(--ns-color-text-primary);
+}
+
+/* Row: text 664 + image 469 (Figma), gap 20. */
+.cs-list__row {
+  display: grid;
+  grid-template-columns: minmax(0, 664fr) minmax(0, 469fr);
+  align-items: center;
+  gap: var(--ns-spacing-20);
+}
+
+.cs-list__row--mirror {
+  grid-template-columns: minmax(0, 469fr) minmax(0, 664fr);
+}
+
+.cs-list__row--mirror .cs-list__media {
+  order: -1;
+}
+
+.cs-list__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--ns-spacing-24);
+  padding: var(--ns-spacing-16);
+}
+
+.cs-list__eyebrow {
+  color: var(--ns-color-text-accent);
+}
+
+.cs-list__body {
+  color: var(--ns-color-text-primary);
+}
+
+.cs-list__body > * + * {
+  margin-top: var(--ns-spacing-16);
+}
+
+.cs-list__media {
+  align-self: stretch;
+  overflow: hidden;
+  border-radius: var(--ns-radius-2xl);
+  background: var(--ns-color-bg-surface);
+  aspect-ratio: 469 / 422;
+}
+
+.cs-list__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.cs-list__row:hover .cs-list__media img {
+  transform: scale(1.04);
+}
+
+@media (max-width: 767px) {
+  .cs-list {
+    padding-block: var(--ns-spacing-40);
+  }
+
+  .cs-list__inner {
+    gap: calc(var(--ns-spacing-40) * 2);
+  }
+
+  .cs-list__featured {
+    min-height: calc(var(--ns-spacing-100) * 4);
+  }
+
+  .cs-list__featured .overlay-card__title {
+    font-size: var(--ns-font-size-web-h2);
+    line-height: var(--ns-line-height-web-h2);
+    letter-spacing: var(--ns-letter-spacing-default);
+  }
+
+  .cs-list__row,
+  .cs-list__row--mirror {
+    grid-template-columns: 1fr;
+  }
+
+  /* Mobile is always text, then image. */
+  .cs-list__row--mirror .cs-list__media {
+    order: 0;
+  }
+
+  .cs-list__copy {
+    padding: 0;
+  }
+
+  .cs-list__media {
+    aspect-ratio: 361 / 456;
+  }
+
+  .cs-list__cta {
+    align-self: stretch;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,115 @@
+.contact-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: min(var(--site-hero-height), calc(100svh - var(--ns-spacing-64)));
+}
+
+/* ---------- Left: form ---------- */
+
+.contact-page__form {
+  order: -1;
+  display: flex;
+  align-items: center;
+  padding-block: var(--ns-spacing-80);
+  padding-inline: max(var(--site-gutter), calc(50vw - var(--site-container) / 2)) var(--ns-spacing-80);
+  background: var(--ns-color-bg-surface);
+}
+
+.contact-page__form > * {
+  width: 100%;
+}
+
+/* ---------- Right: per-tab photo + headline ---------- */
+
+.contact-page__media {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--ns-spacing-80) var(--ns-spacing-80) var(--ns-spacing-64);
+  overflow: hidden;
+  background: var(--ns-color-bg-surface-subtle);
+}
+
+/* Bottom scrim so the copy stays legible over the people. */
+.contact-page__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, transparent 45%, var(--ns-color-bg-overlay) 80%);
+}
+
+.contact-page__layer {
+  position: absolute;
+  /* Photo above, copy below: keep the people out of the text block. */
+  inset: 0 0 calc(var(--ns-spacing-180) + var(--ns-spacing-80)) 0;
+  z-index: -2;
+  width: 100%;
+  height: calc(100% - var(--ns-spacing-180) - var(--ns-spacing-80));
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.contact-page__person {
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.contact-page__person[data-active='true'] {
+  opacity: 1;
+}
+
+.contact-page__copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-16);
+  max-width: calc(var(--ns-spacing-180) * 3);
+  animation: contact-page-fade 300ms ease;
+}
+
+.contact-page__headline,
+.contact-page__body {
+  color: var(--ns-color-text-primary);
+}
+
+.contact-page__headline strong {
+  font-weight: var(--ns-font-weight-black);
+}
+
+@keyframes contact-page-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1023px) {
+  .contact-page__form {
+    padding-inline: var(--ns-spacing-40);
+  }
+
+  .contact-page__media {
+    padding-inline: var(--ns-spacing-40);
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-page {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .contact-page__form {
+    order: 0;
+    padding: var(--ns-spacing-40) var(--ns-spacing-16);
+  }
+
+  .contact-page__media {
+    min-height: calc(var(--ns-spacing-180) * 3 + var(--ns-spacing-60));
+    padding: var(--ns-spacing-32) var(--ns-spacing-32) var(--ns-spacing-64);
+  }
+
+  .contact-page__person {
+    object-position: 30% top;
+  }
+}

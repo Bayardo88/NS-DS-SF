@@ -1,0 +1,361 @@
+{
+  "slug": "development",
+  "title": "Development",
+  "parent": "services",
+  "sections": [
+    {
+      "type": "hero",
+      "heading": "Every {{<}}Code{{/>}} placed\n**with purpose**.",
+      "body": "We build the team you don’t have time to find, and we have the talent that has worked with businesses like yours. So you can keep growing, without slowing down.",
+      "cta": {
+        "label": "Augment Your Team Now",
+        "href": "/contact"
+      },
+      "background": {
+        "src": "/assets/service-detail/hero-code-bokeh.png",
+        "alt": ""
+      },
+      "breadcrumb": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Services",
+          "href": "/services"
+        },
+        {
+          "label": "Development",
+          "href": "/services/development"
+        }
+      ]
+    },
+    {
+      "type": "logo-marquee",
+      "heading": "Developers Who Fit Like A Glove And Perform Like Swiss Watches. These Enterprises Didn’t Waste Time—They Hired Ours",
+      "logos": [
+        {
+          "src": "/assets/shared/client-scalar.svg",
+          "alt": "Scalar"
+        },
+        {
+          "src": "/assets/shared/client-versa.svg",
+          "alt": "Versa"
+        },
+        {
+          "src": "/assets/shared/client-welink.svg",
+          "alt": "WeLink"
+        },
+        {
+          "src": "/assets/shared/client-cmnh.svg",
+          "alt": "Children’s Miracle Network Hospitals"
+        }
+      ]
+    },
+    {
+      "type": "general",
+      "eyebrow": "Software Staff Augmentation for SaaS & Startups",
+      "heading": "Skip Building From Scratch\nYour Team Is Already Here",
+      "body": "Nicasource helps you grow your engineering team without the stress of hiring from scratch. We match you with experienced developers who understand how to ship, not just code. They plug into your tools, your time zone, and your culture—so your product keeps moving while you stay focused on growth.",
+      "cta": {
+        "label": "Skip Hiring Delays—Get Talent Now",
+        "href": "/contact"
+      },
+      "media": {
+        "src": "/assets/service-detail/general-dev-team-office.jpg",
+        "alt": "Three developers reviewing code together on a laptop in an office"
+      }
+    },
+    {
+      "type": "comparison-cards",
+      "heading": "Why **augment** your **tech teams** with Us? Let’s Compare",
+      "subheading": "See the difference of the Staff Augmentation Firm versus other models",
+      "cards": [
+        {
+          "title": "Nicasource",
+          "items": [
+            "Fully managed hiring process, including legal aspects and payroll management",
+            "Comprehensive benefits management",
+            "Training provided based on client needs",
+            "Moderate pricing, including necessary equipment",
+            "Standard 40-hour workweek",
+            "Termination management handled by Nicasource",
+            "Flexible staffing with quick resource swaps",
+            "Easy scalability to meet seasonal demands"
+          ]
+        },
+        {
+          "title": "Recruiting Agency",
+          "items": [
+            "Fully managed hiring process",
+            "Limited support in other areas",
+            "Legal hiring available as an add-on",
+            "Payroll, benefits, and training not included",
+            "Moderate pricing, but no equipment provided",
+            "Working hours unspecified",
+            "Terminations handled by the client",
+            "Changes in hires require a new hiring process",
+            "Limited flexibility for seasonal availability"
+          ]
+        },
+        {
+          "title": "In-House Team",
+          "items": [
+            "Managed internally, including legal hiring and payroll",
+            "Added tax responsibilities",
+            "Benefits and training handled in-house",
+            "High costs due to overhead expenses",
+            "Equipment provided internally",
+            "24-hour workweek",
+            "Terminations managed within the organization",
+            "Lengthy internal process for hiring changes",
+            "Limited seasonal availability with a fixed staff"
+          ]
+        }
+      ],
+      "desktopExpanded": false
+    },
+    {
+      "type": "service-card",
+      "eyebrow": "Explore our Services",
+      "heading": "Look the type of **Custom Software Development** we offer in our company",
+      "icon": "code",
+      "title": "Software\nDevelopment",
+      "description": "Get software solutions built uniquely for you, featuring both sleek front-end design and powerful back-end technology.",
+      "techLabel": "Some technologies we work with:",
+      "tech": [
+        {
+          "label": "React Native",
+          "logo": "/assets/shared/tech-react.svg"
+        },
+        {
+          "label": "Flutter",
+          "logo": "/assets/shared/tech-flutter.svg"
+        },
+        {
+          "label": "Node.js",
+          "logo": "/assets/shared/tech-nodejs.svg"
+        },
+        {
+          "label": "React",
+          "logo": "/assets/shared/tech-react.svg"
+        },
+        {
+          "label": "WordPress",
+          "logo": "/assets/shared/tech-wordpress.svg"
+        },
+        {
+          "label": "Shopify",
+          "logo": "/assets/shared/tech-shopify.svg"
+        },
+        {
+          "label": "Webflow",
+          "logo": "/assets/shared/tech-webflow.svg"
+        }
+      ],
+      "cta": {
+        "label": "Talk to a Dev Team Lead",
+        "href": "/contact"
+      },
+      "exploreLabel": "Explore the rest of our Services",
+      "explore": [
+        {
+          "label": "Project Management",
+          "href": "/services"
+        },
+        {
+          "label": "QA Testing",
+          "href": "/services"
+        },
+        {
+          "label": "Salesforce Administration",
+          "href": "/services"
+        },
+        {
+          "label": "Staff Augmentation",
+          "href": "/services"
+        },
+        {
+          "label": "UX Design",
+          "href": "/services"
+        },
+        {
+          "label": "UI Design",
+          "href": "/services"
+        },
+        {
+          "label": "UX Product Audit",
+          "href": "/services"
+        },
+        {
+          "label": "Product Management",
+          "href": "/services"
+        }
+      ],
+      "media": {
+        "src": "/assets/service-detail/service-card-robot-laptop.jpg",
+        "alt": "Orange robotic arms working beside a laptop showing code"
+      }
+    },
+    {
+      "type": "skills-marquee",
+      "heading": "**We have** the **skills** you’re looking for",
+      "tags": [
+        "React Native",
+        "React.js",
+        "Android",
+        "Python",
+        "C++",
+        "Ruby",
+        "iOS",
+        "Scala",
+        "Vue.js",
+        "C#",
+        "PHP",
+        "Ruby on Rails",
+        "Swift",
+        "Node.js",
+        "Java",
+        "Angular",
+        "HTML",
+        "And More"
+      ]
+    },
+    {
+      "type": "faq-accordion",
+      "heading": "FAQ’s About Hiring a Software Team in the USA",
+      "split": 4,
+      "items": [
+        {
+          "q": "How does custom software development differ from off-the-shelf software?",
+          "a": "Custom software development offers tailored solutions that align closely with a business's unique needs, allowing for greater customization and scalability. While it requires a higher upfront cost and longer development time, it adapts as the business grows. Off-the-shelf software, however, provides a quicker, budget-friendly option but lacks the flexibility to fully meet specific requirements. Choosing between the two depends on whether customization or cost efficiency is the priority."
+        },
+        {
+          "q": "What are the benefits of developing custom software?",
+          "a": "Custom software fits your workflows instead of forcing you to adapt to someone else’s. You own the code, control the roadmap, integrate exactly the tools you use, and avoid paying for features you don’t need. Over time that usually means better efficiency, a stronger competitive edge, and fewer licensing costs."
+        },
+        {
+          "q": "Is custom software development suitable for small businesses?",
+          "a": "Yes. Small teams often get the most from custom software because it removes manual work that would otherwise need extra hires. Starting with a focused MVP keeps the investment small, and our flexible staffing lets you add or reduce engineering hours as your budget allows."
+        },
+        {
+          "q": "Can custom software scale with my business?",
+          "a": "It should — and that’s how we build it. Our engineers design for growth from the start with modular architecture, cloud infrastructure, and automated testing, so new features, users, and integrations don’t require a rewrite."
+        },
+        {
+          "q": "What technologies are used in custom software development?",
+          "a": "It depends on your product and existing stack. Our engineers work with React, React Native, Vue.js, Angular, Node.js, Python, Java, C#, PHP, Ruby on Rails, Swift, Kotlin and more, plus cloud platforms like AWS, Azure and Google Cloud. We match the team to your tools, not the other way around."
+        },
+        {
+          "q": "How much does custom software development cost?",
+          "a": "Cost depends on scope, complexity, and team size. With nearshore staff augmentation you pay for the engineering hours you need — without recruiting fees, benefits, taxes, or equipment on your side. Book a call and we’ll put together a team and estimate that fits your budget."
+        },
+        {
+          "q": "How long does it take to develop custom solutions?",
+          "a": "A focused MVP can ship in a few months; larger platforms are built and released iteratively. Because our pre-vetted engineers can join your team in days rather than months, you start delivering sooner than with a traditional hiring process."
+        },
+        {
+          "q": "How do I choose the right custom software development partner?",
+          "a": "Look for proven experience with products like yours, engineers who communicate clearly in English, real time-zone overlap, transparent pricing, and a process that plugs into your tools. Ask for references — and make sure you can meet the people who will actually write your code."
+        },
+        {
+          "q": "How do you ensure the security of software solutions?",
+          "a": "Security is part of every stage: code reviews, dependency scanning, least-privilege access, encrypted data in transit and at rest, and compliance with your policies and NDAs. Our engineers follow your security processes and work inside your infrastructure."
+        },
+        {
+          "q": "Can custom software be integrated with existing systems?",
+          "a": "Yes. We regularly connect new software to CRMs like Salesforce, ERPs, payment gateways, and third-party APIs, and we can modernize legacy systems step by step so your operations never stop."
+        }
+      ]
+    },
+    {
+      "type": "seo-states",
+      "eyebrow": "No Offshore Lag",
+      "heading": "Covering All U.S. Time Zones with Seamless Overlap",
+      "columns": [
+        {
+          "heading": "Pacific Time",
+          "items": [
+            "California",
+            "Washington",
+            "Oregon",
+            "Nevada",
+            "Idaho (north)",
+            "Alaska (Panhandle)"
+          ]
+        },
+        {
+          "heading": "Mountain Time",
+          "items": [
+            "Colorado",
+            "Arizona",
+            "Utah",
+            "New Mexico",
+            "Montana",
+            "Wyoming",
+            "Idaho (south)",
+            "Kansas (west)",
+            "Nebraska (west)",
+            "Texas (El Paso)"
+          ]
+        },
+        {
+          "heading": "Central Time",
+          "items": [
+            "Texas",
+            "Illinois",
+            "Minnesota",
+            "Wisconsin",
+            "Missouri",
+            "Iowa",
+            "Louisiana",
+            "Oklahoma",
+            "Alabama",
+            "Mississippi",
+            "Arkansas",
+            "Tennessee (west)"
+          ]
+        },
+        {
+          "heading": "Eastern Time",
+          "items": [
+            "New York",
+            "Florida",
+            "Georgia",
+            "Massachusetts",
+            "Pennsylvania",
+            "North Carolina",
+            "Virginia",
+            "Ohio",
+            "Michigan",
+            "New Jersey",
+            "Maryland",
+            "Connecticut"
+          ]
+        },
+        {
+          "heading": "Eastern Time +1",
+          "items": [
+            "Puerto Rico",
+            "U.S. Virgin Islands",
+            "Atlantic Canada",
+            "Remote teams worldwide"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "banner",
+      "heading": "Ready to scale your development team?",
+      "subheading": "Explore Staff Augmentation with Us!",
+      "cta": {
+        "label": "Schedule a Call",
+        "href": "/contact"
+      },
+      "background": {
+        "src": "/assets/shared/banner-waves-bg.jpg",
+        "alt": ""
+      }
+    }
+  ]
+}

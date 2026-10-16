@@ -1,0 +1,87 @@
+.overlay-card {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--ns-spacing-16);
+  min-height: calc(var(--ns-spacing-100) * 2);
+  padding: var(--ns-spacing-24);
+  overflow: hidden;
+  border-radius: var(--ns-radius-xl);
+  background: var(--ns-color-bg-surface);
+  color: var(--ns-color-text-primary);
+}
+
+.overlay-card--lg {
+  padding: var(--ns-spacing-32);
+  border-radius: var(--ns-radius-2xl);
+}
+
+.overlay-card__img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.overlay-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, transparent 35%, var(--ns-color-bg-overlay) 100%), var(--ns-color-bg-overlay);
+}
+
+.overlay-card:hover .overlay-card__img,
+.overlay-card:focus-within .overlay-card__img {
+  transform: scale(1.04);
+}
+
+.overlay-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ns-spacing-6);
+  padding: 0;
+  list-style: none;
+}
+
+/* Solid coral chip as in Figma; dark on-brand text keeps AA in web-2025. */
+.overlay-card__tag {
+  padding: var(--ns-spacing-4) var(--ns-spacing-8);
+  border-radius: var(--ns-radius-sm);
+  background: var(--ns-color-bg-brand);
+  color: var(--ns-color-text-on-brand);
+}
+
+.overlay-card__title {
+  margin-top: auto;
+}
+
+.overlay-card__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Stretch the link over the whole card. */
+.overlay-card__link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.overlay-card__link:focus-visible {
+  outline: none;
+}
+
+.overlay-card:has(.overlay-card__link:focus-visible) {
+  outline: var(--ns-border-width-medium) solid var(--ns-color-border-focus);
+  outline-offset: var(--ns-spacing-2);
+}
+
+.overlay-card__link:hover {
+  text-decoration: underline;
+}

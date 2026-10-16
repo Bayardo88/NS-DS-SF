@@ -1,0 +1,389 @@
+{
+  "slug": "home",
+  "title": "Home",
+  "sections": [
+    {
+      "type": "hero",
+      "align": "center",
+      "heading": "Nearshore Staff Augmentation Company with\nElite Engineering Talent",
+      "body": [
+        "Finding top-performing talent is exhausting, we can make it easy.",
+        "Our engineers are pre-vetted, trained, and team-ready, working in your time zone and embedded in your workflow from day one. Focus on growth; we handle the rest."
+      ],
+      "cta": {
+        "label": "Get Your Elite Team Today",
+        "href": "/contact"
+      },
+      "background": {
+        "src": "/assets/home/hero-globe.png",
+        "alt": ""
+      }
+    },
+    {
+      "type": "logo-marquee",
+      "heading": "Our engineers have helped leading companies ship faster, scale smarter, and build better. And they’re ready to do the same for you.",
+      "logos": [
+        {
+          "src": "/assets/shared/client-scalar.svg",
+          "alt": "Scalar"
+        },
+        {
+          "src": "/assets/shared/client-welink.svg",
+          "alt": "WeLink"
+        },
+        {
+          "src": "/assets/shared/client-cmnh.svg",
+          "alt": "Children’s Miracle Network Hospitals"
+        },
+        {
+          "src": "/assets/shared/client-versa.svg",
+          "alt": "Versa"
+        }
+      ]
+    },
+    {
+      "type": "bento-services",
+      "eyebrow": "Plug-and-Play Expertise",
+      "heading": "We help you scale with expert teams in the areas that move your product forward. From code to quality, and design to delivery, our engineers are ready to jump in, contribute fast, and drive results.",
+      "tiles": [
+        {
+          "label": "Software\nDevelopment",
+          "href": "/services/development",
+          "span": "tall",
+          "image": {
+            "src": "/assets/home/service-hover-software-development.jpg",
+            "alt": ""
+          }
+        },
+        {
+          "label": "Product\nDesign",
+          "href": "/services",
+          "image": {
+            "src": "/assets/home/service-hover-product-design.jpg",
+            "alt": ""
+          }
+        },
+        {
+          "label": "Salesforce Admins\n& Developers",
+          "href": "/services",
+          "span": "wide",
+          "image": {
+            "src": "/assets/home/service-hover-salesforce.jpg",
+            "alt": ""
+          }
+        },
+        {
+          "label": "Project\nManagement",
+          "href": "/services",
+          "span": "wide",
+          "image": {
+            "src": "/assets/home/service-hover-project-management.jpg",
+            "alt": ""
+          }
+        },
+        {
+          "label": "Quality\nAssurance",
+          "href": "/services",
+          "image": {
+            "src": "/assets/home/service-hover-quality-assurance.jpg",
+            "alt": ""
+          }
+        }
+      ]
+    },
+    {
+      "type": "texture-callout",
+      "lines": [
+        "Build a Team",
+        "That Works",
+        "When You Do"
+      ],
+      "texture": "/assets/shared/texture-gradient-ribbons.jpg"
+    },
+    {
+      "type": "general",
+      "eyebrow": "Tailored Teams. On Your Terms.",
+      "heading": "Whatever You Need,\nWithout the Overhead",
+      "body": "Full-time, part-time, or just a few hours a week — we adapt to your needs without rigid scopes, bloated processes, or the overhead of traditional hires. You get embedded engineers who work your hours and tools, without adding to your salary costs, benefits burden, tax liability, or internal admin time. No project padding. No hidden costs. Just the team you need, ready to go.",
+      "cta": {
+        "label": "Find the Right Fit",
+        "href": "/contact"
+      },
+      "media": {
+        "src": "/assets/home/item01-lego-blocks.png",
+        "alt": "Stacked team blocks labelled React Dev 40 hrs, Quality Assurance 20 hrs, Backend Dev 10 hrs and Salesforce Admin 10 hrs"
+      }
+    },
+    {
+      "type": "general",
+      "contentSide": "right",
+      "eyebrow": "Every Hour Counts, But Most Are Lost",
+      "heading": "You’re Paying for 40 Hours. But Getting 24.",
+      "body": [
+        "Research shows that in a typical 40-hour week, only 24 hours are truly productive. Meetings, multitasking, distractions, even lunch — it adds up to 16 hours of lost time every week. And that’s time your projects can’t afford to lose."
+      ],
+      "cta": {
+        "label": "Book a Call and Recover 16 Hours",
+        "href": "/contact"
+      },
+      "media": {
+        "src": "/assets/home/item02-hours-donut.png",
+        "alt": "Ring chart of a 40-hour week: 24 hrs deep work, 6.5 hrs meetings and admin syncs, 3 hrs context switching, 3 hrs lunch and breaks, 2 hrs training, 1.5 hrs miscellaneous"
+      }
+    },
+    {
+      "type": "general",
+      "eyebrow": "We Cover the Time That Slows You Down",
+      "eyebrowTone": "brand",
+      "heading": "Your Team, Focused\nand Fully Aligned.",
+      "body": "Unlike traditional offshore models, you won’t be waiting for answers overnight or waking up to blockers. Our engineers stay aligned through internal syncs, KPI reviews, trainings, team check-ins, and even lunch — without pulling focus from your goals. We call those 8 extra hours NS Time, built into our model so your team can keep moving without interruptions.",
+      "media": {
+        "src": "/assets/home/item03-calendar-tablet.png",
+        "alt": "Weekly calendar showing NS Time blocks around the working day"
+      }
+    },
+    {
+      "type": "timezone-bento",
+      "eyebrow": "Maximize Productivity",
+      "heading": "**English-Speaking** Latin American **Talent** Aligned to **Your Work Hours**.",
+      "body": "Time zone overlap allows Latin American talent to work in sync with U.S. teams, enabling seamless real-time collaboration and increased productivity.",
+      "zones": [
+        {
+          "name": "Pacific",
+          "countries": [
+            "Mexico"
+          ],
+          "utc": "UTC-08:00",
+          "span": "tall",
+          "image": {
+            "src": "/assets/home/tz-pacific.jpg",
+            "alt": ""
+          }
+        },
+        {
+          "name": "Central",
+          "countries": [
+            "Mexico",
+            "Nicaragua"
+          ],
+          "utc": "UTC-06:00",
+          "image": {
+            "src": "/assets/home/tz-central.jpg",
+            "alt": ""
+          }
+        },
+        {
+          "name": "Eastern",
+          "countries": [
+            "Colombia",
+            "Ecuador"
+          ],
+          "utc": "UTC-05:00",
+          "image": {
+            "src": "/assets/home/tz-eastern.jpg",
+            "alt": ""
+          }
+        },
+        {
+          "name": "Mountain",
+          "countries": [
+            "Mexico",
+            "Nicaragua"
+          ],
+          "utc": "UTC-07:00",
+          "image": {
+            "src": "/assets/home/tz-mountain.jpg",
+            "alt": ""
+          }
+        },
+        {
+          "name": "Eastern+1",
+          "countries": [
+            "Brazil",
+            "Argentina"
+          ],
+          "utc": "UTC-03:00",
+          "image": {
+            "src": "/assets/home/tz-eastern-plus-1.jpg",
+            "alt": ""
+          }
+        }
+      ]
+    },
+    {
+      "type": "texture-callout",
+      "uppercase": true,
+      "lines": [
+        "Built to",
+        "fit, easy",
+        "to scale"
+      ],
+      "texture": "/assets/shared/texture-gradient-ribbons.jpg",
+      "align": "center"
+    },
+    {
+      "type": "general",
+      "eyebrow": "A Process Designed for Busy Product Leaders",
+      "heading": "From First Call to Kickoff,\nWe Make It Effortless",
+      "body": "From the first conversation, we align with your stack, your tools, and your delivery pace. You get pre-trained, vetted profiles matched to your workflow. You review. You approve. We plug in and get to work — no friction, no wasted time.",
+      "media": {
+        "src": "/assets/home/process01-ctrl-hire-keys.png",
+        "alt": "Keyboard keys reading Ctrl and Hire"
+      }
+    },
+    {
+      "type": "columns",
+      "columns": 3,
+      "items": [
+        {
+          "number": "01",
+          "title": "We meet\nwith you!",
+          "body": "You’ll meet directly with our COO or CTO to align on your product, goals, and team needs — so we can support your roadmap from day one."
+        },
+        {
+          "number": "02",
+          "title": "We Assemble\nYour Team",
+          "body": "Once you’re on board, we handle the paperwork and start curating a team that fits your stack, tools, and delivery flow."
+        },
+        {
+          "number": "03",
+          "title": "You Approve\nand We Start",
+          "body": "You review the lineup, give the green light, and your new team gets to work — aligned, embedded, and ready to deliver."
+        }
+      ]
+    },
+    {
+      "type": "general",
+      "eyebrow": "Don’t just take our word for it!",
+      "eyebrowTone": "brand",
+      "heading": "Our **track record**\nspeaks for itself.",
+      "body": "We have successfully delivered exceptional results to numerous clients, ranging from ambitious startups to established enterprises!",
+      "testimonials": [
+        {
+          "id": "jolt",
+          "logo": {
+            "src": "/assets/shared/client-jolt.png",
+            "alt": "Jolt"
+          },
+          "name": "Erick",
+          "role": "Head of Development",
+          "quote": "Nicasource has helped us simplify our engineering team growth by making it easier for us to find and retain great programmers. Instead of reviewing hundreds of resumes and interviewing dozens of candidates, they provide fantastic pre-vetted devs that meet our qualifications."
+        },
+        {
+          "id": "scalar",
+          "name": "Client name",
+          "role": "VP of Engineering",
+          "quote": "Placeholder testimonial — replace in WordPress. The carousel advances on its own and pauses on hover or focus."
+        },
+        {
+          "id": "welink",
+          "name": "Client name",
+          "role": "CTO",
+          "quote": "Placeholder testimonial — replace in WordPress."
+        },
+        {
+          "id": "versa",
+          "name": "Client name",
+          "role": "Product Lead",
+          "quote": "Placeholder testimonial — replace in WordPress."
+        }
+      ]
+    },
+    {
+      "type": "post-bento",
+      "eyebrow": "NS Insights",
+      "heading": "Expert Knowledge to Help You Scale With Confidence & Build Smarter"
+    },
+    {
+      "type": "banner",
+      "heading": "Redefine success with Nicasource",
+      "cta": {
+        "label": "Partner with Us",
+        "href": "/contact"
+      },
+      "background": {
+        "src": "/assets/shared/banner-liquid-bg.jpg",
+        "alt": ""
+      }
+    },
+    {
+      "type": "seo-states",
+      "eyebrow": "Supporting Teams Coast to Coast — And Everywhere in Between",
+      "heading": "Wherever You Work, We Work Too",
+      "columns": [
+        {
+          "heading": "Pacific Time",
+          "items": [
+            "California",
+            "Washington",
+            "Oregon",
+            "Nevada",
+            "Idaho (north)",
+            "Alaska (Panhandle)"
+          ]
+        },
+        {
+          "heading": "Mountain Time",
+          "items": [
+            "Colorado",
+            "Arizona",
+            "Utah",
+            "New Mexico",
+            "Montana",
+            "Wyoming",
+            "Idaho (south)",
+            "Kansas (west)",
+            "Nebraska (west)",
+            "Texas (El Paso)"
+          ]
+        },
+        {
+          "heading": "Central Time",
+          "items": [
+            "Texas",
+            "Illinois",
+            "Minnesota",
+            "Wisconsin",
+            "Missouri",
+            "Iowa",
+            "Louisiana",
+            "Oklahoma",
+            "Alabama",
+            "Mississippi",
+            "Arkansas",
+            "Tennessee (west)"
+          ]
+        },
+        {
+          "heading": "Eastern Time",
+          "items": [
+            "New York",
+            "Florida",
+            "Georgia",
+            "Massachusetts",
+            "Pennsylvania",
+            "North Carolina",
+            "Virginia",
+            "Ohio",
+            "Michigan",
+            "New Jersey",
+            "Maryland",
+            "Connecticut"
+          ]
+        },
+        {
+          "heading": "Eastern Time +1",
+          "items": [
+            "Puerto Rico",
+            "U.S. Virgin Islands",
+            "Atlantic Canada",
+            "Remote teams worldwide"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "contact"
+    }
+  ]
+}

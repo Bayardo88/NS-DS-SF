@@ -6,6 +6,12 @@ see CONTRIBUTING.md › Releases.
 
 ## [Unreleased]
 
+#### Added (repo, not the package)
+
+- `website/`: headless WordPress (Playground) + React reference build of the NS 2025 website on the
+  `web-2025` theme, 9 pages + post/job/case-study templates, 34 section types. `website/DESIGN.md`
+  documents it for AI agents; the `ns-website-screens` Claude skill builds new screens with it.
+
 ### 0.1.0 (first release, not tagged yet)
 
 #### Added

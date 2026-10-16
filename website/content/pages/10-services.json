@@ -1,0 +1,301 @@
+{
+  "slug": "services",
+  "title": "Services",
+  "sections": [
+    {
+      "type": "hero",
+      "heading": "Staff Augmentation That Works Like An In-House Team",
+      "body": "We don’t just staff roles — we build teams that integrate with your tools, match your delivery flow, and care about your product like you do. Our engineers are pre-vetted, deeply trained, and ready to move your vision forward from day one.",
+      "cta": {
+        "label": "Build Your Team Now",
+        "href": "/contact"
+      },
+      "background": {
+        "src": "/assets/services/hero-bg-dots.png",
+        "alt": ""
+      },
+      "breadcrumb": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Services",
+          "href": "/services"
+        }
+      ]
+    },
+    {
+      "type": "logo-marquee",
+      "heading": "Brands That Have Taken Advantage Of Our Partnership And Have Grown Their Businesses",
+      "logos": [
+        {
+          "src": "/assets/shared/client-scalar.svg",
+          "alt": "Scalar"
+        },
+        {
+          "src": "/assets/shared/client-versa.svg",
+          "alt": "Versa"
+        },
+        {
+          "src": "/assets/shared/client-welink.svg",
+          "alt": "WeLink"
+        },
+        {
+          "src": "/assets/shared/client-cmnh.svg",
+          "alt": "Children’s Miracle Network Hospitals"
+        }
+      ]
+    },
+    {
+      "type": "general",
+      "eyebrow": "Staff Augmentation for SaaS Teams",
+      "heading": "Expand Your Team Without Slowing Down",
+      "body": [
+        "Nicasource Staff Augmentation helps fast-growing SaaS teams scale engineering capacity — whether you need long-term contributors or short bursts of specialized support.",
+        "From DevOps to QA and everything in between, our engineers integrate like full-time staff: working your hours, on your tools, and aligned to your flow. Without the overhead of recruiting fees, benefits packages, tax liability, or internal admin costs.",
+        "No compliance complexity. No inflated headcount. Just lean, scalable engineering — on your terms."
+      ],
+      "cta": {
+        "label": "Augment Your Team",
+        "href": "/contact"
+      },
+      "media": {
+        "src": "/assets/services/general-team-laptop.jpg",
+        "alt": "Two engineers working together at a laptop"
+      }
+    },
+    {
+      "type": "benefits-explorer",
+      "eyebrow": "When Your Product Can’t Wait",
+      "heading": "We Give You The Equipment You Need To Move Forward Without Slowing Down",
+      "items": [
+        {
+          "title": "40 Productive hours",
+          "body": "These hours are actually hours worked, each day we will demonstrate what we have done in those hours for your business.",
+          "image": {
+            "src": "/assets/services/benefit-beach-laptop.jpg",
+            "alt": "Laptop open on a beach towel"
+          }
+        },
+        {
+          "title": "Cost Efficiency",
+          "body": "Our talent offers a perfect balance between productivity and a more affordable annual cost compared to others. In addition to not paying taxes, social security, etc... We take care of that so you pay less."
+        },
+        {
+          "title": "8 Hours a day",
+          "body": "We call it NS Time, as these hours are on the house, as we will cover meal times, training, team meetings and study time."
+        },
+        {
+          "title": "English Accent",
+          "body": "We make sure that our entire workforce speaks fluent and understandable English."
+        },
+        {
+          "title": "Qualified Talent",
+          "body": "We excel at identifying and honing premier talent, meticulously crafted to meet the exacting demands of your digital product and service, ensuring flawless execution."
+        },
+        {
+          "title": "Task & Team Management",
+          "body": "Focus on what you do best, and we focus on keeping the workers happy because we handle everything to make everything you need happen."
+        },
+        {
+          "title": "LATAM Talent on your time",
+          "body": "Time zone alignment allows Latin American teams to sync effortlessly with their U.S. counterparts, fostering seamless collaboration and greater productivity."
+        },
+        {
+          "title": "In-House Training",
+          "body": "We make sure that our employees have the opportunity to learn new knowledge and techniques to apply them in your business outside of working hours."
+        }
+      ]
+    },
+    {
+      "type": "bento-services",
+      "eyebrow": "You Set the Focus. We Bring the Firepower",
+      "heading": "Engineers, Designers, PMs, and More\nReady to Plug Into Your Flow",
+      "tiles": [
+        {
+          "label": "Software\nDevelopment",
+          "href": "/services/development",
+          "span": "tall",
+          "image": {
+            "src": "/assets/home/service-hover-software-development.jpg",
+            "alt": ""
+          }
+        },
+        {
+          "label": "Product\nDesign",
+          "href": "/services",
+          "image": {
+            "src": "/assets/home/service-hover-product-design.jpg",
+            "alt": ""
+          }
+        },
+        {
+          "label": "Salesforce Admins\n& Developers",
+          "href": "/services",
+          "span": "wide",
+          "image": {
+            "src": "/assets/home/service-hover-salesforce.jpg",
+            "alt": ""
+          }
+        },
+        {
+          "label": "Project\nManagement",
+          "href": "/services",
+          "span": "wide",
+          "image": {
+            "src": "/assets/home/service-hover-project-management.jpg",
+            "alt": ""
+          }
+        },
+        {
+          "label": "Quality\nAssurance",
+          "href": "/services",
+          "image": {
+            "src": "/assets/home/service-hover-quality-assurance.png",
+            "alt": ""
+          }
+        }
+      ]
+    },
+    {
+      "type": "comparison-cards",
+      "heading": "Why **augment** your **tech teams** with Us? Let’s Compare",
+      "subheading": "See the difference of the Staff Augmentation Firm versus other models",
+      "cards": [
+        {
+          "title": "Nicasource",
+          "items": [
+            "Fully managed hiring process, including legal aspects and payroll management",
+            "Comprehensive benefits management",
+            "Training provided based on client needs",
+            "Moderate pricing, including necessary equipment",
+            "Standard 40-hour workweek",
+            "Termination management handled by Nicasource",
+            "Flexible staffing with quick resource swaps",
+            "Easy scalability to meet seasonal demands"
+          ]
+        },
+        {
+          "title": "Recruiting Agency",
+          "items": [
+            "Fully managed hiring process",
+            "Limited support in other areas",
+            "Legal hiring available as an add-on",
+            "Payroll, benefits, and training not included",
+            "Moderate pricing, but no equipment provided",
+            "Working hours unspecified",
+            "Terminations handled by the client",
+            "Changes in hires require a new hiring process",
+            "Limited flexibility for seasonal availability"
+          ]
+        },
+        {
+          "title": "In-House Team",
+          "items": [
+            "Managed internally, including legal hiring and payroll",
+            "Added tax responsibilities",
+            "Benefits and training handled in-house",
+            "High costs due to overhead expenses",
+            "Equipment provided internally",
+            "24-hour workweek",
+            "Terminations managed within the organization",
+            "Lengthy internal process for hiring changes",
+            "Limited seasonal availability with a fixed staff"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "seo-states",
+      "eyebrow": "No Offshore Lag",
+      "heading": "Covering All U.S. Time Zones\nwith Seamless Overlap",
+      "columns": [
+        {
+          "heading": "Pacific Time",
+          "items": [
+            "California",
+            "Washington",
+            "Oregon",
+            "Nevada",
+            "Idaho (north)",
+            "Alaska (Panhandle)"
+          ]
+        },
+        {
+          "heading": "Mountain Time",
+          "items": [
+            "Colorado",
+            "Arizona",
+            "Utah",
+            "New Mexico",
+            "Montana",
+            "Wyoming",
+            "Idaho (south)",
+            "Kansas (west)",
+            "Nebraska (west)",
+            "Texas (El Paso)"
+          ]
+        },
+        {
+          "heading": "Central Time",
+          "items": [
+            "Texas",
+            "Illinois",
+            "Minnesota",
+            "Wisconsin",
+            "Missouri",
+            "Iowa",
+            "Louisiana",
+            "Oklahoma",
+            "Alabama",
+            "Mississippi",
+            "Arkansas",
+            "Tennessee (west)"
+          ]
+        },
+        {
+          "heading": "Eastern Time",
+          "items": [
+            "New York",
+            "Florida",
+            "Georgia",
+            "Massachusetts",
+            "Pennsylvania",
+            "North Carolina",
+            "Virginia",
+            "Ohio",
+            "Michigan",
+            "New Jersey",
+            "Maryland",
+            "Connecticut"
+          ]
+        },
+        {
+          "heading": "Eastern Time +1",
+          "items": [
+            "Puerto Rico",
+            "U.S. Virgin Islands",
+            "Atlantic Canada",
+            "Remote teams worldwide"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "banner",
+      "heading": "Join the 20+ partners who trust us.",
+      "cta": {
+        "label": "Schedule a Call",
+        "href": "/contact"
+      },
+      "background": {
+        "src": "/assets/shared/banner-liquid-bg.jpg",
+        "alt": ""
+      }
+    },
+    {
+      "type": "contact"
+    }
+  ]
+}

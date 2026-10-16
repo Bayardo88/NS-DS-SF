@@ -1,0 +1,119 @@
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-40);
+  overflow: hidden;
+}
+
+.skills__heading {
+  text-align: center;
+}
+
+.skills__rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-16);
+  mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+}
+
+.skills__row {
+  overflow: hidden;
+}
+
+.skills__track {
+  display: flex;
+  width: max-content;
+  animation: skills-rtl 60s linear infinite;
+}
+
+.skills__row--ltr .skills__track {
+  animation-name: skills-ltr;
+}
+
+/* Different start offsets so the rows don't line up. */
+.skills__row:nth-child(2) .skills__track {
+  animation-delay: -20s;
+}
+
+.skills__row:nth-child(3) .skills__track {
+  animation-delay: -40s;
+}
+
+.skills__rows:hover .skills__track {
+  animation-play-state: paused;
+}
+
+.skills__list {
+  display: flex;
+  gap: var(--ns-spacing-16);
+  margin: 0;
+  padding: 0 var(--ns-spacing-16) 0 0;
+  list-style: none;
+}
+
+.skills__tag {
+  flex: none;
+  padding: var(--ns-spacing-8) var(--ns-spacing-16);
+  border: 1px solid var(--ns-color-border-accent);
+  border-radius: var(--ns-radius-lg);
+  background: var(--ns-color-bg-canvas);
+  color: var(--ns-color-text-secondary);
+  white-space: nowrap;
+}
+
+@keyframes skills-rtl {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes skills-ltr {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills__rows {
+    mask-image: none;
+  }
+
+  .skills__row[aria-hidden='true'],
+  .skills__list[aria-hidden='true'] {
+    display: none;
+  }
+
+  .skills__track {
+    width: auto;
+    animation: none;
+  }
+
+  .skills__list {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-inline: var(--site-gutter);
+  }
+}
+
+@media (max-width: 767px) {
+  .skills {
+    gap: var(--ns-spacing-32);
+  }
+
+  .skills__rows {
+    gap: var(--ns-spacing-12);
+  }
+
+  .skills__list {
+    gap: var(--ns-spacing-12);
+    padding-right: var(--ns-spacing-12);
+  }
+}

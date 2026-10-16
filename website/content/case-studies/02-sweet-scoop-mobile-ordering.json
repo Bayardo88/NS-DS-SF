@@ -1,0 +1,89 @@
+{
+  "slug": "sweet-scoop-mobile-ordering",
+  "title": "Ordering ice cream in two taps",
+  "date": "2025-03-02 09:00:00",
+  "excerpt": "A mobile ordering app for a regional ice-cream chain, designed and shipped in 14 weeks.",
+  "meta": {
+    "client": "Sweet Scoop",
+    "project": "Mobile Ordering",
+    "industry": "Food & Beverage",
+    "tags": [
+      "Food & Beverage",
+      "Mobile App",
+      "UX Design"
+    ],
+    "image": {
+      "src": "/assets/case-studies/case-ice-cream.png",
+      "alt": "Ice-cream cone held up against a pastel wall"
+    },
+    "hero_image": {
+      "src": "/assets/services/general-mobile-ice-cream.jpg",
+      "alt": ""
+    },
+    "headline": "**Why hire** our **developers** to grow a mobile-first ordering team?",
+    "summary": "Sweet Scoop needed pick-up ordering before summer. Two React Native engineers, a UX designer and a QA analyst joined their team and shipped a two-tap reorder flow in 14 weeks."
+  },
+  "sections": [
+    {
+      "type": "case-study-hero"
+    },
+    {
+      "type": "case-study-body",
+      "blocks": [
+        {
+          "kind": "intro",
+          "title": "A **two-tap reorder** flow, shipped before peak season."
+        },
+        {
+          "kind": "split",
+          "body": "Sweet Scoop's stores were losing summer sales to long lines. We joined their in-house developer with a small, embedded squad to design and ship a pick-up ordering app for iOS and Android, connected to the chain's existing point-of-sale system.",
+          "image": {
+            "src": "/assets/case-studies/case-ice-cream.png",
+            "alt": "Ice-cream cone against a pastel wall"
+          },
+          "tallImage": {
+            "src": "/assets/services/general-mobile-ice-cream.jpg",
+            "alt": "Customer holding an ice-cream cone"
+          }
+        },
+        {
+          "kind": "text",
+          "title": "Challenge",
+          "body": "A single in-house developer, a POS vendor with a limited API and a hard deadline: the app had to be in the stores before the first heat wave."
+        },
+        {
+          "kind": "text",
+          "title": "Solution",
+          "body": [
+            "We embedded two React Native engineers, a UX designer and a QA analyst working in the client's time zone and tools.",
+            "The team built a thin integration layer over the POS, a saved-favourites reorder flow and automated release checks so the in-house developer could own the app after hand-off."
+          ]
+        },
+        {
+          "kind": "metrics",
+          "title": "Results",
+          "items": [
+            {
+              "value": "14 wks",
+              "label": "from kickoff to both app stores"
+            },
+            {
+              "value": "31%",
+              "label": "of summer orders placed in the app"
+            },
+            {
+              "value": "2 taps",
+              "label": "to reorder a saved favourite"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "case-study-related"
+    },
+    {
+      "type": "contact"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "slug": "about",
+  "title": "About Us",
+  "sections": [
+    {
+      "type": "hero",
+      "heading": "Built for Impact. Driven by People",
+      "body": "We’re a nearshore engineering partner that helps digital products thrive and the people behind them grow.",
+      "background": {
+        "src": "/assets/about/hero-bg.png",
+        "alt": ""
+      },
+      "breadcrumb": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "About Us",
+          "href": "/about"
+        }
+      ],
+      "bodySize": "lead"
+    },
+    {
+      "type": "general",
+      "eyebrow": "Built on Experience, Grown with Purpose",
+      "heading": "A Reliable Nearshore Partner With Decade of Experience",
+      "body": [
+        "Nicasource started in 2013 as a digital agency focused on building great products. We learned that success comes not just from code, but from the people behind it.",
+        "Today, we specialize in nearshore staff augmentation for fast-growing tech companies, embedding engineers who treat your product as their own. We bring the same product mindset—now at scale. Not just a vendor, but a reliable extension of your team."
+      ],
+      "media": {
+        "src": "/assets/about/about-founder-laptop.png",
+        "alt": "NicaSource founder working on a laptop"
+      }
+    },
+    {
+      "type": "general",
+      "contentSide": "right",
+      "eyebrow": "Research",
+      "heading": "**Our findings**",
+      "body": [
+        "We found that the average worker in the USA works at least 24 hours out of 48 working hours per week.",
+        "This reduction of productive time impacts many companies today, both for the progress of a project and monetarily in every sense of the word."
+      ],
+      "cta": {
+        "label": "Schedule a Call",
+        "href": "/contact"
+      },
+      "media": {
+        "src": "/assets/about/research-donut-lost-time.png",
+        "alt": "Donut chart of a 48-hour week: 24 hours productive, 24 hours lost time"
+      }
+    },
+    {
+      "type": "general",
+      "eyebrow": "Why Us?",
+      "heading": "**Our Offer**",
+      "body": "Unlike traditional staffing agencies, Nicasource As a leading Staff Augmentation Firm, provides your company with dedicated teams that address all your digital needs, from the maintenance of websites and platforms to the enhancement and development of new features, without the hassle of international laws, payroll, employee benefits, etc.",
+      "cta": {
+        "label": "Schedule a Call",
+        "href": "/contact"
+      },
+      "media": {
+        "src": "/assets/about/offer-blocks-1800.png",
+        "alt": "Stacked building blocks representing a dedicated team"
+      }
+    },
+    {
+      "type": "columns",
+      "columns": 3,
+      "appearance": "card",
+      "items": [
+        {
+          "title": "Staff Augmentation",
+          "body": "You lead, we support. Add individual engineers to your existing team and keep full control of execution.\n\n**Ideal for:** Long-term, seasonal, or fast-scaling needs"
+        },
+        {
+          "title": "Managed Teams",
+          "body": "No tech team? No problem. We provide a managed dedicated teams led by a tech lead who drives the engineering side while you focus on outcomes. You set the scope — we steer the how.\n\n**Ideal for:** Non-technical teams needing technical leadership, and long-term partnerships."
+        },
+        {
+          "title": "Project-Based Work",
+          "body": "We own the delivery from kickoff to launch. Ideal when you need a team to get in, get it done, and move on.\n\n**Ideal for:** Fixed-scope builds, MVPs, or overflow projects."
+        }
+      ]
+    },
+    {
+      "type": "banner",
+      "heading": "We’re Built To Deliver — For Your Business, Your Users, And Your Team.",
+      "cta": {
+        "label": "Partner with Us",
+        "href": "/contact"
+      },
+      "background": {
+        "src": "/assets/shared/banner-waves-bg.jpg",
+        "alt": ""
+      }
+    },
+    {
+      "type": "contact"
+    }
+  ]
+}

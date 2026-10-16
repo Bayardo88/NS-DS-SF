@@ -1,0 +1,49 @@
+.overlay-card.post-card {
+  padding: var(--ns-spacing-32);
+  border: var(--ns-border-width-thin) solid var(--ns-color-border-subtle);
+  border-radius: var(--ns-radius-2xl);
+  transition: transform 200ms ease;
+}
+
+.post-card .overlay-card__tags {
+  max-width: calc(var(--ns-spacing-180) + var(--ns-spacing-100));
+}
+
+.overlay-card.post-card:hover {
+  transform: translateY(calc(-1 * var(--ns-spacing-4)));
+}
+
+/* Masonry shapes (Figma card heights 240–545 at ~372 wide). */
+.post-card--fixed {
+  aspect-ratio: 12 / 13;
+}
+
+.post-card--short {
+  aspect-ratio: 3 / 2;
+}
+
+.post-card--wide {
+  aspect-ratio: 16 / 15;
+}
+
+.post-card--landscape {
+  aspect-ratio: 9 / 8;
+}
+
+.post-card--square {
+  aspect-ratio: 1;
+}
+
+.post-card--portrait {
+  aspect-ratio: 5 / 6;
+}
+
+.post-card--tall {
+  aspect-ratio: 3 / 4;
+}
+
+@media (max-width: 767px) {
+  .post-card--fixed {
+    aspect-ratio: 9 / 10;
+  }
+}

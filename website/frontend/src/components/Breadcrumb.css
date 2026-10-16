@@ -1,0 +1,35 @@
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ns-spacing-8);
+  padding: 0;
+  list-style: none;
+  color: var(--ns-color-text-primary);
+}
+
+.breadcrumb__item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ns-spacing-4);
+}
+
+.breadcrumb__link {
+  color: inherit;
+  text-decoration: none;
+  border-radius: var(--ns-radius-xs);
+}
+
+.breadcrumb__link:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb__link:focus-visible {
+  outline: var(--ns-border-width-medium) solid var(--ns-color-border-focus);
+  outline-offset: var(--ns-spacing-2);
+}
+
+.breadcrumb__sep {
+  display: inline-flex;
+  color: var(--ns-color-icon-secondary);
+}

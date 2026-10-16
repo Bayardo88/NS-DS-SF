@@ -1,0 +1,157 @@
+.service-card .stack {
+  gap: var(--ns-spacing-20);
+}
+
+/* A light (inverse) panel inside the dark theme: every color here is an inverse/brand token. */
+.service-card__card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.16fr) minmax(0, 1fr);
+  gap: var(--ns-spacing-32);
+  margin-top: var(--ns-spacing-4);
+  padding: var(--ns-spacing-40);
+  border-radius: var(--ns-radius-2xl);
+  background: var(--ns-color-bg-inverse);
+  color: var(--ns-color-text-inverse);
+}
+
+.service-card__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--ns-spacing-32);
+}
+
+.service-card__head {
+  display: flex;
+  align-items: center;
+  gap: var(--ns-spacing-24);
+}
+
+.service-card__icon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: var(--ns-spacing-80);
+  height: var(--ns-spacing-80);
+  border: var(--ns-border-width-medium) solid var(--ns-color-border-brand);
+  border-radius: var(--ns-radius-lg);
+  color: var(--ns-color-icon-brand);
+}
+
+.service-card__title {
+  max-width: 12ch;
+}
+
+.service-card__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-12);
+}
+
+.service-card__label {
+  font-weight: var(--ns-font-weight-black);
+}
+
+.service-card__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ns-spacing-4);
+  padding: 0;
+  list-style: none;
+}
+
+.service-card__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ns-spacing-8);
+  padding: var(--ns-spacing-4) var(--ns-spacing-12);
+  border: 1px solid var(--ns-color-border-default);
+  border-radius: var(--ns-radius-full);
+}
+
+.service-card__chip img {
+  width: var(--ns-spacing-16);
+  height: var(--ns-spacing-16);
+}
+
+.service-card__explore {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: start;
+  gap: var(--ns-spacing-16) var(--ns-spacing-32);
+  padding: 0;
+  list-style: none;
+}
+
+.service-card__link {
+  color: var(--ns-color-text-inverse);
+  text-decoration: none;
+  border-radius: var(--ns-radius-xs);
+}
+
+.service-card__link:hover,
+.service-card__link[aria-current='page'] {
+  text-decoration: underline;
+}
+
+.service-card__link:focus-visible {
+  outline: var(--ns-border-width-medium) solid var(--ns-color-border-focus);
+  outline-offset: var(--ns-spacing-2);
+}
+
+.service-card__media {
+  padding: var(--ns-spacing-16);
+}
+
+.service-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--ns-radius-lg);
+}
+
+@media (max-width: 1023px) {
+  .service-card__card {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card__media {
+    order: -1;
+    padding: 0;
+  }
+
+  .service-card__media img {
+    height: auto;
+    aspect-ratio: 313 / 225;
+  }
+}
+
+@media (max-width: 767px) {
+  .service-card__card {
+    padding: var(--ns-spacing-24);
+    gap: var(--ns-spacing-24);
+  }
+
+  .service-card__copy {
+    gap: var(--ns-spacing-24);
+  }
+
+  .service-card__cta {
+    align-self: stretch;
+    justify-content: center;
+  }
+
+  /* Mobile: the explore list becomes outlined pills. */
+  .service-card__explore {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ns-spacing-8);
+  }
+
+  .service-card__link {
+    display: inline-block;
+    padding: var(--ns-spacing-4) var(--ns-spacing-12);
+    border: 1px solid var(--ns-color-border-default);
+    border-radius: var(--ns-radius-full);
+  }
+}

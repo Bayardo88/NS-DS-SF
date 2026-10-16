@@ -1,0 +1,57 @@
+{
+  "slug": "exploring-the-majestic-mountain-landscapes",
+  "title": "Exploring the Majestic Mountain Landscapes",
+  "date": "2025-05-23 09:00:00",
+  "excerpt": "Remote engineering is a marathon. Teams that last are the ones that take mental health as seriously as uptime, especially when people work across borders and cultures.",
+  "categories": [
+    "Mental Health Awareness"
+  ],
+  "meta": {
+    "image": "/assets/home/blog-mountain-landscapes.jpg",
+    "tags": [
+      "Mental Health Awareness"
+    ],
+    "home_slot": "secondary",
+    "reading_time": "1 min read",
+    "author": {
+      "name": "Boyo Martínez",
+      "role": "Product Director",
+      "avatar": "/assets/blog-post/author-boyo-martinez.jpg",
+      "bio": "Boyo leads product and design at NicaSource, where he helps US companies plan, staff and run nearshore engineering teams. He has spent fifteen years shipping digital products with distributed teams across the Americas.",
+      "verified": true,
+      "years_experience": 15,
+      "expertise": [
+        "UX Design",
+        "Product Design",
+        "Product Strategy"
+      ]
+    },
+    "body": "<h2>Introduction</h2><p>Remote engineering is a marathon. Teams that last are the ones that take mental health as seriously as uptime, especially when people work across borders and cultures.</p><h2>Signals of Burnout</h2><h3>In the work</h3><p>Pull requests get smaller and later, estimates drift, and the same engineer is always the one who picks up the incident at 9 p.m.</p><h3>In the conversation</h3><p>Cameras stay off, retros go quiet, and \"fine\" becomes the default answer. Managers on both sides of the border need to learn to notice.</p><figure><img src=\"/assets/insights/post-majestic-mountain.jpg\" alt=\"Mountain ridge above a sea of clouds\" loading=\"lazy\" /><figcaption>Sustainable pace is a product decision.</figcaption></figure><h2>What Helps</h2><ul><li>Respect local holidays and publish them on the team calendar.</li><li>Share on-call fairly between in-house and nearshore engineers.</li><li>Give every engineer a manager who meets them one-on-one every two weeks.</li></ul><blockquote><p>A rested team ships more than an exhausted one. Every time.</p></blockquote><h2>Conclusion</h2><p>Wellbeing is not a perk you add later. Build it into how your distributed team plans, ships and rests from day one.</p>"
+  },
+  "sections": [
+    {
+      "type": "post-hero"
+    },
+    {
+      "type": "reading-progress"
+    },
+    {
+      "type": "post-article",
+      "banner": {
+        "heading": "Team up with Nicasource for new opportunities!",
+        "cta": {
+          "label": "Partner with Us",
+          "href": "/contact"
+        },
+        "image": {
+          "src": "/assets/shared/banner-liquid-bg.jpg",
+          "alt": ""
+        }
+      }
+    },
+    {
+      "type": "related-posts",
+      "heading": "Wanna go down the rabbit hole? Check out these **related articles!**"
+    }
+  ]
+}

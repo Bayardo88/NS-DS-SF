@@ -1,0 +1,213 @@
+.contact {
+  padding-block: var(--ns-spacing-80);
+}
+
+.contact--band {
+  background: var(--ns-color-bg-surface);
+}
+
+.contact__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-24);
+}
+
+.contact__heading {
+  max-width: 34ch;
+  color: var(--ns-color-text-primary);
+}
+
+.contact__heading strong {
+  font-weight: var(--ns-font-weight-black);
+}
+
+.contact__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ns-spacing-24);
+}
+
+.contact__tab {
+  padding: 0 0 var(--ns-spacing-4);
+  border: 0;
+  border-bottom: var(--ns-border-width-medium) solid transparent;
+  background: none;
+  color: var(--ns-color-text-accent);
+  cursor: pointer;
+}
+
+.contact__tab[aria-selected='true'] {
+  border-bottom-color: var(--ns-color-border-accent);
+}
+
+.contact__tab:hover {
+  color: var(--ns-color-text-primary);
+}
+
+.contact__tab:focus-visible,
+.chip:focus-visible,
+.contact__textarea:focus-visible,
+.contact__file:focus-visible {
+  outline: var(--ns-border-width-medium) solid var(--ns-color-border-focus);
+  outline-offset: var(--ns-spacing-2);
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-24);
+}
+
+.contact__fields {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--ns-spacing-16);
+}
+
+.contact__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--ns-spacing-24);
+}
+
+.contact__label {
+  display: block;
+  margin-bottom: var(--ns-spacing-8);
+  color: var(--ns-color-text-primary);
+}
+
+.contact__services {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.contact__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ns-spacing-12);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Multi-select chip: a toggle button (DS Tag is non-interactive). */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ns-spacing-6);
+  padding: var(--ns-spacing-6) var(--ns-spacing-12);
+  border: var(--ns-border-width-thin) solid var(--ns-color-border-strong);
+  border-radius: var(--ns-radius-xl);
+  background: none;
+  color: var(--ns-color-text-primary);
+  cursor: pointer;
+}
+
+.chip:hover {
+  border-color: var(--ns-color-border-brand);
+}
+
+.chip[aria-pressed='true'] {
+  border-color: var(--ns-color-bg-brand);
+  background: var(--ns-color-bg-brand);
+  color: var(--ns-color-text-on-brand);
+}
+
+.chip[aria-pressed='true']:hover {
+  background: var(--ns-color-bg-brand-hover);
+}
+
+.contact__message {
+  grid-column: 2;
+}
+
+.contact__textarea-wrap {
+  position: relative;
+}
+
+.contact__textarea {
+  width: 100%;
+  min-height: calc(var(--ns-spacing-150) - var(--ns-spacing-2));
+  padding: var(--ns-spacing-16);
+  padding-bottom: var(--ns-spacing-56);
+  border: var(--ns-border-width-thin) solid var(--ns-color-border-input);
+  border-radius: var(--ns-radius-sm);
+  background: transparent;
+  color: var(--ns-color-text-primary);
+  resize: vertical;
+}
+
+.contact__textarea::placeholder {
+  color: var(--ns-color-text-secondary);
+}
+
+.contact__send {
+  position: absolute;
+  right: var(--ns-spacing-12);
+  bottom: var(--ns-spacing-12);
+}
+
+.contact__file {
+  color: var(--ns-color-text-secondary);
+}
+
+.contact__status {
+  min-height: var(--ns-spacing-20);
+  color: var(--ns-color-text-success);
+}
+
+@media (max-width: 767px) {
+  .contact {
+    padding-block: var(--ns-spacing-40);
+  }
+
+  .contact__tabs {
+    justify-content: space-between;
+    gap: var(--ns-spacing-12);
+  }
+
+  .contact__fields,
+  .contact__row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact__message {
+    grid-column: auto;
+  }
+}
+
+.contact__row--general .contact__message {
+  grid-column: 1 / -1;
+}
+
+/* Contact Us page (v2): the module sits in the left half of a split hero, no band of its own. */
+.contact--page {
+  padding-block: 0;
+}
+
+.contact--page .contact__inner {
+  max-width: none;
+  padding-inline: 0;
+}
+
+.contact--page .contact__tab {
+  color: var(--ns-color-text-primary);
+}
+
+.contact--page .contact__tab[aria-selected='true'] {
+  color: var(--ns-color-text-accent);
+}
+
+.contact--page .contact__tab:hover {
+  color: var(--ns-color-text-accent);
+}
+
+.contact--page .contact__row {
+  grid-template-columns: 1fr;
+}
+
+.contact--page .contact__message {
+  grid-column: auto;
+}

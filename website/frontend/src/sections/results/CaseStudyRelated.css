@@ -1,0 +1,35 @@
+.cs-related {
+  padding-block: var(--ns-spacing-80);
+  background: var(--ns-color-bg-canvas);
+}
+
+.cs-related__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-40);
+}
+
+.cs-related__heading {
+  color: var(--ns-color-text-primary);
+}
+
+.cs-related__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--ns-spacing-32);
+}
+
+.cs-related__card {
+  aspect-ratio: 360 / 390;
+}
+
+@media (max-width: 767px) {
+  .cs-related {
+    padding-block: var(--ns-spacing-40);
+  }
+
+  .cs-related__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--ns-spacing-16);
+  }
+}

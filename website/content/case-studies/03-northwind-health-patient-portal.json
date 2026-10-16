@@ -1,0 +1,80 @@
+{
+  "slug": "northwind-health-patient-portal",
+  "title": "A patient portal people actually use",
+  "date": "2025-02-14 09:00:00",
+  "excerpt": "Staff augmentation for a healthcare provider rebuilding its patient portal.",
+  "meta": {
+    "client": "Northwind Health",
+    "project": "Patient Portal",
+    "industry": "Healthcare",
+    "tags": [
+      "Healthcare",
+      "Staff Augmentation",
+      "QA Testing"
+    ],
+    "image": {
+      "src": "/assets/service-detail/general-dev-team-office.jpg",
+      "alt": "Engineers collaborating around a desk"
+    },
+    "hero_image": {
+      "src": "/assets/service-detail/hero-code-bokeh.png",
+      "alt": ""
+    },
+    "headline": "**Scaling** a healthcare team **without slowing** the roadmap.",
+    "summary": "Five engineers and two QA analysts joined Northwind's product team to rebuild the patient portal, adding online booking, test results and secure messaging."
+  },
+  "sections": [
+    {
+      "type": "case-study-hero"
+    },
+    {
+      "type": "case-study-body",
+      "blocks": [
+        {
+          "kind": "intro"
+        },
+        {
+          "kind": "split",
+          "body": "Northwind Health's portal was ten years old and barely used. Their product team had a clear roadmap but not enough hands to deliver it while keeping the legacy system running.",
+          "image": {
+            "src": "/assets/services/general-team-laptop.jpg",
+            "alt": "Team reviewing work on a laptop"
+          },
+          "tallImage": {
+            "src": "/assets/service-detail/general-dev-team-office.jpg",
+            "alt": "Engineers collaborating around a desk"
+          }
+        },
+        {
+          "kind": "text",
+          "title": "Solution",
+          "body": "We embedded five full-stack engineers and two QA analysts under Northwind's engineering manager. They took the booking, results and messaging epics end to end, with automated accessibility and regression checks in every release."
+        },
+        {
+          "kind": "metrics",
+          "title": "Results",
+          "items": [
+            {
+              "value": "3×",
+              "label": "monthly active patients"
+            },
+            {
+              "value": "40%",
+              "label": "fewer calls to book appointments"
+            },
+            {
+              "value": "0",
+              "label": "critical defects in production after launch"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "case-study-related"
+    },
+    {
+      "type": "contact"
+    }
+  ]
+}

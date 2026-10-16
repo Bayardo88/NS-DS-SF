@@ -1,0 +1,62 @@
+.cs-quote {
+  padding-block: var(--ns-spacing-80);
+  background: var(--ns-color-bg-canvas);
+}
+
+.cs-quote__card {
+  display: grid;
+  grid-template-columns: minmax(0, 626fr) minmax(0, 399fr);
+  align-items: start;
+  gap: var(--ns-spacing-16);
+  margin-inline: var(--ns-spacing-16);
+  padding: var(--ns-spacing-40);
+  border-radius: var(--ns-radius-lg);
+  background: var(--ns-color-bg-inverse);
+  color: var(--ns-color-text-inverse);
+}
+
+.cs-quote__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-16);
+  padding-right: var(--ns-spacing-40);
+}
+
+.cs-quote__author {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ns-spacing-8);
+}
+
+/* "user-octagon" glyph (not in the DS icon set): the SVG is used as a mask over a token color. */
+.cs-quote__icon {
+  width: var(--ns-size-icon-sm);
+  height: var(--ns-size-icon-sm);
+  background: var(--ns-color-icon-inverse);
+  mask: url('/assets/blog-post/icon-user-octagon.svg') center / contain no-repeat;
+}
+
+.cs-quote__photo {
+  width: 100%;
+  aspect-ratio: 399 / 464;
+  object-fit: cover;
+  border-radius: var(--ns-radius-lg);
+}
+
+@media (max-width: 767px) {
+  .cs-quote {
+    padding-block: var(--ns-spacing-40);
+  }
+
+  .cs-quote__card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--ns-spacing-24);
+    margin-inline: 0;
+    padding: var(--ns-spacing-24);
+  }
+
+  .cs-quote__text {
+    padding-right: 0;
+  }
+}

@@ -1,0 +1,148 @@
+/* Smooth-scroll the hero "See all openings" jump, only on pages that have the job list. */
+:root:has(.job-list) {
+  scroll-behavior: smooth;
+}
+
+.job-list {
+  padding-block: var(--ns-spacing-80);
+  scroll-margin-top: var(--ns-spacing-80);
+}
+
+.job-list__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-20);
+}
+
+.job-list__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-20);
+}
+
+.job-list__eyebrow {
+  color: var(--ns-color-text-highlight);
+}
+
+.job-list__empty {
+  color: var(--ns-color-text-secondary);
+}
+
+.job-list__empty-link {
+  color: var(--ns-color-text-link);
+  text-decoration: underline;
+}
+
+.job-list__empty-link:hover {
+  color: var(--ns-color-text-link-hover);
+}
+
+.job-list__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--ns-spacing-20);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.job-card {
+  display: flex;
+}
+
+/* Figma Job Card: 371 × 408, padding 24, gap 24, 3px border/subtle (closest token: medium), radius 2xl. */
+.job-card__link {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: var(--ns-spacing-24);
+  min-height: calc(var(--ns-spacing-180) * 2 + var(--ns-spacing-48));
+  padding: var(--ns-spacing-24);
+  border: var(--ns-border-width-medium) solid var(--ns-color-border-subtle);
+  border-radius: var(--ns-radius-2xl);
+  background: var(--ns-color-bg-canvas);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.job-card__link:hover {
+  border-color: var(--ns-color-border-default);
+  transform: translateY(calc(-1 * var(--ns-spacing-4)));
+}
+
+.job-card__link:active {
+  transform: none;
+}
+
+.job-card__link:focus-visible {
+  outline: var(--ns-border-width-medium) solid var(--ns-color-border-focus);
+  outline-offset: var(--ns-spacing-2);
+}
+
+.job-card__img {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: 317 / 260;
+  object-fit: cover;
+  border-radius: var(--ns-radius-lg);
+}
+
+.job-card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--ns-spacing-8);
+}
+
+.job-card__title {
+  color: var(--ns-color-text-primary);
+}
+
+.job-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ns-spacing-8);
+  padding-block: var(--ns-spacing-8);
+  color: var(--ns-color-text-link);
+}
+
+.job-card__link:hover .job-card__cta {
+  color: var(--ns-color-text-link-hover);
+}
+
+@media (max-width: 1023px) {
+  .job-list__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .job-list {
+    padding-block: var(--ns-spacing-40);
+  }
+
+  .job-list__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .job-card__link {
+    min-height: 0;
+  }
+
+  .job-card__img {
+    display: none;
+  }
+
+  .job-card__link:hover {
+    transform: none;
+  }
+
+  .job-card__link:active {
+    border-color: var(--ns-color-border-default);
+  }
+}
