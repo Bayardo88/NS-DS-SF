@@ -8,7 +8,7 @@
     "Technology"
   ],
   "meta": {
-    "image": "/assets/insights/post-eastern-adventures-2.jpg",
+    "image": "/assets/insights/post-cyber-security.jpg",
     "tags": [
       "Cybersecurity Innovations",
       "Technology"
@@ -27,7 +27,7 @@
         "Product Strategy"
       ]
     },
-    "body": "<h2>Introduction</h2><p>Security is the first question every legal team asks about remote and nearshore engineers. The good news: the controls that protect a distributed team are the same ones that protect an office.</p><h2>Access Control</h2><h3>Least privilege</h3><p>Every engineer gets access to the repositories and environments their work needs, and nothing more. Access is reviewed every quarter.</p><h3>Managed devices</h3><p>Company-managed laptops with disk encryption, automatic updates and remote wipe remove most of the risk of lost hardware.</p><figure><img src=\"/assets/insights/post-eastern-adventures-2.jpg\" alt=\"Winding road through a forested valley\" loading=\"lazy\" /><figcaption>Security is a process, not a location.</figcaption></figure><h2>Contracts and Compliance</h2><ul><li>IP assignment clauses that are valid in the engineer's country.</li><li>NDAs signed before access is granted.</li><li>SOC 2-aligned policies for logging and incident response.</li></ul><blockquote><p>A remote engineer on a managed device is safer than an in-office engineer on a personal one.</p></blockquote><h2>Conclusion</h2><p>Treat security as a default, not an exception for remote staff. Clear access rules, managed devices and solid contracts protect your IP wherever your team works.</p>"
+    "body": "<h2>Introduction</h2><p>Security is the first question every legal team asks about remote and nearshore engineers. The good news: the controls that protect a distributed team are the same ones that protect an office.</p><h2>Access Control</h2><h3>Least privilege</h3><p>Every engineer gets access to the repositories and environments their work needs, and nothing more. Access is reviewed every quarter.</p><h3>Managed devices</h3><p>Company-managed laptops with disk encryption, automatic updates and remote wipe remove most of the risk of lost hardware.</p><figure><img src=\"/assets/insights/post-ux-design-mockup.jpg\" alt=\"Design sketches on a desk\" loading=\"lazy\" /><figcaption>Security is a process, not a location.</figcaption></figure><h2>Contracts and Compliance</h2><ul><li>IP assignment clauses that are valid in the engineer's country.</li><li>NDAs signed before access is granted.</li><li>SOC 2-aligned policies for logging and incident response.</li></ul><blockquote><p>A remote engineer on a managed device is safer than an in-office engineer on a personal one.</p></blockquote><h2>Conclusion</h2><p>Treat security as a default, not an exception for remote staff. Clear access rules, managed devices and solid contracts protect your IP wherever your team works.</p>"
   },
   "sections": [
     {

@@ -9,7 +9,7 @@
     "Mental Health Awareness"
   ],
   "meta": {
-    "image": "/assets/insights/post-heart-of-city-2.jpg",
+    "image": "/assets/insights/post-home-office.jpg",
     "tags": [
       "Remote Work",
       "Diversity and Inclusion",
@@ -29,7 +29,7 @@
         "Product Strategy"
       ]
     },
-    "body": "<h2>Introduction</h2><p>The first thirty days decide whether a remote engineer becomes a long-term teammate or a short-term contractor. A clear plan makes the difference.</p><h2>Week One: Access and Context</h2><p>Accounts, repositories and environments should be ready before day one. Pair the new engineer with a buddy and give them a small, real ticket by day three.</p><h2>Weeks Two and Three: Ownership</h2><h3>A first feature</h3><p>Assign a scoped feature they can carry from ticket to production, including tests and release notes.</p><h3>Feedback in both directions</h3><p>Ask what was confusing. New hires spot gaps in documentation that the rest of the team stopped seeing years ago.</p><figure><img src=\"/assets/insights/post-heart-of-city-2.jpg\" alt=\"People crossing a wide plaza in the city\" loading=\"lazy\" /><figcaption>Belonging is built in the first month.</figcaption></figure><h2>Week Four: Belonging</h2><ul><li>Invite them to present their feature in the team demo.</li><li>Introduce them to stakeholders outside engineering.</li><li>Agree on goals for the next quarter in a one-on-one.</li></ul><blockquote><p>Onboarding is the first product your team ships to a new colleague.</p></blockquote><h2>Conclusion</h2><p>A structured first month turns a remote hire into a contributor, and a contributor into someone who stays.</p>"
+    "body": "<h2>Introduction</h2><p>The first thirty days decide whether a remote engineer becomes a long-term teammate or a short-term contractor. A clear plan makes the difference.</p><h2>Week One: Access and Context</h2><p>Accounts, repositories and environments should be ready before day one. Pair the new engineer with a buddy and give them a small, real ticket by day three.</p><h2>Weeks Two and Three: Ownership</h2><h3>A first feature</h3><p>Assign a scoped feature they can carry from ticket to production, including tests and release notes.</p><h3>Feedback in both directions</h3><p>Ask what was confusing. New hires spot gaps in documentation that the rest of the team stopped seeing years ago.</p><figure><img src=\"/assets/insights/post-video-meeting.jpg\" alt=\"Remote teammates meeting over a laptop\" loading=\"lazy\" /><figcaption>Belonging is built in the first month.</figcaption></figure><h2>Week Four: Belonging</h2><ul><li>Invite them to present their feature in the team demo.</li><li>Introduce them to stakeholders outside engineering.</li><li>Agree on goals for the next quarter in a one-on-one.</li></ul><blockquote><p>Onboarding is the first product your team ships to a new colleague.</p></blockquote><h2>Conclusion</h2><p>A structured first month turns a remote hire into a contributor, and a contributor into someone who stays.</p>"
   },
   "sections": [
     {

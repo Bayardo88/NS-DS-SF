@@ -55,3 +55,5 @@ rendering them through the real frontend. You do not draw mockups from scratch o
   hard-coded cards.
 - Never commit to `main`. Work on a `feature/…` branch (repo CLAUDE.md).
 - Placeholder copy must read as real, on-brand copy unless the user asks for lorem.
+- New stock photos: Openverse, CC0 only (StockSnap or rawpixel sources). Show the user the shortlist
+  before downloading, and add a row per image to `website/frontend/public/assets/CREDITS.md`.

@@ -341,7 +341,8 @@ falls back to it when WordPress is offline or doesn't have an entry yet.
    For explorations, use `parent: "explore"` with a slug like `home-v2`, which gives the URL
    `/explore/home-v2`.
 5. **Assets:** reuse the files in `frontend/public/assets/**`. A new image goes in
-   `assets/<page>/` as a JPEG of at most 1800px.
+   `assets/<page>/` as a JPEG of at most 1800px. New stock photos come from Openverse with a **CC0**
+   licence (StockSnap or rawpixel sources), and each one gets a row in `assets/CREDITS.md`.
 6. **Only if needed**, add a section: `frontend/src/sections/<group>/<Name>.tsx` + `.css`,
    registered in that group's `index.ts`. Use tokens only, a focus ring, reduced-motion support, and
    mobile stacking. Then document it in §6.

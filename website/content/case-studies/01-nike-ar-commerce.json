@@ -67,8 +67,8 @@
         {
           "kind": "image",
           "image": {
-            "src": "/assets/case-study/placeholder-vr-bust.png",
-            "alt": "Placeholder project imagery: a bust wearing a VR headset"
+            "src": "/assets/case-study/nike-ar-tryon.jpg",
+            "alt": "Shopper holding a smartphone"
           }
         },
         {
@@ -82,16 +82,16 @@
           "mobile": "scroll",
           "images": [
             {
-              "src": "/assets/case-study/placeholder-vr-bust.png",
-              "alt": "Placeholder project imagery: a bust wearing a VR headset"
+              "src": "/assets/case-study/nike-sneakers-detail.jpg",
+              "alt": "Close-up of white sneakers"
             },
             {
-              "src": "/assets/case-study/placeholder-vr-bust.png",
-              "alt": "Placeholder project imagery: a bust wearing a VR headset"
+              "src": "/assets/case-study/nike-sneakers-street.jpg",
+              "alt": "Sneakers on a city street"
             },
             {
-              "src": "/assets/case-study/placeholder-vr-bust.png",
-              "alt": "Placeholder project imagery: a bust wearing a VR headset"
+              "src": "/assets/case-study/nike-window-shopping.jpg",
+              "alt": "People window shopping"
             }
           ]
         }
@@ -120,8 +120,8 @@
         {
           "kind": "image",
           "image": {
-            "src": "/assets/case-study/placeholder-vr-bust.png",
-            "alt": "Placeholder project imagery: a bust wearing a VR headset"
+            "src": "/assets/case-study/nike-phone-browse.jpg",
+            "alt": "Browsing a store on a phone"
           },
           "size": "lg"
         },
@@ -131,12 +131,12 @@
           "mobile": "stack",
           "images": [
             {
-              "src": "/assets/case-study/placeholder-vr-bust.png",
-              "alt": "Placeholder project imagery: a bust wearing a VR headset"
+              "src": "/assets/case-study/nike-instagram-phone.jpg",
+              "alt": "Scrolling a social feed on a phone"
             },
             {
-              "src": "/assets/case-study/placeholder-vr-bust.png",
-              "alt": "Placeholder project imagery: a bust wearing a VR headset"
+              "src": "/assets/case-study/nike-ecommerce-laptop.jpg",
+              "alt": "Checking out on a laptop"
             }
           ]
         }

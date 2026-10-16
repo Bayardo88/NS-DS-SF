@@ -13,8 +13,8 @@
       "Salesforce"
     ],
     "image": {
-      "src": "/assets/services/benefit-beach-laptop.jpg",
-      "alt": "Laptop open on a desk by the beach"
+      "src": "/assets/case-study/lumen-credit-card.jpg",
+      "alt": "Hand holding a credit card"
     },
     "hero_image": {
       "src": "/assets/shared/hero-glass-x-bg.png",
@@ -46,8 +46,8 @@
         {
           "kind": "image",
           "image": {
-            "src": "/assets/home/mobile-team-hoodies.jpg",
-            "alt": "The Lumen Pay project team"
+            "src": "/assets/case-study/lumen-card-terminal.jpg",
+            "alt": "Paying with a card at a terminal"
           }
         },
         {

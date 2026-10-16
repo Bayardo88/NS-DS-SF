@@ -8,7 +8,7 @@
     "Technology"
   ],
   "meta": {
-    "image": "/assets/insights/post-pacific-ocean-2.jpg",
+    "image": "/assets/insights/post-video-meeting.jpg",
     "tags": [
       "Remote Work",
       "Technology"
@@ -27,7 +27,7 @@
         "Product Strategy"
       ]
     },
-    "body": "<h2>Introduction</h2><p>When companies compare staffing options, they usually compare hourly rates. The number that matters more is how many hours your teams can actually talk to each other.</p><h2>The Cost of Waiting</h2><h3>Blocked tickets</h3><p>Every unanswered question parks a ticket. With a twelve-hour offset, a single clarification can cost a full day; three of them cost a sprint.</p><h3>Review latency</h3><p>Pull requests that wait overnight for review go stale, conflict with other changes and need rework.</p><figure><img src=\"/assets/insights/post-pacific-ocean-2.jpg\" alt=\"Calm ocean horizon at golden hour\" loading=\"lazy\" /><figcaption>Hours of overlap are the real unit of collaboration.</figcaption></figure><h2>Measuring Overlap</h2><ul><li>Count shared working hours per day, per team pair.</li><li>Track median time-to-first-response on questions.</li><li>Track pull-request cycle time before and after a staffing change.</li></ul><h2>Conclusion</h2><p>A slightly higher rate with six hours of overlap is almost always cheaper than a lower rate with none. Measure the waiting, not just the hourly cost.</p>"
+    "body": "<h2>Introduction</h2><p>When companies compare staffing options, they usually compare hourly rates. The number that matters more is how many hours your teams can actually talk to each other.</p><h2>The Cost of Waiting</h2><h3>Blocked tickets</h3><p>Every unanswered question parks a ticket. With a twelve-hour offset, a single clarification can cost a full day; three of them cost a sprint.</p><h3>Review latency</h3><p>Pull requests that wait overnight for review go stale, conflict with other changes and need rework.</p><figure><img src=\"/assets/insights/post-team-meeting.jpg\" alt=\"Team around a table with laptops\" loading=\"lazy\" /><figcaption>Hours of overlap are the real unit of collaboration.</figcaption></figure><h2>Measuring Overlap</h2><ul><li>Count shared working hours per day, per team pair.</li><li>Track median time-to-first-response on questions.</li><li>Track pull-request cycle time before and after a staffing change.</li></ul><h2>Conclusion</h2><p>A slightly higher rate with six hours of overlap is almost always cheaper than a lower rate with none. Measure the waiting, not just the hourly cost.</p>"
   },
   "sections": [
     {

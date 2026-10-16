@@ -13,8 +13,8 @@
       "QA Testing"
     ],
     "image": {
-      "src": "/assets/service-detail/general-dev-team-office.jpg",
-      "alt": "Engineers collaborating around a desk"
+      "src": "/assets/case-study/northwind-doctor-patient.jpg",
+      "alt": "Doctor reviewing results with a patient"
     },
     "hero_image": {
       "src": "/assets/service-detail/hero-code-bokeh.png",
@@ -37,12 +37,12 @@
           "kind": "split",
           "body": "Northwind Health's portal was ten years old and barely used. Their product team had a clear roadmap but not enough hands to deliver it while keeping the legacy system running.",
           "image": {
-            "src": "/assets/services/general-team-laptop.jpg",
-            "alt": "Team reviewing work on a laptop"
+            "src": "/assets/case-study/northwind-hospital.jpg",
+            "alt": "Doctors in a hospital corridor"
           },
           "tallImage": {
-            "src": "/assets/service-detail/general-dev-team-office.jpg",
-            "alt": "Engineers collaborating around a desk"
+            "src": "/assets/case-study/northwind-doctor-patient.jpg",
+            "alt": "Doctor reviewing results with a patient"
           }
         },
         {
