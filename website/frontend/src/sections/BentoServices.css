@@ -1,0 +1,117 @@
+.bento-services {
+  display: grid;
+  /* Figma 1:1048: tall tile + two rows of small/wide tiles that interlock. */
+  grid-template-columns: 1.37fr 1fr 0.72fr 1fr;
+  grid-auto-rows: calc(var(--ns-spacing-120) * 2);
+  gap: var(--ns-spacing-20);
+  padding: 0;
+  margin: var(--ns-spacing-24) var(--ns-spacing-80) 0;
+  list-style: none;
+}
+
+.bento-services__item:nth-child(1) { grid-area: 1 / 1 / 3 / 2; }
+.bento-services__item:nth-child(2) { grid-area: 1 / 2 / 2 / 3; }
+.bento-services__item:nth-child(3) { grid-area: 1 / 3 / 2 / 5; }
+.bento-services__item:nth-child(4) { grid-area: 2 / 2 / 3 / 4; }
+.bento-services__item:nth-child(5) { grid-area: 2 / 4 / 3 / 5; }
+
+.bento-tile {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  padding: var(--ns-spacing-32);
+  overflow: hidden;
+  border: var(--ns-border-width-thin) solid var(--ns-color-border-brand);
+  border-radius: var(--ns-radius-xl);
+  color: var(--ns-color-text-brand);
+  text-decoration: none;
+  transition: border-color 200ms ease;
+}
+
+.bento-tile__label {
+  font-weight: var(--ns-font-weight-black);
+}
+
+.bento-tile__img {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.05);
+  transition:
+    opacity 300ms ease,
+    transform 600ms ease;
+}
+
+/* Darken the photo so the label stays legible. */
+.bento-tile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, transparent 30%, var(--ns-color-bg-canvas) 100%);
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.bento-tile:hover,
+.bento-tile:focus-visible {
+  color: var(--ns-color-text-primary);
+}
+
+.bento-tile:hover .bento-tile__img,
+.bento-tile:focus-visible .bento-tile__img,
+.bento-tile:hover::after,
+.bento-tile:focus-visible::after {
+  opacity: 1;
+  transform: none;
+}
+
+.bento-tile:focus-visible {
+  outline: var(--ns-border-width-medium) solid var(--ns-color-border-focus);
+  outline-offset: var(--ns-spacing-2);
+}
+
+/* Touch: press state instead of hover (annotation 54:103042). */
+@media (hover: none) {
+  .bento-tile:active .bento-tile__img,
+  .bento-tile:active::after {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .bento-services {
+    grid-template-columns: 1fr 1fr;
+    margin-inline: 0;
+  }
+
+  .bento-services__item:nth-child(n) {
+    grid-area: auto;
+  }
+
+  .bento-services__item--tall {
+    grid-row: span 2;
+  }
+
+  .bento-services__item--wide {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 767px) {
+  .bento-services {
+    grid-auto-rows: var(--ns-spacing-150);
+    gap: var(--ns-spacing-12);
+  }
+
+  .bento-tile {
+    padding: var(--ns-spacing-20);
+  }
+}

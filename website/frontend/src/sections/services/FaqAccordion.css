@@ -1,0 +1,104 @@
+.faq__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-40);
+}
+
+.faq__heading {
+  text-align: center;
+}
+
+.faq__columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: var(--ns-spacing-32);
+}
+
+.faq__col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-32);
+  padding: 0;
+  list-style: none;
+}
+
+.faq__item {
+  border: var(--ns-border-width-medium) solid var(--ns-color-border-subtle);
+  border-radius: var(--ns-radius-lg);
+  background: var(--ns-color-bg-canvas);
+  transition: border-color 200ms ease;
+}
+
+/* Figma uses slate-300 (no semantic token); border-accent matches the benefits open state. */
+.faq__item--open {
+  border-color: var(--ns-color-border-accent);
+}
+
+.faq__q-wrap {
+  margin: 0;
+  font: inherit;
+}
+
+.faq__trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--ns-spacing-32);
+  width: 100%;
+  padding: var(--ns-spacing-40) var(--ns-spacing-32);
+  border: 0;
+  border-radius: var(--ns-radius-lg);
+  background: transparent;
+  color: var(--ns-color-text-primary);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq__trigger:focus-visible {
+  outline: var(--ns-border-width-medium) solid var(--ns-color-border-focus);
+  outline-offset: var(--ns-spacing-2);
+}
+
+.faq__q {
+  flex: 1;
+}
+
+.faq__chevron {
+  flex: none;
+  color: var(--ns-color-icon-accent);
+  transition: transform 200ms ease;
+}
+
+.faq__item--open .faq__chevron {
+  transform: rotate(180deg);
+}
+
+.faq__a {
+  padding: 0 var(--ns-spacing-32) var(--ns-spacing-40);
+  color: var(--ns-color-text-secondary);
+}
+
+.faq__a[hidden] {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .faq__columns {
+    grid-template-columns: 1fr;
+    gap: var(--ns-spacing-16);
+  }
+
+  .faq__col {
+    gap: var(--ns-spacing-16);
+  }
+
+  .faq__trigger {
+    gap: var(--ns-spacing-16);
+    padding: var(--ns-spacing-16);
+  }
+
+  .faq__a {
+    padding: 0 var(--ns-spacing-16) var(--ns-spacing-16);
+  }
+}

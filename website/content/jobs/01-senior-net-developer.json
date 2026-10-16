@@ -1,0 +1,71 @@
+{
+  "slug": "senior-net-developer",
+  "title": "Senior .NET Developer",
+  "date": "2026-09-22 09:00:00",
+  "excerpt": "Build and scale cloud APIs in C# and .NET for a US fintech client, working in US Central hours.",
+  "meta": {
+    "role_name": ".NET Developer",
+    "seniority": "Senior",
+    "location": "LATAM",
+    "work_mode": "Remote",
+    "type": "Full-time",
+    "hours": "40 h/week · US Central overlap",
+    "english_level": "B2",
+    "tags": [
+      ".NET",
+      "C#",
+      "Azure",
+      "SQL Server"
+    ],
+    "status": "open",
+    "valid_through": "2026-12-31",
+    "body": [
+      "We are looking for a Senior .NET Developer to join a US fintech product team that serves thousands of small businesses. You will own backend services end to end: from designing APIs and data models to shipping them to Azure and keeping them healthy in production.",
+      "You will work daily with the client’s product managers and engineers, take part in architecture decisions, and mentor mid-level developers on the team. Our stack is .NET 8, C#, Azure Functions, Azure SQL and Service Bus, with React on the front end."
+    ],
+    "responsibilities": [
+      "Design, build and maintain RESTful APIs and background services in C# and .NET 8.",
+      "Model data and write performant queries for Azure SQL / SQL Server.",
+      "Collaborate with product and design to break features into well-scoped work.",
+      "Participate in code reviews to ensure quality and share knowledge.",
+      "Own CI/CD pipelines and observability for your services.",
+      "Mentor mid-level developers and contribute to engineering standards."
+    ],
+    "requirements": [
+      "5+ years of professional experience with C# and .NET.",
+      "Hands-on experience with Azure (Functions, App Service, Service Bus or similar).",
+      "Solid SQL skills and experience with Entity Framework or Dapper.",
+      "Upper-intermediate English (B2) or higher, written and spoken."
+    ]
+  },
+  "sections": [
+    {
+      "type": "job-hero"
+    },
+    {
+      "type": "job-description",
+      "aboutCompany": [
+        "NicaSource is a nearshore staff augmentation company based in Managua, Nicaragua, since 2013. We embed pre-vetted Latin American engineers, designers and QA specialists into product teams across the US and beyond, working in their time zone and inside their workflow from day one.",
+        "Our people grow with us: every teammate gets NS Time — 8 paid hours a week for training, internal syncs and team moments — plus a community of 100+ professionals who share what they learn."
+      ],
+      "benefitsIntro": "We take care of the people who take care of our clients. Beyond a competitive USD salary, you get the flexibility of a remote-first team and the support of a company that invests in your career.",
+      "benefits": [
+        {
+          "title": "Remote first",
+          "body": "Work from anywhere in LATAM with a schedule that overlaps your US team. We cover your internet and a home-office stipend."
+        },
+        {
+          "title": "NS Time",
+          "body": "8 paid hours every week for training, certifications, internal syncs and team moments, built into your 40-hour week."
+        },
+        {
+          "title": "Flexible time off",
+          "body": "Paid vacation, local holidays and personal days you actually take. Plan them with your team and your client, without the guilt."
+        }
+      ]
+    },
+    {
+      "type": "job-application"
+    }
+  ]
+}

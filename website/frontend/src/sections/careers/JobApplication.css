@@ -1,0 +1,122 @@
+.job-apply {
+  padding-block: var(--ns-spacing-80);
+  background: var(--ns-color-bg-surface);
+  scroll-margin-top: var(--ns-spacing-80);
+}
+
+.job-apply__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-24);
+}
+
+.job-apply__heading {
+  color: var(--ns-color-text-primary);
+}
+
+.job-apply__heading strong {
+  font-weight: var(--ns-font-weight-black);
+}
+
+.job-apply__tab-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ns-spacing-24);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.job-apply__tab {
+  display: inline-block;
+  padding-bottom: var(--ns-spacing-4);
+  border-bottom: var(--ns-border-width-medium) solid transparent;
+  color: var(--ns-color-text-accent);
+  text-decoration: none;
+}
+
+a.job-apply__tab:hover {
+  color: var(--ns-color-text-primary);
+}
+
+a.job-apply__tab:focus-visible {
+  outline: var(--ns-border-width-medium) solid var(--ns-color-border-focus);
+  outline-offset: var(--ns-spacing-2);
+}
+
+.job-apply__tab--active {
+  border-bottom-color: var(--ns-color-border-brand);
+}
+
+.job-apply__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-24);
+}
+
+/* Figma: rows of 5 equal fields, gap 16. */
+.job-apply__fields {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--ns-spacing-24) var(--ns-spacing-16);
+  align-items: start;
+}
+
+.job-apply__portfolio {
+  grid-column: span 2;
+}
+
+.job-apply__summary {
+  min-height: var(--ns-spacing-20);
+  color: var(--ns-color-text-error);
+}
+
+.job-apply__summary:empty {
+  display: none;
+}
+
+.job-apply__external {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--ns-spacing-16);
+}
+
+.job-apply__note {
+  color: var(--ns-color-text-secondary);
+}
+
+.job-apply__success-text {
+  max-width: 40ch;
+  color: var(--ns-color-text-primary);
+}
+
+.job-apply__success-text:focus-visible {
+  outline: var(--ns-border-width-medium) solid var(--ns-color-border-focus);
+  outline-offset: var(--ns-spacing-2);
+}
+
+@media (max-width: 1023px) {
+  .job-apply__fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .job-apply {
+    padding-block: var(--ns-spacing-40);
+  }
+
+  .job-apply__tab-list {
+    justify-content: space-between;
+    gap: var(--ns-spacing-12);
+  }
+
+  .job-apply__fields {
+    grid-template-columns: 1fr;
+  }
+
+  .job-apply__portfolio {
+    grid-column: auto;
+  }
+}

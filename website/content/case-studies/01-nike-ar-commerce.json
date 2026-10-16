@@ -1,0 +1,152 @@
+{
+  "slug": "nike-ar-commerce",
+  "title": "AR, the new frontier in online retail",
+  "date": "2025-04-10 09:00:00",
+  "excerpt": "An AR-first online store that lets Nike fans try on shoes and apparel from their phones.",
+  "meta": {
+    "featured": true,
+    "client": "Nike",
+    "project": "AR Commerce",
+    "industry": "Retail",
+    "tags": [
+      "Retail",
+      "E-commerce",
+      "Augmented Reality"
+    ],
+    "image": {
+      "src": "/assets/case-studies/featured-ar-remote-work.png",
+      "alt": ""
+    },
+    "hero_image": {
+      "src": "/assets/case-study/hero-waves.png",
+      "alt": ""
+    },
+    "logo": {
+      "src": "/assets/case-study/client-logo-nike.png",
+      "alt": "Nike"
+    },
+    "headline": "An AR-first store that lets fans **try before they buy**.",
+    "summary": "We embedded a product squad with Nike's e-commerce team to ship an AR try-on experience, personalized recommendations and a three-step checkout.",
+    "testimonial": {
+      "quote": "Working with this team has been a game changer for our project. Their expertise and dedication have helped us expand our reach across LATAM, particularly in Mexico, Nicaragua, and Argentina. We couldn't have done it without their support!",
+      "name": "Boyo",
+      "role": "Product Director",
+      "photo": {
+        "src": "/assets/case-study/testimonial-client-photo.png",
+        "alt": "Portrait of the client"
+      }
+    }
+  },
+  "sections": [
+    {
+      "type": "case-study-hero"
+    },
+    {
+      "type": "case-study-body",
+      "blocks": [
+        {
+          "kind": "intro"
+        },
+        {
+          "kind": "split",
+          "body": "Introducing a groundbreaking e-commerce platform for Nike that revolutionizes the online shopping experience. This project features an intuitive interface, personalized product recommendations, and a streamlined checkout process. Customers can explore the latest athletic gear, track their orders in real-time, and enjoy exclusive discounts tailored just for them. With enhanced mobile compatibility and a vibrant community forum, Nike's new online store is set to elevate the way fans connect with their favorite brand.",
+          "image": {
+            "src": "/assets/case-study/overview-shopper.jpg",
+            "alt": "Shopper browsing eyewear in the mobile store, with floating product cards"
+          },
+          "tallImage": {
+            "src": "/assets/case-study/overview-mobile-app.jpg",
+            "alt": "Mobile store screens: product detail, new arrivals and the home screen"
+          }
+        },
+        {
+          "kind": "text",
+          "title": "Strategy",
+          "body": "Nike's e-commerce strategy focuses on leveraging augmented reality (AR) to enhance the online shopping experience. By allowing customers to virtually try on shoes and apparel through their smartphones, Nike aims to bridge the gap between physical and digital shopping. Additionally, the strategy includes personalized recommendations based on user behavior and preferences, ensuring that every customer feels uniquely catered to. The integration of a loyalty program that rewards users for engaging with the brand online will further enhance customer retention and satisfaction."
+        },
+        {
+          "kind": "image",
+          "image": {
+            "src": "/assets/case-study/nike-ar-tryon.jpg",
+            "alt": "Shopper holding a smartphone"
+          }
+        },
+        {
+          "kind": "text",
+          "title": "Design",
+          "body": "The design system pairs bold product photography with a calm, high-contrast interface so the AR try-on stays the hero of every screen. We prototyped the try-on flow with real shoppers, cut the path from product page to checkout to three steps, and built every component to work one-handed on a phone first, then scale up to tablet and desktop."
+        },
+        {
+          "kind": "gallery",
+          "layout": "wide-narrow",
+          "mobile": "scroll",
+          "images": [
+            {
+              "src": "/assets/case-study/nike-sneakers-detail.jpg",
+              "alt": "Close-up of white sneakers"
+            },
+            {
+              "src": "/assets/case-study/nike-sneakers-street.jpg",
+              "alt": "Sneakers on a city street"
+            },
+            {
+              "src": "/assets/case-study/nike-window-shopping.jpg",
+              "alt": "People window shopping"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "case-study-testimonial"
+    },
+    {
+      "type": "case-study-body",
+      "blocks": [
+        {
+          "kind": "split",
+          "reverse": true,
+          "title": "Development",
+          "body": "Introducing a groundbreaking e-commerce platform for Nike that revolutionizes the online shopping experience. This project features an intuitive interface, personalized product recommendations, and a streamlined checkout process. Customers can explore the latest athletic gear, track their orders in real-time, and enjoy exclusive discounts tailored just for them. With enhanced mobile compatibility and a vibrant community forum, Nike's new online store is set to elevate the way fans connect with their favorite brand.",
+          "image": {
+            "src": "/assets/case-study/overview-shopper.jpg",
+            "alt": "Shopper browsing eyewear in the mobile store, with floating product cards"
+          },
+          "tallImage": {
+            "src": "/assets/case-study/overview-mobile-app.jpg",
+            "alt": "Mobile store screens: product detail, new arrivals and the home screen"
+          }
+        },
+        {
+          "kind": "image",
+          "image": {
+            "src": "/assets/case-study/nike-phone-browse.jpg",
+            "alt": "Browsing a store on a phone"
+          },
+          "size": "lg"
+        },
+        {
+          "kind": "gallery",
+          "layout": "narrow-wide",
+          "mobile": "stack",
+          "images": [
+            {
+              "src": "/assets/case-study/nike-instagram-phone.jpg",
+              "alt": "Scrolling a social feed on a phone"
+            },
+            {
+              "src": "/assets/case-study/nike-ecommerce-laptop.jpg",
+              "alt": "Checking out on a laptop"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "case-study-related"
+    },
+    {
+      "type": "contact"
+    }
+  ]
+}

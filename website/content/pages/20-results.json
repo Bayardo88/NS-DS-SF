@@ -1,0 +1,31 @@
+{
+  "slug": "results",
+  "title": "Case Studies",
+  "sections": [
+    {
+      "type": "hero",
+      "heading": "More than **10 years** as a staffing firm within the **software** and **engineering industry**.",
+      "background": {
+        "src": "/assets/case-studies/hero-studio.png",
+        "alt": ""
+      },
+      "breadcrumb": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Case Studies",
+          "href": "/results"
+        }
+      ]
+    },
+    {
+      "type": "case-study-list",
+      "ctaLabel": "Read case study"
+    },
+    {
+      "type": "contact"
+    }
+  ]
+}

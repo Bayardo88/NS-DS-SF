@@ -1,0 +1,70 @@
+{
+  "slug": "senior-product-designer",
+  "title": "Senior Product Designer",
+  "date": "2026-10-06 09:00:00",
+  "excerpt": "Lead UX and UI for a B2B analytics product, from discovery to a shipped design system.",
+  "meta": {
+    "role_name": "Product Designer",
+    "seniority": "Senior",
+    "location": "Nicaragua",
+    "work_mode": "Hybrid",
+    "type": "Full-time",
+    "hours": "40 h/week · US Central overlap",
+    "english_level": "C1",
+    "tags": [
+      "Figma",
+      "Design Systems",
+      "UX Research",
+      "Prototyping"
+    ],
+    "status": "open",
+    "valid_through": "2027-01-31",
+    "body": [
+      "We are looking for a Senior Product Designer to lead UX and UI for a B2B analytics product used by finance teams. You will run discovery with users, turn complex data into clear interfaces, and evolve a design system shared by design and engineering.",
+      "You will be the design voice in a small product team, working closely with a product manager and four engineers, and with the support of the NicaSource design guild."
+    ],
+    "responsibilities": [
+      "Plan and run user interviews, usability tests and design reviews.",
+      "Design end-to-end flows, from wireframes to high-fidelity prototypes in Figma.",
+      "Maintain and extend the product design system with engineering.",
+      "Make sure every screen meets WCAG 2.1 AA.",
+      "Present design decisions to client stakeholders and document them for the team."
+    ],
+    "requirements": [
+      "5+ years designing web products, with a portfolio of shipped work.",
+      "Expert Figma skills, including components, variables and prototyping.",
+      "Experience building or maintaining a design system.",
+      "Advanced English (C1)."
+    ]
+  },
+  "sections": [
+    {
+      "type": "job-hero"
+    },
+    {
+      "type": "job-description",
+      "aboutCompany": [
+        "NicaSource is a nearshore staff augmentation company based in Managua, Nicaragua, since 2013. We embed pre-vetted Latin American engineers, designers and QA specialists into product teams across the US and beyond, working in their time zone and inside their workflow from day one.",
+        "Our people grow with us: every teammate gets NS Time — 8 paid hours a week for training, internal syncs and team moments — plus a community of 100+ professionals who share what they learn."
+      ],
+      "benefitsIntro": "We take care of the people who take care of our clients. Beyond a competitive USD salary, you get the flexibility of a remote-first team and the support of a company that invests in your career.",
+      "benefits": [
+        {
+          "title": "Remote first",
+          "body": "Work from anywhere in LATAM with a schedule that overlaps your US team. We cover your internet and a home-office stipend."
+        },
+        {
+          "title": "NS Time",
+          "body": "8 paid hours every week for training, certifications, internal syncs and team moments, built into your 40-hour week."
+        },
+        {
+          "title": "Flexible time off",
+          "body": "Paid vacation, local holidays and personal days you actually take. Plan them with your team and your client, without the guilt."
+        }
+      ]
+    },
+    {
+      "type": "job-application"
+    }
+  ]
+}

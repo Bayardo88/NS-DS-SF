@@ -1,0 +1,61 @@
+{
+  "slug": "the-heart-of-the-city-central-insights",
+  "title": "The Heart of the City: Central Insights",
+  "date": "2025-05-02 09:00:00",
+  "excerpt": "Central Time is the quiet workhorse of nearshore engineering. A team in Managua or Mexico City shares every working hour with a client in Chicago or Dallas, which means questions get answered the same morning and pull requests get reviewed before lunch.",
+  "categories": [
+    "Trends",
+    "Technology",
+    "Sustainability"
+  ],
+  "meta": {
+    "image": "/assets/home/blog-central-insights.jpg",
+    "tags": [
+      "Trends",
+      "Technology",
+      "Sustainability"
+    ],
+    "home_slot": "secondary",
+    "reading_time": "2 min read",
+    "author": {
+      "name": "Boyo Martínez",
+      "role": "Product Director",
+      "avatar": "/assets/blog-post/author-boyo-martinez.jpg",
+      "bio": "Boyo leads product and design at NicaSource, where he helps US companies plan, staff and run nearshore engineering teams. He has spent fifteen years shipping digital products with distributed teams across the Americas.",
+      "verified": true,
+      "years_experience": 15,
+      "expertise": [
+        "UX Design",
+        "Product Design",
+        "Product Strategy"
+      ]
+    },
+    "body": "<h2>Introduction</h2><p>Central Time is the quiet workhorse of nearshore engineering. A team in Managua or Mexico City shares every working hour with a client in Chicago or Dallas, which means questions get answered the same morning and pull requests get reviewed before lunch.</p><p>In this article we look at what that overlap actually buys a product team, and how to design rituals that make the most of it.</p><h2>Why Overlap Beats Headcount</h2><h3>Fewer handoffs, faster loops</h3><p>Offshore models often trade cost for latency: a question asked at 4 p.m. is answered the next day. With full overlap, the feedback loop collapses from 24 hours to minutes, and that compounds across every ticket in a sprint.</p><h3>Shared context</h3><p>Engineers who join the same stand-ups, demos and incident calls as your in-house team absorb product context naturally. They stop being \"the vendor\" and start making product decisions.</p><figure><img src=\"/assets/insights/post-heart-of-city-1.jpg\" alt=\"City street at dusk seen from above\" loading=\"lazy\" /><figcaption>Same hours, same rituals, one team.</figcaption></figure><h2>Designing the Working Day</h2><ul><li>Keep one daily synchronous touchpoint, at most fifteen minutes.</li><li>Protect a four-hour block of deep-work time for everyone, on both sides.</li><li>Record demos and decisions so nobody depends on having been in the room.</li></ul><blockquote><p>Overlap is not about more meetings. It is about never waiting a day for an answer.</p></blockquote><h2>Conclusion</h2><p>Central Time overlap turns a nearshore team into an extension of your own. Treat the shared hours as a resource, plan them deliberately, and the distance stops showing up in your velocity charts.</p>"
+  },
+  "sections": [
+    {
+      "type": "post-hero"
+    },
+    {
+      "type": "reading-progress"
+    },
+    {
+      "type": "post-article",
+      "banner": {
+        "heading": "Team up with Nicasource for new opportunities!",
+        "cta": {
+          "label": "Partner with Us",
+          "href": "/contact"
+        },
+        "image": {
+          "src": "/assets/shared/banner-liquid-bg.jpg",
+          "alt": ""
+        }
+      }
+    },
+    {
+      "type": "related-posts",
+      "heading": "Wanna go down the rabbit hole? Check out these **related articles!**"
+    }
+  ]
+}

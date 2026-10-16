@@ -1,0 +1,111 @@
+.interest-marquee {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-40);
+  padding-block: var(--ns-spacing-80);
+  overflow-x: clip;
+}
+
+.interest-marquee__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--ns-spacing-40);
+}
+
+.interest-marquee__heading {
+  color: var(--ns-color-text-primary);
+  text-align: center;
+  text-wrap: balance;
+}
+
+.interest-marquee__heading strong {
+  font-weight: var(--ns-font-weight-black);
+}
+
+/* Figma: 917 of 1153 wide, left-aligned inside a centred box. */
+.interest-marquee__body {
+  max-width: 80%;
+  color: var(--ns-color-text-primary);
+}
+
+.interest-marquee__rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-16);
+}
+
+.interest-marquee__row {
+  display: flex;
+  justify-content: center;
+}
+
+.interest-marquee__track {
+  display: flex;
+  flex: none;
+  gap: var(--ns-spacing-16);
+  animation: interest-marquee-rtl 60s linear infinite;
+}
+
+.interest-marquee__row--ltr .interest-marquee__track {
+  animation-name: interest-marquee-ltr;
+}
+
+.interest-marquee__row:hover .interest-marquee__track {
+  animation-play-state: paused;
+}
+
+.interest-marquee__list {
+  display: flex;
+  flex: none;
+  gap: var(--ns-spacing-16);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.interest-marquee__chip {
+  flex: none;
+  padding: var(--ns-spacing-8) var(--ns-spacing-16);
+  border: var(--ns-border-width-thin) solid var(--ns-color-border-accent);
+  border-radius: var(--ns-radius-lg);
+  background: var(--ns-color-bg-canvas);
+  color: var(--ns-color-text-secondary);
+  white-space: nowrap;
+}
+
+/* The track holds two identical lists + one gap between them: shifting by half (plus half a gap)
+   lands the second list exactly where the first started. */
+@keyframes interest-marquee-rtl {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - var(--ns-spacing-8)));
+  }
+}
+
+@keyframes interest-marquee-ltr {
+  from {
+    transform: translateX(calc(-50% - var(--ns-spacing-8)));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interest-marquee__track {
+    animation: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .interest-marquee {
+    padding-block: var(--ns-spacing-40);
+  }
+
+  .interest-marquee__body {
+    max-width: none;
+  }
+}

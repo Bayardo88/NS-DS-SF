@@ -1,0 +1,170 @@
+/*
+ * Site layer for the NicaSource 2025 website. Colors, type, spacing, radius and effects all come
+ * from @nicasource/ds tokens (web-2025 theme). The only raw values in this app are the layout
+ * constants below (page grid widths), which the design system doesn't model.
+ */
+
+:root {
+  /* Layout constants (Figma: 1512 frame, content 1152 wide = 180 side margins). */
+  --site-container: 1152px;
+  --site-container-wide: 1352px;
+  --site-hero-height: 843px;
+  --site-gutter: var(--ns-spacing-24);
+  --site-section-y: var(--ns-spacing-120);
+}
+
+@media (max-width: 767px) {
+  :root {
+    --site-gutter: var(--ns-spacing-20);
+    --site-section-y: var(--ns-spacing-64);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--ns-color-bg-canvas);
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--ns-color-bg-canvas);
+  color: var(--ns-color-text-primary);
+  font-family: var(--ns-font-family-web);
+  -webkit-font-smoothing: antialiased;
+}
+
+main:focus {
+  outline: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+figure,
+blockquote {
+  margin: 0;
+}
+
+/* ---------- Layout primitives ---------- */
+
+.container {
+  width: 100%;
+  max-width: calc(var(--site-container) + 2 * var(--site-gutter));
+  margin-inline: auto;
+  padding-inline: var(--site-gutter);
+}
+
+.container--wide {
+  max-width: calc(var(--site-container-wide) + 2 * var(--site-gutter));
+}
+
+.section {
+  padding-block: var(--site-section-y);
+}
+
+.section--tight {
+  padding-block: calc(var(--site-section-y) / 2);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-24);
+}
+
+/* ---------- Shared text treatments ---------- */
+
+/* Eyebrow: Web/Eyebrow/Black, honey (accent) by default, coral (brand) variant. */
+.eyebrow {
+  color: var(--ns-color-text-accent);
+}
+
+.eyebrow--brand {
+  color: var(--ns-color-text-brand);
+}
+
+/* Headings on the site are slate-50/300; `**bold**` segments in content render as <strong>. */
+.heading {
+  color: var(--ns-color-text-secondary);
+}
+
+.heading strong {
+  font-weight: var(--ns-font-weight-black);
+}
+
+.body-copy {
+  color: var(--ns-color-text-secondary);
+}
+
+.body-copy > * + * {
+  margin-top: var(--ns-spacing-16);
+}
+
+/* Huge display text filled with an image (the iridescent "texture" headings). */
+.texture-text {
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- Header: the DS SiteHeader on the site's surface ---------- */
+
+.site-header {
+  background: var(--ns-color-bg-surface);
+}
+
+/* ---------- Dev helpers ---------- */
+
+.route-loading {
+  min-height: 100vh;
+}
+
+.source-badge {
+  position: fixed;
+  right: var(--ns-spacing-12);
+  bottom: var(--ns-spacing-12);
+  z-index: 200;
+  padding: var(--ns-spacing-4) var(--ns-spacing-8);
+  border-radius: var(--ns-radius-full);
+  background: var(--ns-color-bg-surface);
+  border: 1px solid var(--ns-color-border-default);
+  color: var(--ns-color-text-tertiary);
+  pointer-events: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

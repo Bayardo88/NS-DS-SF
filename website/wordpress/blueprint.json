@@ -1,0 +1,17 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "landingPage": "/wp-admin/",
+  "steps": [
+    {
+      "step": "setSiteOptions",
+      "options": {
+        "permalink_structure": "/%postname%/",
+        "blogname": "NicaSource"
+      }
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php require '/ns-seed/seed.php';"
+    }
+  ]
+}

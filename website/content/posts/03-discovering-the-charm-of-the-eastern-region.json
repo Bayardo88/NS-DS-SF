@@ -1,0 +1,59 @@
+{
+  "slug": "discovering-the-charm-of-the-eastern-region",
+  "title": "Discovering the Charm of the Eastern Region",
+  "date": "2025-05-16 09:00:00",
+  "excerpt": "For East Coast companies, Central America sits one or two hours behind New York, depending on the season. That small offset is one of the most underrated advantages in nearshore staffing.",
+  "categories": [
+    "Technology",
+    "Sustainability"
+  ],
+  "meta": {
+    "image": "/assets/home/blog-eastern-region.jpg",
+    "tags": [
+      "Technology",
+      "Sustainability"
+    ],
+    "home_slot": "secondary",
+    "reading_time": "1 min read",
+    "author": {
+      "name": "Boyo Martínez",
+      "role": "Product Director",
+      "avatar": "/assets/blog-post/author-boyo-martinez.jpg",
+      "bio": "Boyo leads product and design at NicaSource, where he helps US companies plan, staff and run nearshore engineering teams. He has spent fifteen years shipping digital products with distributed teams across the Americas.",
+      "verified": true,
+      "years_experience": 15,
+      "expertise": [
+        "UX Design",
+        "Product Design",
+        "Product Strategy"
+      ]
+    },
+    "body": "<h2>Introduction</h2><p>For East Coast companies, Central America sits one or two hours behind New York, depending on the season. That small offset is one of the most underrated advantages in nearshore staffing.</p><h2>The Shape of an Eastern Day</h2><h3>Morning alignment</h3><p>Your product managers set priorities first thing; by the time your nearshore engineers sign on, the backlog is groomed and the questions are written down.</p><h3>Evening coverage</h3><p>The nearshore team keeps working after the New York office winds down, which gives you a natural window for deploys, monitoring and support without anyone pulling a night shift.</p><figure><img src=\"/assets/insights/post-eastern-charm-2.jpg\" alt=\"Colourful colonial facades on a quiet street\" loading=\"lazy\" /><figcaption>A small offset that adds an hour of coverage.</figcaption></figure><h2>What to Watch For</h2><ul><li>Daylight saving changes shift the overlap twice a year; put them on the shared calendar.</li><li>Agree on a hard stop for meetings so the late hour stays focused.</li></ul><h2>Conclusion</h2><p>An Eastern client with a Central American team gets almost total overlap plus an extra hour of runway every day. Plan around it and it becomes a competitive edge.</p>"
+  },
+  "sections": [
+    {
+      "type": "post-hero"
+    },
+    {
+      "type": "reading-progress"
+    },
+    {
+      "type": "post-article",
+      "banner": {
+        "heading": "Team up with Nicasource for new opportunities!",
+        "cta": {
+          "label": "Partner with Us",
+          "href": "/contact"
+        },
+        "image": {
+          "src": "/assets/shared/banner-liquid-bg.jpg",
+          "alt": ""
+        }
+      }
+    },
+    {
+      "type": "related-posts",
+      "heading": "Wanna go down the rabbit hole? Check out these **related articles!**"
+    }
+  ]
+}

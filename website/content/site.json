@@ -1,0 +1,69 @@
+{
+  "name": "NicaSource",
+  "nav": [
+    { "label": "Home", "href": "/" },
+    { "label": "Services", "href": "/services" },
+    { "label": "Results", "href": "/results" },
+    { "label": "About Us", "href": "/about" },
+    { "label": "Careers", "href": "/careers" },
+    { "label": "Insights", "href": "/insights" },
+    { "label": "Contact Us", "href": "/contact" }
+  ],
+  "footer": {
+    "columns": [
+      {
+        "heading": "Hire",
+        "links": [
+          { "label": "Hire Developers", "href": "/services/development" },
+          { "label": "Hire UX/UI Designers", "href": "/services" },
+          { "label": "Hire Quality Assurance (QA)", "href": "/services" },
+          { "label": "Hire Project Managers", "href": "/services" },
+          { "label": "Hire SalesForce Admins", "href": "/services" },
+          { "label": "Hire SalesForce Developers", "href": "/services" }
+        ]
+      },
+      {
+        "heading": "Nicasource",
+        "links": [
+          { "label": "About Us", "href": "/about" },
+          { "label": "Case Studies", "href": "/results" },
+          { "label": "Our Working Industries", "href": "/results" },
+          { "label": "Careers", "href": "/careers" },
+          { "label": "Blog", "href": "/insights" }
+        ]
+      },
+      {
+        "heading": "House Specialty",
+        "links": [
+          { "label": "Staff Augmentation", "href": "/services" },
+          { "label": "Why LATAM?", "href": "/about" },
+          { "label": "Overlap With US Time Zones", "href": "/about" }
+        ]
+      }
+    ],
+    "badges": [
+      { "src": "/assets/shared/badge-openai-select-partner.svg", "alt": "OpenAI Select Partner" }
+    ],
+    "subscribe": {
+      "heading": "Insight subscription",
+      "body": "We are your gateway to exceptional nearshore talent",
+      "label": "Email",
+      "placeholder": "darklord88@gmail.com",
+      "cta": "Subscribe"
+    },
+    "careersCard": {
+      "label": "Say Hi and join our team!",
+      "cta": { "label": "Explore Careers", "href": "/careers" },
+      "image": "/assets/shared/footer-careers-card-bg.jpg"
+    },
+    "watermark": "Nicasource LLC",
+    "tagline": "Your nearshore engineering partner",
+    "copyright": "© 2025 NicaSource LLC. All rights reserved.",
+    "social": {
+      "instagram": "https://www.instagram.com/nicasource",
+      "facebook": "https://www.facebook.com/nicasource",
+      "linkedin": "https://www.linkedin.com/company/nicasource"
+    }
+  },
+  "contact": {}
+}

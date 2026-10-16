@@ -1,0 +1,111 @@
+.insights-grid {
+  padding-block: var(--ns-spacing-80);
+  background: var(--ns-color-bg-canvas);
+}
+
+.insights-grid__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-16);
+}
+
+.insights-grid__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ns-spacing-6);
+}
+
+/* Unselected = surface, selected = brand (insights.md page notes reconcile the two frames). */
+.insights-grid__chip {
+  padding: var(--ns-spacing-8);
+  border: var(--ns-border-width-thin) solid transparent;
+  border-radius: var(--ns-radius-sm);
+  background: var(--ns-color-bg-surface);
+  color: var(--ns-color-text-primary);
+  cursor: pointer;
+}
+
+.insights-grid__chip:hover {
+  border-color: var(--ns-color-border-brand);
+}
+
+.insights-grid__chip[aria-pressed='true'] {
+  border-color: var(--ns-color-border-strong);
+  background: var(--ns-color-bg-brand);
+  color: var(--ns-color-text-on-brand);
+}
+
+.insights-grid__chip[aria-pressed='true']:hover {
+  background: var(--ns-color-bg-brand-hover);
+}
+
+.insights-grid__chip:active {
+  background: var(--ns-color-bg-brand-pressed);
+  color: var(--ns-color-text-on-brand);
+}
+
+.insights-grid__chip:focus-visible {
+  outline: var(--ns-border-width-medium) solid var(--ns-color-border-focus);
+  outline-offset: var(--ns-spacing-2);
+}
+
+.insights-grid__count {
+  min-height: var(--ns-spacing-24);
+  color: var(--ns-color-text-secondary);
+}
+
+/* Masonry: CSS columns keep DOM order = reading order inside each column, and on mobile. */
+.insights-grid__list {
+  column-count: 3;
+  column-gap: var(--ns-spacing-20);
+  padding: 0;
+  list-style: none;
+}
+
+.insights-grid__item {
+  display: flex;
+  flex-direction: column;
+  break-inside: avoid;
+  margin-bottom: var(--ns-spacing-20);
+}
+
+.insights-grid__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--ns-spacing-24);
+  padding: var(--ns-spacing-40);
+  border: var(--ns-border-width-thin) dashed var(--ns-color-border-default);
+  border-radius: var(--ns-radius-2xl);
+  color: var(--ns-color-text-primary);
+}
+
+.insights-grid__more {
+  align-self: center;
+  margin-top: var(--ns-spacing-20);
+}
+
+@media (max-width: 1023px) {
+  .insights-grid__list {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 767px) {
+  .insights-grid {
+    padding-block: var(--ns-spacing-40);
+  }
+
+  .insights-grid__filters {
+    justify-content: center;
+  }
+
+  .insights-grid__list {
+    column-count: 1;
+  }
+
+  .insights-grid__more {
+    align-self: stretch;
+    justify-content: center;
+  }
+}

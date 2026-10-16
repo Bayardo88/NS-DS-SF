@@ -1,0 +1,28 @@
+.callout {
+  padding-block: var(--site-section-y);
+}
+
+.callout__text {
+  display: flex;
+  flex-direction: column;
+  color: var(--ns-color-text-brand);
+  background-attachment: fixed;
+}
+
+.callout--center .callout__text {
+  align-items: center;
+  text-align: center;
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .callout__text {
+    color: transparent;
+  }
+}
+
+/* iOS ignores fixed backgrounds; keep the texture static on touch devices. */
+@media (hover: none) {
+  .callout__text {
+    background-attachment: scroll;
+  }
+}

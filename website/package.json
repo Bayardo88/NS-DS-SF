@@ -1,0 +1,27 @@
+{
+  "name": "@nicasource/website-reference",
+  "private": true,
+  "type": "module",
+  "description": "Headless WordPress + React reference build of the NicaSource 2025 website, on @nicasource/ds.",
+  "scripts": {
+    "wp": "wp-playground-cli server --port=9400 --blueprint=wordpress/blueprint.json --mount=./wordpress/mu-plugins:/wordpress/wp-content/mu-plugins --mount=./wordpress/seed:/ns-seed --mount=./content:/ns-content",
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^6.1.2",
+    "@wp-playground/cli": "^3.1.58",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.4"
+  },
+  "dependencies": {
+    "@nicasource/ds": "file:..",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.18.4"
+  }
+}

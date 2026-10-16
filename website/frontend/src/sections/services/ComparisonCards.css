@@ -1,0 +1,120 @@
+.comparison__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-60);
+}
+
+.comparison__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--ns-spacing-24);
+  text-align: center;
+}
+
+.comparison__sub {
+  color: var(--ns-color-text-primary);
+}
+
+.comparison__cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: var(--ns-spacing-24);
+  padding: 0;
+  list-style: none;
+}
+
+.comparison__card {
+  border: var(--ns-border-width-medium) solid var(--ns-color-border-subtle);
+  border-radius: var(--ns-radius-lg);
+  background: var(--ns-color-bg-canvas);
+}
+
+/* Expanded cards share the row height on desktop. */
+.comparison__card--open {
+  align-self: stretch;
+}
+
+.comparison__title-wrap {
+  margin: 0;
+  font: inherit;
+}
+
+.comparison__trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--ns-spacing-16);
+  width: 100%;
+  padding: var(--ns-spacing-32);
+  border: 0;
+  border-radius: var(--ns-radius-lg);
+  background: transparent;
+  color: var(--ns-color-text-primary);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.comparison__trigger:focus-visible {
+  outline: var(--ns-border-width-medium) solid var(--ns-color-border-focus);
+  outline-offset: var(--ns-spacing-2);
+}
+
+.comparison__title {
+  flex: 1;
+}
+
+.comparison__chevron {
+  flex: none;
+  color: var(--ns-color-icon-accent);
+  transition: transform 200ms ease;
+}
+
+.comparison__card--open .comparison__chevron {
+  transform: rotate(180deg);
+}
+
+.comparison__panel {
+  padding: 0 var(--ns-spacing-32) var(--ns-spacing-32);
+  color: var(--ns-color-text-secondary);
+}
+
+.comparison__panel[hidden] {
+  display: none;
+}
+
+.comparison__list {
+  margin: 0;
+  padding-left: var(--ns-spacing-24);
+  list-style: disc;
+}
+
+@media (max-width: 1023px) {
+  .comparison__cards {
+    grid-template-columns: 1fr;
+    gap: var(--ns-spacing-16);
+  }
+}
+
+@media (max-width: 767px) {
+  .comparison__inner {
+    gap: var(--ns-spacing-32);
+  }
+
+  .comparison__header {
+    align-items: stretch;
+  }
+
+  .comparison__header .heading {
+    text-align: left;
+  }
+
+  .comparison__trigger {
+    padding: var(--ns-spacing-24);
+  }
+
+  .comparison__panel {
+    padding: 0 var(--ns-spacing-24) var(--ns-spacing-24);
+  }
+}

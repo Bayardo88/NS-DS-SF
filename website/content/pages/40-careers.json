@@ -1,0 +1,93 @@
+{
+  "slug": "careers",
+  "title": "Careers",
+  "sections": [
+    {
+      "type": "hero",
+      "align": "start",
+      "breadcrumb": [
+        { "label": "Home", "href": "/" },
+        { "label": "Careers", "href": "/careers" }
+      ],
+      "heading": "Careers That Turn LATAM Talent Into Global Impact",
+      "body": "Be part of a nearshore team powering startups & enterprises across the US and beyond.",
+      "cta": { "label": "See all openings", "href": "#open-roles" },
+      "background": { "src": "/assets/careers/hero-bg.png", "alt": "" }
+    },
+    {
+      "type": "texture-callout",
+      "lines": ["Embrace remote life"],
+      "texture": "/assets/shared/texture-gradient-ribbons.jpg",
+      "uppercase": true
+    },
+    {
+      "type": "info-cards",
+      "align": "center",
+      "eyebrow": "Built for Your Career",
+      "heading": "Benefits That Care for You and Your Future"
+    },
+    {
+      "type": "info-cards",
+      "eyebrow": "Your Next Challenge Awaits",
+      "heading": "Build for Global Tech, Grow Without Limits",
+      "items": [
+        {
+          "title": "Global Connections",
+          "body": "We excel at identifying and honing premier talent, meticulously crafted to meet the exacting demands of your digital product and service, ensuring flawless execution."
+        },
+        {
+          "title": "Remote first work",
+          "body": "Our talent offers a perfect balance between productivity and a more affordable annual cost compared to others. In addition to not paying taxes, social security, etc... We take care of that so you pay less."
+        },
+        {
+          "title": "Flexible time off",
+          "body": "We offer 40 productive hours weekly for your business, with daily updates. Enjoy 8 extra hours, called NS Time, for meals, training, and meetings. Our training keeps our team learning new skills to benefit your business."
+        }
+      ]
+    },
+    {
+      "type": "general",
+      "contentSide": "left",
+      "eyebrow": "Why Us?",
+      "heading": "**Life at Nicasource**",
+      "body": [
+        "Behind every project, there’s a team that collaborates and enjoys the journey together. At Nicasource, it’s not just about writing code or delivering features—it’s about creating spaces where people connect, share moments, and celebrate along the way.",
+        "Growth here feels collective. Our culture blends professional excellence with real human connection: from stand-ups to milestones, from learning opportunities to small celebrations like this one. Every challenge becomes a chance to grow stronger as a team and deliver lasting impact."
+      ],
+      "media": {
+        "src": "/assets/careers/life-at-nicasource-team.png",
+        "alt": "The NicaSource team in matching aprons celebrating together",
+        "width": 1152,
+        "height": 896
+      }
+    },
+    {
+      "type": "image-collage",
+      "image": {
+        "src": "/assets/careers/culture-collage-mission-vision.png",
+        "alt": "Collage of NicaSource team photos with our Mission and Vision notes and our values: Commitment, Honesty, Respect, Transparency, Flexibility.",
+        "width": 1290,
+        "height": 1816
+      }
+    },
+    {
+      "type": "interest-marquee",
+      "heading": "The Way We Work Is The Way We Grow Together",
+      "body": "At Nicasource, collaboration is built on shared principles. They guide how we deliver, but also define what we expect from every teammate who joins us. We believe growth comes when both sides live by the same standards — shaping how we show up, how we work together, and how we succeed as a team.",
+      "rows": [
+        ["Rock’n’Roll", "Jazz", "Classical", "Hip Hop", "Reggae", "Blues", "Metal", "Pop", "Country", "Folk", "Electronic", "Soul", "R&B", "Punk", "Indie", "Alternative", "Funk", "Disco"],
+        ["Hiking", "Camping", "Kayaking", "Cycling", "Rock Climbing", "Bird Watching", "Fishing", "Skiing", "Surfing", "Photography", "Snorkeling", "Trail Running", "Wildlife Observation", "Caving", "Stargazing", "Picnicking", "Scuba Diving", "Backpacking"],
+        ["Comic books", "Graphic novels", "Manga", "Webcomics", "Superhero comics", "Indie comics", "Historical comics", "Science fiction comics", "Fantasy comics", "Horror comics", "Romantic comics", "Educational comics", "Political cartoons", "Satirical comics", "Children's comics", "Slice of life comics", "Adventure comics", "Science comics"]
+      ]
+    },
+    {
+      "type": "job-list",
+      "id": "open-roles",
+      "eyebrow": "Open Roles",
+      "heading": "Ready to **make your Mark**?",
+      "ctaLabel": "Apply Now",
+      "emptyText": "No open roles right now. Check back soon.",
+      "emptyCta": { "label": "Send us a general inquiry", "href": "/contact" }
+    }
+  ]
+}

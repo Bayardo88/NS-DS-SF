@@ -1,0 +1,14 @@
+.cs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ns-spacing-6);
+  padding: 0;
+  list-style: none;
+}
+
+.cs-tags__tag {
+  padding: var(--ns-spacing-8);
+  border-radius: var(--ns-radius-sm);
+  background: var(--ns-color-bg-brand);
+  color: var(--ns-color-text-on-brand);
+}

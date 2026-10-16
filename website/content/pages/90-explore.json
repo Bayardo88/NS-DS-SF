@@ -1,0 +1,12 @@
+{
+  "slug": "explore",
+  "title": "Explorations",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "Sandbox",
+      "heading": "Website **explorations**",
+      "body": "New versions of NicaSource pages live under /explore/<slug>. They are built from the same sections and tokens as the production pages."
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+/* Light card on the dark site: inverse surface + inverse text (web-2025). */
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-24);
+  margin: 0;
+  padding: var(--ns-spacing-40);
+  border-radius: var(--ns-radius-lg);
+  background: var(--ns-color-bg-inverse);
+  color: var(--ns-color-text-inverse);
+}
+
+.testimonial__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ns-spacing-16);
+}
+
+.testimonial__logo {
+  height: var(--ns-spacing-40);
+  width: auto;
+}
+
+.testimonial__who strong {
+  font-weight: var(--ns-font-weight-bold);
+}
+
+.testimonial__dots {
+  display: flex;
+  gap: var(--ns-spacing-8);
+}
+
+.testimonial__dot {
+  width: var(--ns-spacing-12);
+  height: var(--ns-spacing-12);
+  padding: 0;
+  border: 0;
+  border-radius: var(--ns-radius-full);
+  background: var(--ns-color-border-input);
+  cursor: pointer;
+  transition: width 200ms ease;
+}
+
+.testimonial__dot[aria-current='true'] {
+  width: var(--ns-spacing-32);
+  background: var(--ns-color-bg-brand);
+}
+
+.testimonial__dot:focus-visible {
+  outline: var(--ns-border-width-medium) solid var(--ns-color-border-focus);
+  outline-offset: var(--ns-spacing-2);
+}
+
+@media (max-width: 767px) {
+  .testimonial {
+    padding: var(--ns-spacing-24);
+  }
+}

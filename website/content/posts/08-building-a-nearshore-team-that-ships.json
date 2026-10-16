@@ -1,0 +1,58 @@
+{
+  "slug": "building-a-nearshore-team-that-ships",
+  "title": "Building a Nearshore Team That Ships",
+  "date": "2025-09-04 09:00:00",
+  "excerpt": "Outcomes first, roles second: how to structure and integrate a nearshore engineering squad.",
+  "categories": [
+    "Remote Work",
+    "Trends"
+  ],
+  "meta": {
+    "image": "/assets/insights/post-team-meeting.jpg",
+    "tags": [
+      "Remote Work",
+      "Trends"
+    ],
+    "reading_time": "1 min read",
+    "author": {
+      "name": "Boyo Martínez",
+      "role": "Product Director",
+      "avatar": "/assets/blog-post/author-boyo-martinez.jpg",
+      "bio": "Boyo leads product and design at NicaSource, where he helps US companies plan, staff and run nearshore engineering teams. He has spent fifteen years shipping digital products with distributed teams across the Americas.",
+      "verified": true,
+      "years_experience": 15,
+      "expertise": [
+        "UX Design",
+        "Product Design",
+        "Product Strategy"
+      ]
+    },
+    "body": "<h2>Introduction</h2><p>Hiring engineers is the easy part. Building a nearshore team that ships, week after week, takes deliberate structure.</p><h2>Start With the Work, Not the Roles</h2><p>Before you open a single position, write down the outcomes you need in the next two quarters. The mix of seniority and skills follows from there.</p><h3>A typical first squad</h3><ul><li>One senior engineer who owns technical decisions.</li><li>Two mid-level engineers for delivery.</li><li>A QA engineer embedded from the first sprint, not added later.</li></ul><figure><img src=\"/assets/insights/post-heart-of-city-3.jpg\" alt=\"Busy city intersection seen from a rooftop\" loading=\"lazy\" /><figcaption>Structure first, then scale.</figcaption></figure><h2>Integrate, Don't Isolate</h2><h3>One backlog</h3><p>Nearshore engineers work from the same backlog, in the same tools, under the same definition of done as your in-house team.</p><h3>One standard of quality</h3><p>Code review goes both ways. Senior nearshore engineers review in-house code too, which builds trust faster than any kickoff deck.</p><blockquote><p>The moment a team has its own backlog, it has become a vendor again.</p></blockquote><h2>Conclusion</h2><p>Define outcomes, staff for them, and integrate the team into your rituals from day one. That is the difference between extra headcount and extra capacity.</p>"
+  },
+  "sections": [
+    {
+      "type": "post-hero"
+    },
+    {
+      "type": "reading-progress"
+    },
+    {
+      "type": "post-article",
+      "banner": {
+        "heading": "Team up with Nicasource for new opportunities!",
+        "cta": {
+          "label": "Partner with Us",
+          "href": "/contact"
+        },
+        "image": {
+          "src": "/assets/shared/banner-liquid-bg.jpg",
+          "alt": ""
+        }
+      }
+    },
+    {
+      "type": "related-posts",
+      "heading": "Wanna go down the rabbit hole? Check out these **related articles!**"
+    }
+  ]
+}

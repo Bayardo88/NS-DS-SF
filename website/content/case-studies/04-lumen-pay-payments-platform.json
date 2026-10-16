@@ -1,0 +1,80 @@
+{
+  "slug": "lumen-pay-payments-platform",
+  "title": "Rebuilding a payments platform for scale",
+  "date": "2025-01-20 09:00:00",
+  "excerpt": "A managed team for a fintech moving from a monolith to services.",
+  "meta": {
+    "client": "Lumen Pay",
+    "project": "Payments Platform",
+    "industry": "Fintech",
+    "tags": [
+      "Fintech",
+      "Software Development",
+      "Salesforce"
+    ],
+    "image": {
+      "src": "/assets/case-study/lumen-credit-card.jpg",
+      "alt": "Hand holding a credit card"
+    },
+    "hero_image": {
+      "src": "/assets/shared/hero-glass-x-bg.png",
+      "alt": ""
+    },
+    "headline": "A **managed team** that took a fintech **from monolith to services**.",
+    "summary": "A tech lead, four backend engineers and a Salesforce developer moved Lumen Pay's payment flows to services and connected them to the sales team's CRM."
+  },
+  "sections": [
+    {
+      "type": "case-study-hero"
+    },
+    {
+      "type": "case-study-body",
+      "blocks": [
+        {
+          "kind": "intro"
+        },
+        {
+          "kind": "text",
+          "title": "Challenge",
+          "body": "Lumen Pay's monolith could not keep up with transaction growth, and every release risked downtime. Sales had no view of customer payment health."
+        },
+        {
+          "kind": "text",
+          "title": "Solution",
+          "body": "A managed team led by our tech lead split the payment flows into services behind a gateway, added observability, and synced payment health into Salesforce so account managers could act before customers churned."
+        },
+        {
+          "kind": "image",
+          "image": {
+            "src": "/assets/case-study/lumen-card-terminal.jpg",
+            "alt": "Paying with a card at a terminal"
+          }
+        },
+        {
+          "kind": "metrics",
+          "title": "Results",
+          "items": [
+            {
+              "value": "99.98%",
+              "label": "uptime in the first year"
+            },
+            {
+              "value": "5×",
+              "label": "transaction volume handled"
+            },
+            {
+              "value": "2 wks",
+              "label": "average time to ship a new payment method"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "case-study-related"
+    },
+    {
+      "type": "contact"
+    }
+  ]
+}

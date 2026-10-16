@@ -1,0 +1,33 @@
+{
+  "slug": "insights",
+  "title": "NS Insights",
+  "sections": [
+    {
+      "type": "insights-hero",
+      "breadcrumb": [
+        { "label": "Home", "href": "/" },
+        { "label": "Insights", "href": "/insights" }
+      ],
+      "eyebrow": "Your go-to source",
+      "heading": "Tech insights and industry trends.",
+      "body": "Explore expert tips on software solutions, team scaling, and digital innovation to stay ahead in the tech world.",
+      "media": {
+        "src": "/assets/insights/hero-3d-icon-pack.png",
+        "alt": ""
+      }
+    },
+    {
+      "type": "featured-post"
+    },
+    {
+      "type": "insights-grid",
+      "pageSize": 9
+    },
+    {
+      "type": "banner",
+      "heading": "Redefine success with Nicasource",
+      "cta": { "label": "Partner with Us", "href": "/contact" },
+      "background": { "src": "/assets/shared/banner-waves-bg.jpg", "alt": "" }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ns-spacing-6);
+  padding: 0;
+  list-style: none;
+}
+
+/* Figma uses light text on coral (~3.6:1); the DS on-brand text keeps AA (insights.md page notes). */
+.post-tags__chip {
+  display: inline-block;
+  padding: var(--ns-spacing-8);
+  border-radius: var(--ns-radius-sm);
+  background: var(--ns-color-bg-brand);
+  color: var(--ns-color-text-on-brand);
+  text-decoration: none;
+}
+
+.post-tags__chip--link:hover {
+  background: var(--ns-color-bg-brand-hover);
+}
+
+.post-tags__chip--link:active {
+  background: var(--ns-color-bg-brand-pressed);
+}
+
+.post-tags__chip--link:focus-visible {
+  outline: var(--ns-border-width-medium) solid var(--ns-color-border-focus);
+  outline-offset: var(--ns-spacing-2);
+}

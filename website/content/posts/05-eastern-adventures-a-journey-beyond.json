@@ -1,0 +1,57 @@
+{
+  "slug": "eastern-adventures-a-journey-beyond",
+  "title": "Eastern Adventures: A Journey Beyond",
+  "date": "2025-05-30 09:00:00",
+  "excerpt": "Every nearshore engagement starts with a leap of faith. This is the story of how a Boston fintech grew a two-person pilot into a twenty-engineer product group in eighteen months.",
+  "categories": [
+    "Technology"
+  ],
+  "meta": {
+    "image": "/assets/home/blog-eastern-adventures.jpg",
+    "tags": [
+      "Technology"
+    ],
+    "home_slot": "secondary",
+    "reading_time": "1 min read",
+    "author": {
+      "name": "Boyo Martínez",
+      "role": "Product Director",
+      "avatar": "/assets/blog-post/author-boyo-martinez.jpg",
+      "bio": "Boyo leads product and design at NicaSource, where he helps US companies plan, staff and run nearshore engineering teams. He has spent fifteen years shipping digital products with distributed teams across the Americas.",
+      "verified": true,
+      "years_experience": 15,
+      "expertise": [
+        "UX Design",
+        "Product Design",
+        "Product Strategy"
+      ]
+    },
+    "body": "<h2>Introduction</h2><p>Every nearshore engagement starts with a leap of faith. This is the story of how a Boston fintech grew a two-person pilot into a twenty-engineer product group in eighteen months.</p><h2>Starting Small</h2><p>The pilot was deliberately narrow: two engineers, one well-scoped feature, a four-week deadline. The goal was to test communication, not just code.</p><h3>What we measured</h3><ul><li>Time from question to answer in the shared Slack channel.</li><li>Pull-request review turnaround.</li><li>Defects found after release.</li></ul><figure><img src=\"/assets/insights/post-eastern-adventures-1.jpg\" alt=\"Traveller looking out over a valley at sunrise\" loading=\"lazy\" /><figcaption>A pilot is a test of communication first.</figcaption></figure><h2>Scaling Up</h2><p>Once the numbers held, the client added a QA engineer and a designer, then a second squad. Each new hire was onboarded by an existing nearshore engineer, which kept the culture consistent.</p><blockquote><p>The second squad shipped faster than the first because the first one onboarded them.</p></blockquote><h2>Conclusion</h2><p>Start with a pilot you can measure, let the numbers decide, and grow the team around the people who already understand your product.</p>"
+  },
+  "sections": [
+    {
+      "type": "post-hero"
+    },
+    {
+      "type": "reading-progress"
+    },
+    {
+      "type": "post-article",
+      "banner": {
+        "heading": "Team up with Nicasource for new opportunities!",
+        "cta": {
+          "label": "Partner with Us",
+          "href": "/contact"
+        },
+        "image": {
+          "src": "/assets/shared/banner-liquid-bg.jpg",
+          "alt": ""
+        }
+      }
+    },
+    {
+      "type": "related-posts",
+      "heading": "Wanna go down the rabbit hole? Check out these **related articles!**"
+    }
+  ]
+}

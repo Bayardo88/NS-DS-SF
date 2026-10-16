@@ -1,0 +1,168 @@
+.footer {
+  padding-top: var(--ns-spacing-64);
+  background: var(--ns-color-bg-canvas);
+  color: var(--ns-color-text-primary);
+}
+
+.footer__top {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--ns-spacing-48);
+}
+
+.footer__menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ns-spacing-32);
+}
+
+.footer__heading {
+  margin-bottom: var(--ns-spacing-24);
+  color: var(--ns-color-text-secondary);
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-12);
+  padding: 0;
+  list-style: none;
+}
+
+.footer__link {
+  border-radius: var(--ns-radius-xs);
+  color: var(--ns-color-text-secondary);
+  text-decoration: none;
+}
+
+.footer__link:hover {
+  color: var(--ns-color-text-primary);
+  text-decoration: underline;
+}
+
+.footer__link:focus-visible,
+.footer__logo:focus-visible {
+  outline: var(--ns-border-width-medium) solid var(--ns-color-border-focus);
+  outline-offset: var(--ns-spacing-2);
+}
+
+.footer__badges {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-12);
+  padding: 0;
+  list-style: none;
+}
+
+.footer__badges img {
+  width: calc(var(--ns-spacing-96) + var(--ns-spacing-40));
+  border-radius: var(--ns-radius-sm);
+  background: var(--ns-color-bg-inverse);
+}
+
+.footer__aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-24);
+}
+
+.footer__muted {
+  color: var(--ns-color-text-secondary);
+}
+
+.footer__subscribe-row {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--ns-spacing-12);
+  margin-top: var(--ns-spacing-16);
+}
+
+.footer__email {
+  flex: 1;
+}
+
+.footer__careers {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ns-spacing-12);
+  padding: var(--ns-spacing-20);
+  border-radius: var(--ns-radius-lg);
+  background-size: cover;
+  background-position: center;
+}
+
+/* The giant brand name band. */
+.footer__watermark {
+  margin-block: var(--ns-spacing-40);
+  font-family: var(--ns-font-family-web);
+  font-weight: var(--ns-font-weight-black);
+  font-size: clamp(var(--ns-font-size-web-h1), 11.5vw, var(--ns-font-size-web-callout-lg));
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--ns-color-bg-surface);
+  overflow: hidden;
+}
+
+.footer__trail {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--ns-spacing-24);
+  padding-block: var(--ns-spacing-24) var(--ns-spacing-32);
+  border-top: var(--ns-spacing-6) solid var(--ns-color-bg-surface);
+  color: var(--ns-color-text-primary);
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-12);
+}
+
+.footer__logo {
+  align-self: flex-start;
+  border-radius: var(--ns-radius-xs);
+}
+
+.footer__social {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--ns-spacing-12);
+}
+
+.footer__social ul {
+  display: flex;
+  gap: var(--ns-spacing-4);
+  padding: 0;
+  list-style: none;
+  color: var(--ns-color-icon-brand);
+}
+
+@media (max-width: 1023px) {
+  .footer__top {
+    grid-template-columns: 1fr;
+  }
+
+  /* Newsletter first on mobile (annotation 57:103312). */
+  .footer__aside {
+    order: -1;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer__menu {
+    flex-direction: column;
+  }
+
+  .footer__trail {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .footer__social {
+    justify-content: flex-start;
+  }
+}

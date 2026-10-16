@@ -1,0 +1,75 @@
+.job-description {
+  padding-block: var(--ns-spacing-80);
+}
+
+.job-description__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-60);
+}
+
+/* Figma: label in a fixed 481px column, content flex 1 (≈652px of 1153). */
+.job-description__block {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: var(--ns-spacing-20);
+  align-items: start;
+}
+
+.job-description__label {
+  color: var(--ns-color-text-secondary);
+}
+
+.job-description__benefits {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-spacing-20);
+}
+
+/* WYSIWYG-style output from WordPress (job.md §2). */
+.job-prose {
+  color: var(--ns-color-text-secondary);
+}
+
+.job-prose p + p,
+.job-description__paras > * + * {
+  margin-top: var(--ns-spacing-20);
+}
+
+.job-prose ul {
+  padding-left: var(--ns-spacing-24);
+  margin: 0;
+  list-style: disc;
+}
+
+.job-prose strong {
+  font-weight: var(--ns-font-weight-black);
+}
+
+.job-prose a {
+  color: var(--ns-color-text-link);
+  text-decoration: underline;
+}
+
+.job-prose a:hover {
+  color: var(--ns-color-text-link-hover);
+}
+
+.job-prose a:focus-visible {
+  outline: var(--ns-border-width-medium) solid var(--ns-color-border-focus);
+  outline-offset: var(--ns-spacing-2);
+}
+
+@media (max-width: 767px) {
+  .job-description {
+    padding-block: var(--ns-spacing-40);
+  }
+
+  .job-description__inner {
+    gap: var(--ns-spacing-40);
+  }
+
+  .job-description__block {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "secure-by-default-protecting-ip-with-remote-teams",
+  "title": "Secure by Default: Protecting IP with Remote Teams",
+  "date": "2025-07-10 09:00:00",
+  "excerpt": "Access control, managed devices and contracts that keep your code safe wherever your team works.",
+  "categories": [
+    "Cybersecurity Innovations",
+    "Technology"
+  ],
+  "meta": {
+    "image": "/assets/insights/post-cyber-security.jpg",
+    "tags": [
+      "Cybersecurity Innovations",
+      "Technology"
+    ],
+    "reading_time": "1 min read",
+    "author": {
+      "name": "Boyo Martínez",
+      "role": "Product Director",
+      "avatar": "/assets/blog-post/author-boyo-martinez.jpg",
+      "bio": "Boyo leads product and design at NicaSource, where he helps US companies plan, staff and run nearshore engineering teams. He has spent fifteen years shipping digital products with distributed teams across the Americas.",
+      "verified": true,
+      "years_experience": 15,
+      "expertise": [
+        "UX Design",
+        "Product Design",
+        "Product Strategy"
+      ]
+    },
+    "body": "<h2>Introduction</h2><p>Security is the first question every legal team asks about remote and nearshore engineers. The good news: the controls that protect a distributed team are the same ones that protect an office.</p><h2>Access Control</h2><h3>Least privilege</h3><p>Every engineer gets access to the repositories and environments their work needs, and nothing more. Access is reviewed every quarter.</p><h3>Managed devices</h3><p>Company-managed laptops with disk encryption, automatic updates and remote wipe remove most of the risk of lost hardware.</p><figure><img src=\"/assets/insights/post-ux-design-mockup.jpg\" alt=\"Design sketches on a desk\" loading=\"lazy\" /><figcaption>Security is a process, not a location.</figcaption></figure><h2>Contracts and Compliance</h2><ul><li>IP assignment clauses that are valid in the engineer's country.</li><li>NDAs signed before access is granted.</li><li>SOC 2-aligned policies for logging and incident response.</li></ul><blockquote><p>A remote engineer on a managed device is safer than an in-office engineer on a personal one.</p></blockquote><h2>Conclusion</h2><p>Treat security as a default, not an exception for remote staff. Clear access rules, managed devices and solid contracts protect your IP wherever your team works.</p>"
+  },
+  "sections": [
+    {
+      "type": "post-hero"
+    },
+    {
+      "type": "reading-progress"
+    },
+    {
+      "type": "post-article",
+      "banner": {
+        "heading": "Team up with Nicasource for new opportunities!",
+        "cta": {
+          "label": "Partner with Us",
+          "href": "/contact"
+        },
+        "image": {
+          "src": "/assets/shared/banner-liquid-bg.jpg",
+          "alt": ""
+        }
+      }
+    },
+    {
+      "type": "related-posts",
+      "heading": "Wanna go down the rabbit hole? Check out these **related articles!**"
+    }
+  ]
+}

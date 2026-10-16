@@ -1,0 +1,71 @@
+{
+  "slug": "mid-qa-automation-engineer",
+  "title": "Mid QA Automation Engineer",
+  "date": "2026-09-29 09:00:00",
+  "excerpt": "Own end-to-end test automation with Playwright and Cypress for a US healthcare SaaS product.",
+  "meta": {
+    "role_name": "QA Automation Engineer",
+    "seniority": "Mid",
+    "location": "LATAM",
+    "work_mode": "Remote",
+    "type": "Full-time",
+    "hours": "40 h/week · US Eastern overlap",
+    "english_level": "B2",
+    "image": "/assets/services/hero-mobile-woman-glasses.jpg",
+    "tags": [
+      "Playwright",
+      "Cypress",
+      "TypeScript",
+      "CI/CD"
+    ],
+    "status": "open",
+    "valid_through": "2026-12-31",
+    "body": [
+      "Join a cross-functional squad building a healthcare SaaS platform used by clinics across the United States. As our QA Automation Engineer, you will make sure every release is safe to ship, balancing automated coverage with sharp exploratory testing.",
+      "You will design the test strategy with the team, grow our Playwright suite, and make quality visible in every pull request."
+    ],
+    "responsibilities": [
+      "Design and maintain end-to-end and API test suites in Playwright and Cypress.",
+      "Integrate automated tests into GitHub Actions and keep the pipeline fast and reliable.",
+      "Test software thoroughly to ensure functionality, accessibility and performance.",
+      "Write clear bug reports and work with developers to reproduce and fix issues.",
+      "Communicate effectively with stakeholders to gather requirements and provide updates."
+    ],
+    "requirements": [
+      "3+ years in QA, with at least 2 years automating tests in TypeScript or JavaScript.",
+      "Experience testing REST APIs and web applications.",
+      "Familiarity with CI/CD and version control (Git).",
+      "Upper-intermediate English (B2) or higher."
+    ]
+  },
+  "sections": [
+    {
+      "type": "job-hero"
+    },
+    {
+      "type": "job-description",
+      "aboutCompany": [
+        "NicaSource is a nearshore staff augmentation company based in Managua, Nicaragua, since 2013. We embed pre-vetted Latin American engineers, designers and QA specialists into product teams across the US and beyond, working in their time zone and inside their workflow from day one.",
+        "Our people grow with us: every teammate gets NS Time — 8 paid hours a week for training, internal syncs and team moments — plus a community of 100+ professionals who share what they learn."
+      ],
+      "benefitsIntro": "We take care of the people who take care of our clients. Beyond a competitive USD salary, you get the flexibility of a remote-first team and the support of a company that invests in your career.",
+      "benefits": [
+        {
+          "title": "Remote first",
+          "body": "Work from anywhere in LATAM with a schedule that overlaps your US team. We cover your internet and a home-office stipend."
+        },
+        {
+          "title": "NS Time",
+          "body": "8 paid hours every week for training, certifications, internal syncs and team moments, built into your 40-hour week."
+        },
+        {
+          "title": "Flexible time off",
+          "body": "Paid vacation, local holidays and personal days you actually take. Plan them with your team and your client, without the guilt."
+        }
+      ]
+    },
+    {
+      "type": "job-application"
+    }
+  ]
+}
